@@ -8,7 +8,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
+//이 어노테이션 덕분에 GlobalExceptionHandler는 프로젝트 전역의 예외를 처리할 수 있습니다.
+//즉 UserController에서 사용자가 입력한 회원가입 정보의 유효성을 검사하면서 예외가 발생하면 여기서처리해줌 해당 어노테이션때문에
+
+
 public class GlobalExceptionHandler {
+//UserController 에서 발생한 예외클래스명이 있을거잖아. 그 예외와 매핑해주기 위해서 @ExceptionHandler 어노테이션을 사용
 
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ApiResponseDto<Void>> handleIllegalArgumentException(IllegalArgumentException e) {

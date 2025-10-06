@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
+//해당 @RequiredArgsConstructor라는 어노테이션을 통해 user < service <UserService 의 인터페이스 구현체인 userServiceImpl을 주입받고 갇게됨.
 @RequestMapping("/users") // 클래스 레벨에서 공통 URL 경로 설정
 public class UserController {
 
@@ -21,8 +22,11 @@ public class UserController {
     @PostMapping("/signup")
     public ResponseEntity<ApiResponseDto<Void>> signUp(@Valid @RequestBody SignUpRequestDto requestDto) {
         userService.signUp(requestDto);
-        // API 명세서에 따라 성공 응답을 반환합니다.
-        // HttpStatus.OK (200) 대신 HttpStatus.CREATED (201)를 사용하여 리소스 생성을 명시할 수도 있습니다.
+        //클라이언트가 입력한 회원가입 정보를 SignUpRequestDto로 받아오고 해당 객체인 requestDto와 주입받은 UserService 인터페이스 구현체
+        //객체와 인터페이스 구현체를 이용해서 signUp 메소드를 실행.
+
+        //@Valid 어노테이션 --> SignUpRequestDto에 각 필드에 @NotBlank 와 같은 유효성 검사를 실행시켜주는 어노테이션임
+        //유효성 실패할 경우 ? --> MethodArgumentNotValidException이 발생함.-- > 예외처리해줘야됨? -->어떻게?
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(ApiResponseDto.success("회원 가입이 완료되었습니다.", null));
     }

@@ -19,22 +19,26 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void signUp(SignUpRequestDto requestDto) {
-        // 1. 비밀번호와 비밀번호 확인 필드가 일치하는지 확인
+        //signup 로직 순서는 어떻게 해야할까?
+        //우선 이름, 학번, 이메일, 비밀번호, 비밀번호 확인 순서로 사용자가 타이핑함.
+        //맨 처음 서비스를 시작했을 때 당연히 DB에는 값이 저장안되어있으니 학번 중복을
+        //학번 중복을 로직 맨 처음에 베치하면 NullPointerException이 발생할수도있지 않을까?
+        //비밀번호랑 비밀번호확인 값을 먼저 체크하는게 맞을까?
+        // 1. 학번 중복 확인
+        if (userRepository.existsByStudentNumber(requestDto.getStudentNumber())) {
+            throw new IllegalArgumentException("이미 사용 중인 학번입니다.");
+        }// 이런 오류 발생났을 때 global 폴더에 만든 GlobalExceptionHandler 호출하면되지않나?
+
+        //  이메일 중복 확인
+        if (userRepository.existsByEmail(requestDto.getEmail())) {
+            throw new IllegalArgumentException("이미 사용 중인 이메일입니다.");
+        }
+        // 비밀번호랑 비밀번호확인이랑 같은지 체크
         if (!requestDto.getPassword().equals(requestDto.getPasswordCheck())) {
             throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
         }
 
-        // 2. 학번 중복 확인
-        if (userRepository.existsByStudentNumber(requestDto.getStudentNumber())) {
-            throw new IllegalArgumentException("이미 사용 중인 학번입니다.");
-        }
-
-        // 3. 이메일 중복 확인
-        if (userRepository.existsByEmail(requestDto.getEmail())) {
-            throw new IllegalArgumentException("이미 사용 중인 이메일입니다.");
-        }
-
-        // 4. 비밀번호 암호화
+        //  비밀번호 암호화
         String encodedPassword = passwordEncoder.encode(requestDto.getPassword());
 
         // 5. UserEntity 객체 생성 및 DB 저장
