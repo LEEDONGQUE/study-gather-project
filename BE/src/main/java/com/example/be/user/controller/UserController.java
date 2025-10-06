@@ -1,15 +1,32 @@
 package com.example.be.user.controller;
 
+import com.example.be.global.dto.ApiResponseDto;
+import com.example.be.user.dto.SignUpRequestDto;
+import com.example.be.user.dto.UserResponseDto;
+import com.example.be.user.service.UserService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/users")
 public class UserController {
 
-    @GetMapping("/users/login")
-    public String loginForm() {
-        return "login_form";
+    private final UserService userService;
+
+    @PostMapping("/signup")
+    public ResponseEntity<ApiResponseDto<Void>> signUp(@Valid @RequestBody SignUpRequestDto requestDto) {
+        userService.signUp(requestDto);
+        return ResponseEntity.ok(ApiResponseDto.success("회원 가입이 완료되었습니다.", null));
+    }
+
+    @GetMapping("/{userId}")
+    public ResponseEntity<ApiResponseDto<UserResponseDto>> getUserInfo(@PathVariable Long userId) {
+        UserResponseDto userDto = userService.getUserInfo(userId);
+        return ResponseEntity.ok(ApiResponseDto.success("회원 정보 조회 성공", userDto));
     }
 
     @PostMapping("/users/login")

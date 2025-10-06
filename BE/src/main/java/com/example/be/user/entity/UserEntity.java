@@ -1,7 +1,8 @@
 package com.example.be.user.entity;
 
-import com.example.be.user.dto.UserDto;
+import com.example.be.user.dto.SignUpRequestDto;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,11 +30,13 @@ public class UserEntity {
 
     public UserEntity() {}//기본 생성자
 
-    public UserEntity(UserDto userdto) {
-        this.studentNumber = userdto.getStudentNumber();
-        this.userName = userdto.getUserName();
-        this.email = userdto.getEmail();
-        this.password = userdto.getPassword();
+    @Builder
+    public UserEntity(String studentNumber, String userName, String email, String password) {
+        this.studentNumber = studentNumber;
+        this.userName = userName;
+        this.email = email;
+        this.password =   password;
+
     }
 
 }
