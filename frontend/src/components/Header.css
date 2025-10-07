@@ -28,14 +28,14 @@
 
 .logo-subtitle {
   color:#174579;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.2;
 }
 
 .main-nav {
   display: flex;
-  gap: 80px; /* 메뉴 아이템 사이의 간격 */
-  margin-left: 180px;
+  gap: 50px; /* 메뉴 아이템 사이의 간격 */
+  margin-left: 130px;
 }
 
 /* 개별 메뉴 아이템 (NavLink) */
@@ -43,7 +43,7 @@
   /* 폰트 디자인 */
   color: #174579;
   font-family: "Noto Sans", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -62,7 +62,7 @@
 
 .search-bar-container {
   position: relative; /* 아이콘을 내부에 배치하기 위한 기준점 */
-  margin-left: 180px;
+  margin-left: 130px;
 }
 
 /* 돋보기 아이콘 */
@@ -81,7 +81,7 @@
   border-radius: 10px;
   border: 1px solid #BEC5CD;
   background: #F5F5F5;
-  width: 600px;
+  width: 350px;
   height: 42px;
   box-sizing: border-box;
   padding-left: 50px; /* 돋보기 아이콘과 겹치지 않도록 왼쪽 여백 */
@@ -98,7 +98,7 @@
   border: 1px solid #BEC5CD;
   
   /* 검색창과의 간격 */
-  margin-left: 30px;
+  margin-left: 20px;
   
   height: 42px;
   box-sizing: border-box;
