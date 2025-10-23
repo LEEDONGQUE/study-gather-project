@@ -1,19 +1,21 @@
 import "./Header.css";
 import { Link, NavLink } from "react-router-dom";
-import logoImg from "../assets/logo.png";
-import searchIcon from "../assets/search.svg";
-import loginIcon from "../assets/login.svg";
+import logoImg from "../../assets/logo.png";
+import searchIcon from "../../assets/search.svg";
+import loginIcon from "../../assets/login.svg";
 
 function Header() {
   return (
     <header className="header-container">
-      <div className="logo-section">
-        <img src={logoImg} alt="로고이미지" className="logo" />
-        <div className="logo-text-wrapper">
-          <span className="logo-title">STUDYHUB</span>
-          <span className="logo-subtitle">STUDY GROUP PLATFORM</span>
+      <Link to="/" className="logo-link">
+        <div className="logo-section">
+          <img src={logoImg} alt="로고이미지" className="logo" />
+          <div className="logo-text-wrapper">
+            <span className="logo-title">STUDYHUB</span>
+            <span className="logo-subtitle">STUDY GROUP PLATFORM</span>
+          </div>
         </div>
-      </div>
+      </Link>
       <nav className="main-nav">
         <NavLink to="/status" className="nav-link">
           모임 현황

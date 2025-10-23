@@ -6,10 +6,16 @@
   border-bottom: 1px solid #bec5cd;
 }
 
+.logo-link {
+  text-decoration: none;
+} 
+/* logo-link 만 link태그 추가로 인한
+밑줄 제거 위해 css 추가 */
+
 .logo-section {
   display: flex;
   align-items: center;
-  text-decoration: none;
+  
 }
 
 .logo-text-wrapper {
@@ -24,12 +30,14 @@
   font-size: 24px;
   font-weight: bold;
   line-height: 1.2;
+  text-decoration: none; /* 링크 밑줄 제거 */
 }
 
 .logo-subtitle {
   color: #174579;
   font-size: 10px;
   line-height: 1.2;
+  text-decoration: none; /* 링크 밑줄 제거 */
 }
 
 .main-nav {
@@ -111,7 +119,7 @@
   padding: 8px 16px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  text-decoration: none;/*로그인 버튼 태그 -> nav로 바뀌면서 버튼으로 인식못하기에 밑줄 없애는 용도로 추가함*/
+  text-decoration: none; /*로그인 버튼 태그 -> nav로 바뀌면서 버튼으로 인식못하기에 밑줄 없애는 용도로 추가함*/
 }
 
 .login-button:hover {

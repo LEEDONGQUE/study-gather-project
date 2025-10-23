@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400; /* Regular은 400 */
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #174579;
+  font-size: 40px;
+  font-weight: 400;
+  margin: 20px;
+}
+
+.board_header {
+  background-color: #eef3fa;
+  border-bottom: 1px solid #bec5cd;
+  border-top-left-radius: 12px; /* 왼쪽 위 둥글게 */
+  border-top-right-radius: 12px; /* 오른쪽 위 둥글게 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* ✅ 밑에만 그림자 */
+}
+
+.board_title_text {
+  display: inline-block;
+  margin: 30px 20px;
+  font-size: 30px; /* 피그마에서 30이면 그대로 30px */
+}
+
+.icon {
+  margin-left: 40px;
+  color: #174579;
+}
+
+.board {
+  border: 1px solid #bec5cd;
+  border-radius: 12px;
+  margin: 0 50px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.study_info_section {
+  display: inline-block;
+  color: #174579;
+  margin: 10px 0 10px 10px;
+}
+
+.distribute_bar {
+  display: inline-block; /* 핵심: 인라인 블록으로 만들어야 margin 적용됨 */
+  margin: 0 30px 0 10px;
+  color: #bec5cd;
+}
+
+.wrapper_content {
+  border-top: 1px solid #bec5cd; /* 파란색 진한 선 */
+}
+.content {
+  width: 100%; /* 박스가 부모 폭을 전부 사용 */
+  white-space: normal; /* 자동 줄바꿈 허용 (핵심) */
+  word-break: break-word; /* 긴 단어도 줄바꿈 */
+  line-height: 1.6; /* 줄 간격 보기 좋게 */
+  text-align: left; /* 텍스트 정렬 (원하는 경우 center/right로 변경 가능) */
+  padding: 0px 15px;
+  min-height: 200px; /* 밑에 내용 없어도 일정 공간 유지 */
+}
+
+.openchat {
+  background-color: #eef3fa;
+  width: 25%;
+  border: 1px solid #bec5cd; /* 윤곽선 색상 지정 */
+  border-radius: 12px; /* 모서리 둥글게 */
+  margin: 0 0 20px 40px;
+}

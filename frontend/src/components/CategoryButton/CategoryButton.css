@@ -1,0 +1,22 @@
+.category-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.category-btn.active {
+  background: #4f8ef7;
+  color: white;
+  border-color: #4f8ef7;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+}

@@ -1,0 +1,77 @@
+{
+  "study_list": {
+    "code": "OK",
+    "message": "스터디 목록 조회에 성공했습니다.",
+    "data": {
+      "studies": [
+        {
+          "study_id": 110,
+          "study_title": "알고리즘 코딩 테스트 준비반",
+          "study_topic": "코딩 테스트",
+          "current_participants": 1,
+          "max_participants": 10,
+          "start_date": "2025-10-01",
+          "end_date": "2025-10-05",
+          "status": "모집중"
+        },
+        {
+          "study_id": 109,
+          "study_title": "토익 900점 목표 스터디",
+          "study_topic": "어학",
+          "current_participants": 5,
+          "max_participants": 6,
+          "start_date": "2025-10-01",
+          "end_date": "2025-10-05",
+          "status": "모집중"
+        }
+      ]
+    }
+  },
+
+  "study_details": [
+    {
+      "id": 110,
+      "code": "OK",
+      "message": "스터디 상세 정보 조회에 성공했습니다.",
+      "data": {
+        "study_id": 110,
+        "study_title": "알고리즘 코딩 테스트 준비반",
+        "study_topic": "코딩 테스트",
+        "description": "하루 한 개 풀이를 목표로 함께 문제를 푸는 스터디입니다.",
+        "max_participants": 10,
+        "current_participants": 1,
+        "status": "모집중", 
+        "place": "공학관 305 스터디룸 2",
+        "start_date": "2025-10-01",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/abcd123",
+        "organizer": {
+          "organizer_id": 25,
+          "organizer_name": "홍길동"
+        }
+      }
+    },
+    {
+      "id": 109,
+      "code": "OK",
+      "message": "스터디 상세 정보 조회에 성공했습니다.",
+      "data": {
+        "study_id": 109,
+        "study_title": "토익 900점 목표 스터디",
+        "study_topic": "어학",
+        "description": "제가 토익 점수 새로 받아야 해서, 같이 문제 풀이 공부할 사람 구합니다. 이전 점수 955점이였어요.  900점 이상 반이지만 700,800점 분들도 환영 합니다. 저도 700점대였을 때 900점반에서 문제풀이스터디 했는데 각자 푸는 거라 문제없었어요. 같이 문제 풀이 하고, 리뷰는 각자 하거나 조금 같이 해도 괜찮습니다.  강남이나 사당에서 모여서 해요! 주중에 저녁에도 가능은 합니다. 주중 월, 금 저녁 혹은 주말(토,일) 5~7pm 문의 주세요^^",
+        "max_participants": 6,
+        "current_participants": 5,
+        "status": "모집중", 
+        "place": "인문관 201",
+        "start_date": "2025-10-01",
+        "end_date": "2025-10-05",
+        "chat_link": "https://open.kakao.com/o/efgh456",
+        "organizer": {
+          "organizer_id": 31,
+          "organizer_name": "김영희"
+        }
+      }
+    }
+  ]
+}

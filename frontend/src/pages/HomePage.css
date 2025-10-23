@@ -1,0 +1,122 @@
+/* 배너: 이미지 위에 내용(바+텍스트) 얹기 */
+* {
+  box-sizing: border-box;
+}
+.banner {
+  position: relative;
+  display: flex; /* 바 + 텍스트 가로 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 10px; /* 바와 텍스트 간격 */
+  min-height: 240px; /* 이미지 높이만큼 영역 확보 */
+  padding: 20px; /* 좌상단 여백 (원하는 위치로 조절) */
+}
+
+/* 배경 이미지: 배너 전체에 깔기 */
+.image {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 찌그러짐 방지 */
+  z-index: 0; /* 맨 뒤에 */
+  display: block;
+}
+
+/* 텍스트 옆 세로 바 */
+.bar {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #67e8f9, #174579);
+  border-radius: 3px;
+  transform: translate(0px, 6px); /* 위치 이동 */
+  position: absolute;
+  z-index: 1; /* 이미지 위 */
+  left: 40px;
+}
+
+/* 공통 텍스트: absolute 제거! (중요) */
+.common-text {
+  position: static; /* 기존 absolute 제거 */
+  color: white;
+  z-index: 1; /* 이미지 위 */
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35); /* 가독성(선택) */
+}
+.text-line1 {
+  display: flex; /* 텍스트 가로 정렬 */
+  align-items: baseline;
+  gap: 10px;
+  top: 60px;
+  left: 40px;
+  position: absolute;
+}
+/* 강조 텍스트 */
+.major {
+  color: #67e8f9;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* 필요 시 개별 크기 조정 */
+.study {
+  font-size: 18px;
+}
+.eng {
+  left: 40px;
+
+  font-size: 14px;
+  opacity: 0.9;
+  position: absolute;
+  top: 100px;
+}
+
+.text-line2 {
+  position: absolute;
+  z-index: 1;
+  bottom: 80px;
+  left: 40px;
+}
+
+.dot {
+  margin: 0 6px; /* 앞뒤에 여백 */
+  color: white; /* 회색 점 */
+  font-weight: bold; /* 굵게 */
+}
+
+.kor-univ,
+.eng-univ {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* 우하단 버튼은 고정 배치 */
+.overlay-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: auto;
+  background: #174579;
+  z-index: 2; /* 모든 요소 위 */
+  border-radius: 5px;
+  padding: 6px 12px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.overlay-btn:hover {
+  background: #1f5aa0;
+  transform: scale(1.05);
+}
+
+.btn-text {
+  color: white;
+  margin: 0;
+}
