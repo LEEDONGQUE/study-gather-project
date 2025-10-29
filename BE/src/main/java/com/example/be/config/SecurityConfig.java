@@ -1,5 +1,6 @@
 package com.example.be.config;
 
+import org.springframework.http.HttpMethod;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -31,7 +32,7 @@ public class SecurityConfig {
                 // 3. HTTP 요청에 대한 인가 규칙 설정
                 .authorizeHttpRequests(auth -> auth
                         // "/users/signup", "/users/login" 경로는 인증 없이 접근 허용
-                        .requestMatchers("/users/signup").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/users/signup").permitAll()
                         // 그 외의 모든 요청은 인증 필요
                         .anyRequest().authenticated()
                 );
