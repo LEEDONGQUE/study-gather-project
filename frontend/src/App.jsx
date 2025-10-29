@@ -1,23 +1,21 @@
 import React from "react";
-import "./App.css";
 import { Routes, Route, Outlet } from "react-router-dom";
+import styled from "styled-components";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/loginpage/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 function Layout() {
   return (
-    <div>
-      <div className="app-container">
-        <Header />
-      </div>
+    <AppContainer>
+      <Header />
       <main>
         <Outlet />
       </main>
       <footer>footer</footer>
-    </div>
+    </AppContainer>
   );
 }
 
@@ -35,3 +33,7 @@ export default function App() {
   );
 }
 
+const AppContainer = styled.div`
+  width: 1440px;
+  margin: 0 auto;
+`;
