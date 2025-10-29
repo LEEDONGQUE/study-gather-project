@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-//이 어노테이션 덕분에 GlobalExceptionHandler는 프로젝트 전역의 예외를 처리할 수 있습니다.
+//이 어노테이션 덕분에 전역에서 발생하는 예외상황 가져감
 //즉 UserController에서 사용자가 입력한 회원가입 정보의 유효성을 검사하면서 예외가 발생하면 여기서처리해줌 해당 어노테이션때문에
 
 

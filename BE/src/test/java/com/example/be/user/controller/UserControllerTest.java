@@ -1,93 +1,111 @@
 package com.example.be.user.controller;
 
+
+
+import com.example.be.config.SecurityConfig;
 import com.example.be.user.dto.SignUpRequestDto;
-import com.example.be.user.repository.UserRepository;
+import com.example.be.user.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.transaction.annotation.Transactional;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doThrow;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SpringBootTest // 실제 Spring 컨테이너를 실행하여 테스트
-@AutoConfigureMockMvc // MockMvc(가짜 HTTP 요청 객체)를 자동으로 설정
-@Transactional // 각 테스트가 끝난 후 DB를 롤백하여 테스트 간 독립성 보장
+@WebMvcTest(UserController.class) // 1. UserController만 테스트 대상으로 지정
+@Import(SecurityConfig.class)     // 2. SecurityConfig 임포트 (permitAll() 설정 때문)
 class UserControllerTest {
 
     @Autowired
-    private MockMvc mockMvc; // API를 테스트하기 위한 객체
+    private MockMvc mockMvc; // 3. HTTP 요청을 시뮬레이션하는 MockMvc
 
     @Autowired
-    private ObjectMapper objectMapper; // 객체를 JSON 문자열로 변환하기 위한 객체
+    private ObjectMapper objectMapper; // 4. DTO 객체를 JSON 문자열로 변환
 
-    @Autowired
-    private UserRepository userRepository;
-
-    @BeforeEach
-    void setUp() {
-        // 각 테스트 실행 전에 DB를 깨끗하게 비웁니다.
-        userRepository.deleteAllInBatch();
-    }
+    @MockBean
+    private UserService userService; // 5. UserController가 의존하는 UserService를 가짜(Mock)로 만듦
 
     @Test
-    @DisplayName("회원가입 API 성공 테스트")
-    void signUpApi_success() throws Exception {
-        // given
-        SignUpRequestDto requestDto = createSignUpRequestDto("testuser", "password123!");
-
-        // when
-        // /users/signup 경로로 POST 요청을 보냄
-        ResultActions resultActions = mockMvc.perform(post("/users/signup")
-                .contentType(MediaType.APPLICATION_JSON) // 요청 본문의 타입
-                .content(objectMapper.writeValueAsString(requestDto))); // 객체를 JSON으로 변환
-
-        // then
-        // 응답 상태가 201 Created인지 확인
-        resultActions.andExpect(status().isCreated())
-                // 응답 본문의 code 필드가 "OK"인지 확인 (JSON Path 사용)
-                .andExpect(jsonPath("$.code").value("OK"))
-                .andExpect(jsonPath("$.message").value("회원 가입이 완료되었습니다."))
-                .andDo(print()); // 요청/응답 전체 내용 출력
-    }
-
-    @Test
-    @DisplayName("회원가입 API 실패 - 잘못된 이메일 형식")
-    void signUpApi_fail_invalidEmail() throws Exception {
-        // given
-        SignUpRequestDto requestDto = createSignUpRequestDto("testuser", "password123!");
-        requestDto.setEmail("invalid-email"); // 유효하지 않은 이메일 설정
-
-        // when
-        ResultActions resultActions = mockMvc.perform(post("/users/signup")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(requestDto)));
-
-        // then
-        // 응답 상태가 400 Bad Request인지 확인
-        resultActions.andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.code").value("VALIDATION_FAILED"))
-                .andExpect(jsonPath("$.message").value("이메일 형식이 올바르지 않습니다."))
-                .andDo(print());
-    }
-
-    // 헬퍼 메서드
-    private SignUpRequestDto createSignUpRequestDto(String username, String password) {
+    @DisplayName("회원가입 성공")
+    void signUp_Success() throws Exception {
+        // given (전제)
         SignUpRequestDto requestDto = new SignUpRequestDto();
-        requestDto.setStudentNumber("20250001");
-        requestDto.setUserName(username);
+        requestDto.setStudentNumber("12345678");
+        requestDto.setUserName("테스트");
         requestDto.setEmail("test@example.com");
-        requestDto.setPassword(password);
-        requestDto.setPasswordCheck(password);
-        return requestDto;
+        requestDto.setPassword("password123");
+        requestDto.setPasswordCheck("password123");
+
+        String requestJson = objectMapper.writeValueAsString(requestDto);
+
+        // 6. 서비스가 성공적으로 실행된다고 가정 (아무것도 반환하지 않음)
+        doNothing().when(userService).signUp(any(SignUpRequestDto.class));
+
+        // when (실행) & then (검증)
+        mockMvc.perform(post("/users/signup") // 7. /users/signup으로 POST 요청
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestJson))
+                .andExpect(status().isCreated()) // 8. HTTP 201 Created 상태인지 확인
+                .andExpect(jsonPath("$.code").value("OK")) // 9. 응답 JSON의 code 필드 확인
+                .andExpect(jsonPath("$.message").value("회원 가입이 완료되었습니다.")); // 10. message 필드 확인
+    }
+
+    @Test
+    @DisplayName("회원가입 실패 - 유효성 검사 (예: 빈 이메일)")
+    void signUp_Fail_Validation() throws Exception {
+        // given
+        SignUpRequestDto requestDto = new SignUpRequestDto();
+        requestDto.setStudentNumber("12345678");
+        requestDto.setUserName("테스트");
+        requestDto.setEmail(""); // 11. 유효성 검사에 실패할 빈 이메일
+        requestDto.setPassword("password123");
+        requestDto.setPasswordCheck("password123");
+
+        String requestJson = objectMapper.writeValueAsString(requestDto);
+
+        // 12. 서비스가 호출될 필요 없음 (유효성 검사에서 먼저 실패)
+
+        // when & then
+        mockMvc.perform(post("/users/signup")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestJson))
+                .andExpect(status().isBadRequest()) // 13. GlobalExceptionHandler가 400 Bad Request를 반환하는지 확인
+                .andExpect(jsonPath("$.code").value("VALIDATION_FAILED")) // 14. 핸들러가 반환하는 code 확인
+                .andExpect(jsonPath("$.message").value("이메일은 필수 입력 값입니다.")); // 15. DTO의 @NotBlank 메시지 확인
+    }
+
+    @Test
+    @DisplayName("회원가입 실패 - 비즈니스 로직 (예: 이메일 중복)")
+    void signUp_Fail_BusinessLogic() throws Exception {
+        // given
+        SignUpRequestDto requestDto = new SignUpRequestDto();
+        requestDto.setStudentNumber("12345678");
+        requestDto.setUserName("테스트");
+        requestDto.setEmail("duplicate@example.com"); // 유효하지만 중복된 이메일이라고 가정
+        requestDto.setPassword("password123");
+        requestDto.setPasswordCheck("password123");
+
+        String requestJson = objectMapper.writeValueAsString(requestDto);
+
+        // 16. 서비스가 "이메일 중복" 예외를 발생시킨다고 가정
+        doThrow(new IllegalArgumentException("이미 사용 중인 이메일입니다."))
+                .when(userService).signUp(any(SignUpRequestDto.class));
+
+        // when & then
+        mockMvc.perform(post("/users/signup")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestJson))
+                .andExpect(status().isBadRequest()) // 17. GlobalExceptionHandler가 400 Bad Request를 반환하는지 확인
+                .andExpect(jsonPath("$.code").value("Not Ok")) // 18. 핸들러가 반환하는 code 확인
+                .andExpect(jsonPath("$.message").value("이미 사용 중인 이메일입니다.")); // 19. 서비스가 던진 예외 메시지 확인
     }
 }
