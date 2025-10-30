@@ -6,3 +6,4 @@ export default function HomePage() {
         <div>MainPage</div>
     )
 }
+
