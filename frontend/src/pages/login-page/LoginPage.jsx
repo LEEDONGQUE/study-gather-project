@@ -3,13 +3,23 @@ import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import loginPageImg from "../../assets/login_logo.png";
 import { useModal } from "./useModal";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
     const overlayRef = useRef(null);
     const { closeModal, openSignup } = useModal();
+    const navigate = useNavigate(); 
+    const location = useLocation();
+
+    const handleClose = () => {  
+      closeModal();
+      if (location.pathname === "/login") {
+        navigate("/", { replace: true });
+      }
+    };
 
     useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && closeModal();
+    const onKey = (e) => e.key === "Escape" && handleClose();
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
     }, [closeModal]);
@@ -17,12 +27,12 @@ export default function LoginPage() {
     return createPortal(
         <Overlay
         ref={overlayRef}
-        onClick={(e) => e.target === overlayRef.current && closeModal()}
+        onClick={(e) => e.target === overlayRef.current && handleClose()}
         aria-modal="true"
         role="dialog"
         >
           <ModalBox>
-             <CloseButton onClick={closeModal} aria-label="닫기">
+             <CloseButton onClick={handleClose} aria-label="닫기">
                 <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style={{ display: "block" }}>
                     <path fill="#174579" d="M6.4 5l12.6 12.6-1.4 1.4L5 6.4 6.4 5zM5 17.6 17.6 5l1.4 1.4L6.4 19 5 17.6z" />
                 </svg>
@@ -33,7 +43,7 @@ export default function LoginPage() {
              <Form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  closeModal();
+                  handleClose();
                 }}
              >
                <Input type="text" placeholder="학번" />
@@ -64,8 +74,8 @@ const Overlay = styled.div`
 
 /* .modal-box */
 const ModalBox = styled.div`
-  width: 350px;
-  height: 400px;
+  width: 400px;
+  height: 450px;
   flex-shrink: 0;
   background: #fff;
   border-radius: 30px;
@@ -139,6 +149,7 @@ const LoginButton = styled.button`
   align-items: center;
   border-radius: 30px;
   border: 1px solid #174579;
+  background: #fff;
   color: #174579;
   font-size: 15px;
 `;

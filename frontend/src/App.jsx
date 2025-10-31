@@ -1,5 +1,4 @@
-import React from "react";
-import "./App.css";
+import React, { useEffect } from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage";
@@ -34,33 +33,31 @@ function LoginRouteSync() {
 
 function Layout() {
   return (
-    <div>
-      <div className="app-container">
-        <Header />
-      </div>
+    <AppContainer>
+      <Header />
       <main>
         <Outlet />
       </main>
       <footer>footer</footer>
-    </div>
+      <ModalHost />
+    </AppContainer>
   );
 }
 
 export default function App() {
   return (
-    <ModalProvider>
+    <>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="/studies/:id" element={<Studydetail />} />
           {/* <Route path="login" element={<LoginRouteSync />} /> */}
-          <Route path="login" element={<LoginPage />} />
-
           <Route path="signup" element={<SignupPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
-    </ModalProvider>
+
+    </>
   );
 }
 
