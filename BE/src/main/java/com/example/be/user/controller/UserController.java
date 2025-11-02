@@ -1,15 +1,19 @@
 package com.example.be.user.controller;
 
 import com.example.be.global.dto.ApiResponseDto;
+import com.example.be.user.dto.LoginRequestDto;
 import com.example.be.user.dto.SignUpRequestDto;
 import com.example.be.user.dto.UserResponseDto;
 import com.example.be.user.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 //해당 @RequiredArgsConstructor라는 어노테이션을 통해 user < service <UserService 의 인터페이스 구현체인 userServiceImpl을 주입받고 갇게됨.
@@ -38,12 +42,28 @@ public class UserController {
         return ResponseEntity.ok(ApiResponseDto.success("회원 정보 조회 성공", userDto));
     }
 
-    // 로그인 API (추후 구현)
-    // @PostMapping("/login")
-    // public ResponseEntity<ApiResponseDto<?>> login() {
-    //     // 로그인 로직 구현
-    //     return null;
-    // }
+    /**
+     * 로그인 submit
+     * @param loginRequestDto 로그인 데이터 DTO
+     * @return 사용자 정보
+     * TODO 로깅 방식 AOP(Aspect)로 변경
+     * TODO 빈 값고 불일치 exception 분리
+     */
+     @PostMapping("/login")
+     public ResponseEntity<ApiResponseDto<?>> loginSubmit(@RequestBody LoginRequestDto loginRequestDto, HttpServletRequest request) {
+         String ip = request.getRemoteAddr();
 
-    // 불필요하거나 중복되는 URL 매핑을 제거하여 코드를 정리했습니다.
+         log.info("[LOGIN ATTEMPT] studentNumber={}, IP={}", loginRequestDto.getStudentNumber(), ip);
+
+         try {
+             ApiResponseDto<?> response = userService.login(loginRequestDto);
+             log.info("[LOGIN SUCCESS] studentNumber={}, IP={}", loginRequestDto.getStudentNumber(), ip);
+             return ResponseEntity.ok(response);
+         } catch (IllegalArgumentException e) {
+             log.warn("[LOGIN FAILURE] studentNumber={}, IP={}, reason={}", loginRequestDto.getStudentNumber(), ip, e.getMessage());
+             return ResponseEntity.badRequest().body(ApiResponseDto.error("SF", e.getMessage()));
+         }
+
+     }
+
 }

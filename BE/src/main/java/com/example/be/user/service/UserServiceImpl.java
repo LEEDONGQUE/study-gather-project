@@ -1,5 +1,7 @@
 package com.example.be.user.service;
 
+import com.example.be.global.dto.ApiResponseDto;
+import com.example.be.user.dto.LoginRequestDto;
 import com.example.be.user.dto.SignUpRequestDto;
 import com.example.be.user.dto.UserResponseDto;
 import com.example.be.user.entity.UserEntity;
@@ -60,5 +62,24 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new IllegalArgumentException("사용자를 찾을 수 없습니다. userId: " + userId));
 
         return new UserResponseDto(user);
+    }
+
+    /**
+     * 로그인 진행
+     * @param requestDto 로그인 요청 DTO(학번, 비밀번호)
+     * @return 성공 메시지
+     */
+    public ApiResponseDto<?> login(LoginRequestDto requestDto) {
+        // 학번 검증
+        UserEntity user = userRepository.findByStudentNumber(requestDto.getStudentNumber())
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 학번입니다."));
+
+        // 비밀번호 일치 여부 검증
+        if (!passwordEncoder.matches(requestDto.getPassword(), user.getPassword())) {
+            throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
+        }
+
+        // 성공 응답
+        return ApiResponseDto.success("로그인 성공", null);
     }
 }
