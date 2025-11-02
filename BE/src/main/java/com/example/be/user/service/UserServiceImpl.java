@@ -1,6 +1,7 @@
 package com.example.be.user.service;
 
 import com.example.be.global.dto.ApiResponseDto;
+import com.example.be.global.jwt.JwtTokenProvider;
 import com.example.be.user.dto.LoginRequestDto;
 import com.example.be.user.dto.SignUpRequestDto;
 import com.example.be.user.dto.UserResponseDto;
@@ -17,6 +18,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final JwtTokenProvider jwtTokenProvider;
 
     @Override
     @Transactional
@@ -79,7 +81,10 @@ public class UserServiceImpl implements UserService {
             throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
         }
 
+        // 로그인 성공 시 JWT 토큰 발행
+        String token = jwtTokenProvider.createToken(user.getStudentNumber());
+
         // 성공 응답
-        return ApiResponseDto.success("로그인 성공", null);
+        return ApiResponseDto.success("로그인 성공", token);
     }
 }

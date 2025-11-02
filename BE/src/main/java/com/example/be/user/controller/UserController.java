@@ -66,4 +66,10 @@ public class UserController {
 
      }
 
+     @PostMapping("/logout")
+     public ResponseEntity<ApiResponseDto<Void>> logout(HttpServletRequest request) {
+         // TODO 로직 구현
+         return null;
+     }
+
 }
