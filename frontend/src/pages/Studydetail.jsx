@@ -103,10 +103,24 @@ export default function Studydetail() {
 
         {/* ✅ 올바른 Material 아이콘 사용 */}
         <MdOutlineChatBubble className="icon_chat" />
-        <div className="openchat">
-          오픈채팅방 링크 {chat_link || "미등록"}
-        </div>
+        <div className="openchat">오픈채팅방 링크 {chat_link || "미등록"}</div>
       </div>
     </div>
   );
 }
+
+// function del() {
+//   if (window.confirm("삭제 하시겠습니까?")) {
+//     fetch(`http://localhost:3001/study_details?id=${id}`, {
+//       method: "DELETE",
+//     }).then((res) => {
+//       if (res.ok) {
+//         setWord({ id: 0 });
+//       }
+//     });
+//   }
+// }
+
+// if (word.id == 0) {
+//   return null;
+// }

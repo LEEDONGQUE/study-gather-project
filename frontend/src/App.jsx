@@ -3,15 +3,13 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/login-page/LoginPage";
-import SignupPage from "./pages/SignupPage";
+import SignupPage from "./pages/signup-page/SignupPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import Studydetail from "./pages/Studydetail";
-
-//  모달 컨텍스트 흡수 (경로는 팀원 코드 기준)
-import { useModal } from "./pages/login-page/useModal";
+import { ModalContext } from "./pages/login-page/useModal"
 import ModalProvider from "./pages/login-page/ModalProvider";
-
-//추가
+import ModalRoot from "./pages/signup-page/ModalRoot";
+import { useModal } from "./pages/login-page/useModal";
 import styled from "styled-components";
 
 // 현재 모달 키에 따라 실제 모달 내용을 렌더링
@@ -46,18 +44,18 @@ function Layout() {
 
 export default function App() {
   return (
-    <>
+    <ModalProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="/studies/:id" element={<Studydetail />} />
-          {/* <Route path="login" element={<LoginRouteSync />} /> */}
+          <Route path="login" element={<LoginRouteSync />} />
           <Route path="signup" element={<SignupPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
-
-    </>
+      <ModalRoot />
+    </ModalProvider>
   );
 }
 
