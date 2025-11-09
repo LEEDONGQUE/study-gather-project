@@ -6,7 +6,13 @@ import ictIcon from "../assets/ICT.png";
 import "./HomePage.css";
 import Pagecontrol from "../components/Pagecontrol/Pagecontrol";
 import { IoShareOutline } from "react-icons/io5";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+
 export default function HomePage() {
+  const location = useLocation();
+  const [studies, setStudies] = useState([]);
+
   // useEffect(() => {
   //   const fetchStudys = async () => {
   //     const response = await axios("url", {
@@ -19,7 +25,12 @@ export default function HomePage() {
 
   //   fetchStudys();
   // }, []);
-
+  useEffect(() => {
+    fetch("http://localhost:3001/study_list")
+      .then((res) => res.json())
+      .then((data) => setStudies(data.data.studies))
+      .catch((err) => console.error(err));
+  }, [location]);
   return (
     <main>
       {/* 배너 영역 */}

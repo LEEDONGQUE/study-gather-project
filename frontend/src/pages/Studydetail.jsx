@@ -5,12 +5,14 @@ import { useEffect, useState } from "react";
 import { FaUser, FaHashtag, FaCalendarAlt, FaUsers } from "react-icons/fa"; // ✅ fa 세트만 남김
 import { MdOutlineChatBubble } from "react-icons/md"; // ✅ md 세트에서 가져오기
 import StatusBadge from "../components/StatusBadge.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function Studydetail() {
   const { id } = useParams();
 
   const [study, setStudy] = useState(null);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:3001/study_details?id=${id}`)
@@ -53,6 +55,25 @@ export default function Studydetail() {
     organizer,
     chat_link,
   } = study;
+
+  async function deleteClick() {
+    if (window.confirm("삭제 하시겠습니까?")) {
+      await fetch(`http://localhost:3001/study_details/${id}`, {
+        method: "DELETE",
+      });
+      await fetch(`http://localhost:3002/study_list/${id}`, {
+        method: "DELETE",
+      });
+      navigate("/status", { replace: true });
+    }
+  }
+
+  if (id === 0) {
+    return null;
+  }
+
+
+
 
   return (
     <div className="container">
@@ -104,23 +125,13 @@ export default function Studydetail() {
         {/* ✅ 올바른 Material 아이콘 사용 */}
         <MdOutlineChatBubble className="icon_chat" />
         <div className="openchat">오픈채팅방 링크 {chat_link || "미등록"}</div>
+
+        {/* //수정 */}
+        {/* <button onClick={modifyClick}>수정</button> */}
+
+        {/* //삭제 */}
+        <button onClick={deleteClick}>삭제</button>
       </div>
     </div>
   );
 }
-
-// function del() {
-//   if (window.confirm("삭제 하시겠습니까?")) {
-//     fetch(`http://localhost:3001/study_details?id=${id}`, {
-//       method: "DELETE",
-//     }).then((res) => {
-//       if (res.ok) {
-//         setWord({ id: 0 });
-//       }
-//     });
-//   }
-// }
-
-// if (word.id == 0) {
-//   return null;
-// }

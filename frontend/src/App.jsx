@@ -6,11 +6,12 @@ import LoginPage from "./pages/login-page/LoginPage";
 import SignupPage from "./pages/signup-page/SignupPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import Studydetail from "./pages/Studydetail";
-import { ModalContext } from "./pages/login-page/useModal"
+import { ModalContext } from "./pages/login-page/useModal";
 import ModalProvider from "./pages/login-page/ModalProvider";
 import ModalRoot from "./pages/signup-page/ModalRoot";
 import { useModal } from "./pages/login-page/useModal";
 import styled from "styled-components";
+import Createpage from "./pages/Createpage";
 
 // 현재 모달 키에 따라 실제 모달 내용을 렌더링
 function ModalHost() {
@@ -47,10 +48,11 @@ export default function App() {
     <ModalProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
           <Route path="/studies/:id" element={<Studydetail />} />
           <Route path="login" element={<LoginRouteSync />} />
           <Route path="signup" element={<SignupPage />} />
+          <Route path="status" element={<HomePage />} />
+          <Route path="create" element={<Createpage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
