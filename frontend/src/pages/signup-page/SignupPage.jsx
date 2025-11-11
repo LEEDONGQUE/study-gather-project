@@ -1,75 +1,100 @@
 import { createPortal } from "react-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import loginPageImg from "../../assets/login_logo.png";
 import { useModal } from "../login-page/useModal";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function SignupPage() {
-    const overlayRef = useRef(null);
-    const { closeModal } = useModal();
-    const navigate = useNavigate();
-    const location = useLocation();
+  const overlayRef = useRef(null);
+  const { closeModal } = useModal();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
-    const handleClose = () => {
-        closeModal();
-        if (location.pathname === "/signup") {
-            navigate("/", { replace: true });
-        }
-    };
+  const handleClose = () => {
+    closeModal();
+    if (location.pathname === "/signup") {
+      navigate("/", { replace: true });
+    }
+  };
 
-    useEffect(() => {
-        const onKey = (e) => e.key === "Escape" && handleClose();
-        window.addEventListener("keydown", onKey);
-        return () => window.removeEventListener("keydown", onKey);
-    }, []);
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && handleClose();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
-    const submit = (e) => {
-        e.preventDefault();
-        // TODO: 회원가입 처리 로직
-        handleClose();
-    };
+  const submit = (e) => {
+    e.preventDefault();
 
-    return createPortal(
-        <Overlay
-            ref={overlayRef}
-            onClick={(e) => e.target === overlayRef.current && handleClose()}
-            aria-modal="true"
-            role="dialog"
-        >
-            <ModalBox>
-                <CloseButton onClick={handleClose} aria-label="닫기">
-                    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style={{ display: "block" }}>
-                        <path fill="#174579" d="M6.4 5l12.6 12.6-1.4 1.4L5 6.4 6.4 5zM5 17.6 17.6 5l1.4 1.4L6.4 19 5 17.6z" />
-                    </svg>
-                </CloseButton>
+    if (password !== confirmPassword) {
+      setErrorMsg("비밀번호가 일치하지 않습니다.");
+      return;
+    }
+    // TODO: 회원가입 처리 로직
+    handleClose();
+  };
 
-                <Logo src={loginPageImg} alt="STUDYHUB 로고" />
+  return createPortal(
+    <Overlay
+      ref={overlayRef}
+      onClick={(e) => e.target === overlayRef.current && handleClose()}
+      aria-modal="true"
+      role="dialog"
+    >
+      <ModalBox>
+        <CloseButton onClick={handleClose} aria-label="닫기">
+          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style={{ display: "block" }}>
+            <path fill="#174579" d="M6.4 5l12.6 12.6-1.4 1.4L5 6.4 6.4 5zM5 17.6 17.6 5l1.4 1.4L6.4 19 5 17.6z" />
+          </svg>
+        </CloseButton>
 
-                <Form onSubmit={submit}>
-                    <Input type="text" placeholder="이름을 입력해주세요" />
-                    <Input type="text" placeholder="학번을 입력해주세요" />
-                    <Input type="email" placeholder="이메일을 입력해주세요" />
-                    <Input type="password" placeholder="비밀번호를 입력해주세요" />
-                    <Input type="password" placeholder="비밀번호를 확인해주세요" />
+        <Logo src={loginPageImg} alt="STUDYHUB 로고" />
 
-                    <AgreeRow>
-                        <input id="agree" type="checkbox" required />
-                        <AgreeLabel htmlFor="agree">
-                            이용 약관 보기 및 개인정보 처리방침에 동의합니다.
-                        </AgreeLabel>
-                    </AgreeRow>
+        <Form onSubmit={submit}>
+          <Input type="text" placeholder="이름을 입력해주세요" />
+          <Input
+            type="text"
+            placeholder="학번을 입력해주세요"
+            inputMode="numeric" pattern="[0-9]*"
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^0-9]/g, '');
+            }}
+          />
+          <Input type="email" placeholder="이메일을 입력해주세요" />
+          <Input
+            type="password"
+            placeholder="비밀번호를 입력해주세요"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Input
+            type="password"
+            placeholder="비밀번호를 확인해주세요"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
 
-                    <PrimaryButton type="submit">회원가입</PrimaryButton>
-                </Form>
+          {errorMsg && <ErrorMsg>{errorMsg}</ErrorMsg>}
 
-            </ModalBox>
-        </Overlay>,
-        document.body
-    );
+          <AgreeRow>
+            <input id="agree" type="checkbox" required />
+            <AgreeLabel htmlFor="agree">
+              이용 약관 보기 및 개인정보 처리방침에 동의합니다.
+            </AgreeLabel>
+          </AgreeRow>
+
+          <PrimaryButton type="submit">회원가입</PrimaryButton>
+        </Form>
+
+      </ModalBox>
+    </Overlay>,
+    document.body
+  );
 }
-
-/* === styles === */
 
 const Overlay = styled.div`
   position: fixed;
@@ -204,4 +229,12 @@ const SwitchLink = styled.button`
   color: #174579;
 
   &:hover { text-decoration: underline; }
+`;
+
+const ErrorMsg = styled.div`
+  color: #d32f2f;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: -4px;
+  margin-bottom: 6px;
 `;

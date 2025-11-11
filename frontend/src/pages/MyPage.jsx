@@ -215,24 +215,23 @@ const Main = styled.main`
 const Segmented = styled.div`
   position: relative;
   display: flex;
-  width: 855px;      /* 전체 길이 */
-  height: 60px;      /* 전체 높이 */
-  padding: 5px 6px;  /* 안쪽 여백 (위아래 5px, 좌우 6px 정도) */
+  width: 855px;     
+  height: 60px;  
+  padding: 5px 6px; 
 
   border-radius: 30px;
   border: 1px solid #BEC5CD;
   background: #F5F5F5;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  overflow: hidden;  /* 안쪽 요소 둥글게 잘리게 */
+  overflow: hidden; 
 `;
 
-// 선택된 쪽 하늘색 박스 (전체의 정확히 절반)
 const Thumb = styled.div`
   position: absolute;
   top: 4px;
   left: ${({ $pos }) => ($pos === "applied" ? "4px" : "calc(50% + 2px)")};
-  width: calc(50% - 8px);      /* 전체의 1/2 - 양쪽 여백 */
-  height: calc(100% - 8px);    /* 위/아래 여백 만큼 줄임 */
+  width: calc(50% - 8px);    
+  height: calc(100% - 8px);    
 
   border-radius: 30px;
   background: #EEF3FA;
