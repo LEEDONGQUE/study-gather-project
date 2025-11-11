@@ -4,6 +4,7 @@ import styled from "styled-components";
 import loginPageImg from "../../assets/login_logo.png";
 import { useModal } from "../login-page/useModal";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useCallback } from "react";
 
 export default function SignupPage() {
   const overlayRef = useRef(null);
@@ -14,18 +15,19 @@ export default function SignupPage() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const handleClose = () => {
+
+  const handleClose = useCallback(() => {
     closeModal();
     if (location.pathname === "/signup") {
       navigate("/", { replace: true });
     }
-  };
+  }, [closeModal, location.pathname, navigate]);
 
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && handleClose();
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [handleClose]);
 
   const submit = (e) => {
     e.preventDefault();
