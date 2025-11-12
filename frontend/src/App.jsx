@@ -47,6 +47,7 @@ export default function App() {
     <ModalProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
           <Route path="/studies/:id" element={<Studydetail />} />
           <Route path="login" element={<LoginRouteSync />} />
           <Route path="signup" element={<SignupPage />} />
