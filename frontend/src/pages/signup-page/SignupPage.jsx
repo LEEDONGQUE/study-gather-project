@@ -5,13 +5,21 @@ import loginPageImg from "../../assets/login_logo.png";
 import { useModal } from "../login-page/useModal";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useCallback } from "react";
+import axios from "axios";
 
 export default function SignupPage() {
   const overlayRef = useRef(null);
   const { closeModal } = useModal();
   const navigate = useNavigate();
   const location = useLocation();
-  const [password, setPassword] = useState("");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    student_number: "",
+    email: "",
+    password: "",
+  });
+
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -29,15 +37,59 @@ export default function SignupPage() {
     return () => window.removeEventListener("keydown", onKey);
   }, [handleClose]);
 
-  const submit = (e) => {
-    e.preventDefault();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
+    if (name === "student_number") {
+      const numericValue = value.replace(/[^0-9]/g, '');
+      setFormData(prev => ({ ...prev, [name]: numericValue }));
+    } else {
+      // 'name', 'email', 'password' 필드를 업데이트
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMsg("");
+
+    const { name, student_number, email, password } = formData;
+    if (!name || !student_number || !email || !password) {
+      setErrorMsg("모든 필드를 입력해주세요.");
+      return;
+    }
     if (password !== confirmPassword) {
       setErrorMsg("비밀번호가 일치하지 않습니다.");
       return;
     }
-    // TODO: 회원가입 처리 로직
-    handleClose();
+
+    try {
+      const response = await axios.post('/api/signup', formData);
+
+      if (response.data.code === "OK") {
+        alert("회원가입이 완료되었습니다. 로그인해주세요.");
+        handleClose();
+      } else {
+        setErrorMsg(response.data.message || "회원가입에 실패했습니다.");
+      }
+
+    } catch (error) {
+      if (error.response) {
+        const status = error.response.status;
+        const message = error.response.data?.message;
+
+        switch (status) {
+          case 422:
+            setErrorMsg(message || "입력 값이 올바르지 않습니다. (예: 이미 가입된 학번)");
+            break;
+          case 500:
+          default:
+            setErrorMsg("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+        }
+      } else {
+        setErrorMsg("네트워크 오류가 발생했습니다. 연결을 확인해주세요.");
+      }
+    }
   };
 
   return createPortal(
@@ -56,22 +108,37 @@ export default function SignupPage() {
 
         <Logo src={loginPageImg} alt="STUDYHUB 로고" />
 
-        <Form onSubmit={submit}>
-          <Input type="text" placeholder="이름을 입력해주세요" />
+        <Form onSubmit={handleSubmit}>
+          {/* ✨ 6. Input들에 name, value, onChange 연결 */}
+          <Input
+            type="text"
+            placeholder="이름을 입력해주세요"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
           <Input
             type="text"
             placeholder="학번을 입력해주세요"
-            inputMode="numeric" pattern="[0-9]*"
-            onInput={(e) => {
-              e.target.value = e.target.value.replace(/[^0-9]/g, '');
-            }}
+            inputMode="numeric"
+            name="student_number"
+            value={formData.student_number}
+            onChange={handleChange}
+          // onInput은 handleChange로 통합되어 제거
           />
-          <Input type="email" placeholder="이메일을 입력해주세요" />
+          <Input
+            type="email"
+            placeholder="이메일을 입력해주세요"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
           <Input
             type="password"
             placeholder="비밀번호를 입력해주세요"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            name="password" // 'name' 속성 추가
+            value={formData.password}
+            onChange={handleChange} // 'handleChange' 사용
           />
           <Input
             type="password"
@@ -88,10 +155,9 @@ export default function SignupPage() {
               이용 약관 보기 및 개인정보 처리방침에 동의합니다.
             </AgreeLabel>
           </AgreeRow>
-
           <PrimaryButton type="submit">회원가입</PrimaryButton>
-        </Form>
 
+        </Form>
       </ModalBox>
     </Overlay>,
     document.body

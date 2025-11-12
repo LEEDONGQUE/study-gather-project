@@ -1,9 +1,10 @@
 import { createPortal } from "react-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import styled from "styled-components";
 import loginPageImg from "../../assets/login_logo.png";
 import { useModal } from "./useModal";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function LoginPage() {
   const overlayRef = useRef(null);
@@ -11,10 +12,69 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleClose = () => {
+  const [loginInfo, setLoginInfo] = useState({
+    student_number: "",
+    password: "",
+  });
+
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "student_number") {
+      const numericValue = value.replace(/[^0-9]/g, '');
+      setLoginInfo(prev => ({ ...prev, [name]: numericValue }));
+    } else {
+      setLoginInfo(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleClose = useCallback(() => {
     closeModal();
     if (location.pathname === "/login") {
       navigate("/", { replace: true });
+    }
+  }, [closeModal, location, navigate]);
+
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
+
+    if (!loginInfo.student_number || !loginInfo.password) {
+      setErrorMessage("학번과 비밀번호를 모두 입력해주세요.");
+      return;
+    }
+
+    try {
+      const response = await axios.post('/api/login', loginInfo);
+
+      if (response.data.code === "OK") {
+        const { accessToken } = response.data.data;
+
+        localStorage.setItem('accessToken', accessToken);
+        handleClose();
+      }
+
+    } catch (error) {
+      if (error.response) {
+        const status = error.response.status;
+        switch (status) {
+          case 401:
+            setErrorMessage("학번 또는 비밀번호가 일치하지 않습니다.");
+            break;
+          case 404:
+            setErrorMessage("존재하지 않는 사용자입니다.");
+            break;
+          case 422:
+            setErrorMessage("입력 값이 올바르지 않습니다.");
+            break;
+          case 500:
+          default:
+            setErrorMessage("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+        }
+      } else {
+        setErrorMessage("로그인 요청에 실패했습니다. 네트워크를 확인해주세요.");
+      }
     }
   };
 
@@ -22,7 +82,7 @@ export default function LoginPage() {
     const onKey = (e) => e.key === "Escape" && handleClose();
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [closeModal]);
+  }, [handleClose]);
 
   return createPortal(
     <Overlay
@@ -39,25 +99,26 @@ export default function LoginPage() {
         </CloseButton>
 
         <Logo src={loginPageImg} alt="로그인페이지 로고" />
+        <ErrorMessage>{errorMessage}</ErrorMessage>
 
-        <Form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleClose();
-          }}
-        >
+        <Form onSubmit={handleLoginSubmit}>
           <Input
             type="text"
             placeholder="학번"
-            inputMode="numeric" pattern="[0-9]*"
-            onInput={(e) => {
-              e.target.value = e.target.value.replace(/[^0-9]/g, '');
-            }}
+            inputMode="numeric"
+            name="student_number" // state 키와 일치
+            value={loginInfo.student_number}
+            onChange={handleChange}
           />
-          <Input type="password" placeholder="비밀번호" />
+          <Input
+            type="password"
+            placeholder="비밀번호"
+            name="password" // state 키와 일치
+            value={loginInfo.password}
+            onChange={handleChange}
+          />
           <LoginButton type="submit">로그인</LoginButton>
         </Form>
-
         <SwitchRow>
           <SwitchLink type="button" onClick={openSignup}>회원가입</SwitchLink>
         </SwitchRow>
@@ -67,7 +128,6 @@ export default function LoginPage() {
   );
 }
 
-/* .modal-overlay */
 const Overlay = styled.div`
   position: fixed;
   inset: 0;
@@ -174,4 +234,13 @@ const SwitchLink = styled.button`
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
+`;
+
+const ErrorMessage = styled.p`
+  color: #e01e5a; // 에러 색상
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  height: 20px; // 에러 메시지가 없어도 공간 유지 (레이아웃 밀림 방지)
+  text-align: center;
 `;
