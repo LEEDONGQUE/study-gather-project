@@ -68,8 +68,25 @@ public class UserController {
 
      @PostMapping("/logout")
      public ResponseEntity<ApiResponseDto<Void>> logout(HttpServletRequest request) {
-         // TODO 로직 구현
-         return null;
+         String authHeader = request.getHeader("Authorization");
+
+         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+             return ResponseEntity
+                     .status(HttpStatus.BAD_REQUEST)
+                     .body(ApiResponseDto.error("INVALID_TOKEN", "Authorization 헤더가 없거나 형식이 잘못되었습니다."));
+         }
+         // "Bearer " 접두사 제거
+         String token = authHeader.substring(7);
+
+         // TODO : 실제 토큰 무효화 로직 구현 필요
+         //        서버 측에서 이 토큰을 '블랙리스트'로 관리해야 함.
+         //       (예: Redis에 토큰을 저장하고, 인증 필터에서 해당 토큰이 블랙리스트에 있는지 확인)
+         // userService.blacklistToken(token); // -> 이런 서비스 로직 호출
+
+         log.info("[LOGOUT SUCCESS] User requested logout. Token processed: {}", token);
+
+         return ResponseEntity
+                 .ok(ApiResponseDto.success("로그아웃 완료되었습니다.", null));
      }
 
 }

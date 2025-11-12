@@ -32,7 +32,7 @@ public class SecurityConfig {
                 // 3. HTTP 요청에 대한 인가 규칙 설정
                 .authorizeHttpRequests(auth -> auth
                         // "/users/signup", "/users/login" 경로는 인증 없이 접근 허용
-                        .requestMatchers(HttpMethod.POST,"/users/signup", "/users/login").permitAll()
+                        .requestMatchers("/users/signup", "/users/login","/users/**").permitAll()
                         // 그 외의 모든 요청은 인증 필요
                         .anyRequest().authenticated()
                 );
