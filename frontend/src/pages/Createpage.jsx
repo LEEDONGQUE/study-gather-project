@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 export default function Createpage() {
   const [form, setForm] = useState({
@@ -106,85 +107,334 @@ export default function Createpage() {
   };
 
   return (
-    <main>
-      <h1>모임 생성하기</h1>
+    <PageWrapper>
+      <PageTitle>모임 생성하기</PageTitle>
+      <PageSubtitle>✨ 새로운 스터디 모임을 만들어보세요!</PageSubtitle>
+      <Container>
 
-      <form onSubmit={handleSubmit}>
-        <label>제목</label>
-        <input
-          name="title"
-          value={form.title}
-          onChange={handleChange}
-          placeholder="스터디 제목"
-        />
+        <HeaderBox>
+          <HeaderTextWrapper>
+            <HeaderTitle>스터디 모임 정보</HeaderTitle>
+            <HeaderSub>정확한 정보를 입력해주세요!</HeaderSub>
+          </HeaderTextWrapper>
+        </HeaderBox>
 
-        <label>주최자</label>
-        <input
-          name="host"
-          value={form.host}
-          onChange={handleChange}
-          placeholder="주최자 이름"
-        />
+        <StyledForm onSubmit={handleSubmit}>
+          <FieldRow>
+            <Field fullWidth>
+              <Label>제목</Label>
+              <Input
+                name="title"
+                value={form.title}
+                onChange={handleChange}
+                placeholder="스터디 모임 제목을 입력해주세요"
+              />
+            </Field>
+          </FieldRow>
 
-        <label>주제</label>
-        <select name="topic" value={form.topic} onChange={handleChange}>
-          <option value="">선택하세요</option>
-          <option value="major">전공</option>
-          <option value="task">과제</option>
-          <option value="interview">면접</option>
-        </select>
+          <FieldRow>
+            <Field>
+              <Label>주최자</Label>
+              <Input
+                name="host"
+                value={form.host}
+                onChange={handleChange}
+                placeholder="주최자 이름을 입력해주세요"
+              />
+            </Field>
 
-        <label>모집 인원</label>
-        <input
-          type="number"
-          name="member"
-          value={form.member}
-          onChange={handleChange}
-        />
+            <Field>
+              <Label>주제</Label>
+              <Select name="topic" value={form.topic} onChange={handleChange}>
+                <option value="">스터디 주제를 선택해주세요</option>
+                <option value="major">전공</option>
+                <option value="task">과제</option>
+                <option value="interview">면접</option>
+              </Select>
+            </Field>
+          </FieldRow>
 
-        <label>장소</label>
-        <input
-          name="place"
-          value={form.place}
-          onChange={handleChange}
-          placeholder="모임 장소"
-        />
+          <FieldRow>
+            <Field>
+              <Label>모집 인원</Label>
+              <Input
+                type="number"
+                name="member"
+                value={form.member}
+                onChange={handleChange}
+                placeholder="인원"
+              />
+            </Field>
 
-        <label>시작일</label>
-        <input
-          type="date"
-          name="startDate"
-          value={form.startDate}
-          onChange={handleChange}
-        />
+            <Field>
+              <Label>장소</Label>
+              <Input
+                name="place"
+                value={form.place}
+                onChange={handleChange}
+                placeholder="모임 장소를 입력해주세요"
+              />
+            </Field>
+          </FieldRow>
 
-        <label>종료일</label>
-        <input
-          type="date"
-          name="endDate"
-          value={form.endDate}
-          onChange={handleChange}
-        />
+          <FieldRow>
+            <Field>
+              <Label>시작 날짜</Label>
+              <Input
+                type="date"
+                name="startDate"
+                value={form.startDate}
+                onChange={handleChange}
+              />
+            </Field>
+            <Field>
+              <Label>종료 날짜</Label>
+              <Input
+                type="date"
+                name="endDate"
+                value={form.endDate}
+                onChange={handleChange}
+              />
+            </Field>
+          </FieldRow>
 
-        <label>스터디 소개</label>
-        <textarea
-          name="studyIntro"
-          value={form.studyIntro}
-          onChange={handleChange}
-          placeholder="소개 입력"
-        />
+          <FieldRow>
+            <Field fullWidth>
+              <Label>스터디 소개</Label>
+              <TextArea
+                name="studyIntro"
+                value={form.studyIntro}
+                onChange={handleChange}
+                placeholder="스터디 모임에 대한 소개를 입력해주세요 (예: 목표, 진행방식, 커리큘럼 등)"
+              />
+            </Field>
+          </FieldRow>
 
-        <label>오픈채팅방 링크</label>
-        <input
-          type="url"
-          name="openChat"
-          value={form.openChat}
-          onChange={handleChange}
-          placeholder="https://"
-        />
+          <FieldRow>
+            <Field fullWidth>
+              <Label>오픈채팅방 링크</Label>
+              <Input
+                type="url"
+                name="openChat"
+                value={form.openChat}
+                onChange={handleChange}
+                placeholder="카카오톡 오픈채팅방 링크를 입력해주세요"
+              />
+            </Field>
+          </FieldRow>
 
-        <button type="submit">등록</button>
-      </form>
-    </main>
+          <ButtonRow>
+            <SubmitButton type="submit">등록</SubmitButton>
+            <CancelButton type="button">취소</CancelButton>
+          </ButtonRow>
+        </StyledForm>
+      </Container>
+    </PageWrapper>
   );
 }
+
+const PageWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+`;
+
+const PageTitle = styled.h1`
+  color: #174579;
+  font-family: "Noto Sans KR";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  height: 48p 
+`;
+
+const PageSubtitle = styled.div`
+  display: inline-flex;
+  height: 35px;
+  padding: 7px 40px 7px 39px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #F5F5F5;
+
+  font-size: 18px;
+  color: #333333;
+  margin-top: -15px;
+`;
+
+const Container = styled.main`
+  width: 1100px;
+  height: 1100px;
+  flex-shrink: 0;
+
+  border-radius: 30px;
+  border: 1px solid #bec5cd;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+
+  margin-top: 35px;
+`;
+
+const HeaderBox = styled.div`
+  width: 100%;
+  height: 130px;
+  flex-shrink: 0;
+
+  border-radius: 30px 30px 0 0;
+  background: #eef3fa;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+`;
+
+const HeaderTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
+const HeaderTitle = styled.div`
+  font-size: 25px;
+  font-weight: 700;
+  color: #333333;
+`;
+
+const HeaderSub = styled.div`
+  font-size: 13px;
+  color: #174579;
+`;
+
+const StyledForm = styled.form`
+  flex: 1;
+  padding: 30px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+const FieldRow = styled.div`
+  display: flex;
+  gap: 16px;
+  width: 100%;
+`;
+
+const Field = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: ${(props) => (props.fullWidth ? "1 1 100%" : props.small ? "0 0 120px" : "1")};
+`;
+
+const Label = styled.label`
+  margin-left: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #174579;
+`;
+
+const Input = styled.input`
+  display: flex;
+  width: 100%;
+  padding: 16px 20px;
+  align-items: center;
+
+  border-radius: 10px;
+  border: 1px solid #BEC5CD;
+  background: #F5F5F5;
+
+  font-size: 16px;
+  color: #333;
+
+  &:focus {
+    outline: none;
+    border-color: #174579;
+    background: #fff;
+  }
+`;
+
+const Select = styled.select`
+  display: flex;
+  width: 100%;
+  padding: 16px 20px;
+  align-items: center;
+
+  border-radius: 10px;
+  border: 1px solid #BEC5CD;
+  background: #F5F5F5;
+
+  font-size: 16px;
+  color: #333;
+
+  &:focus {
+    outline: none;
+    border-color: #174579;
+    background: #fff;
+  }
+`;
+
+const TextArea = styled.textarea`
+  display: flex;
+  width: 100%;
+  height: 300px;
+
+  padding: 16px 20px;
+  align-items: flex-start;
+
+  border-radius: 10px;
+  border: 1px solid #BEC5CD;
+  background: #F5F5F5;
+
+  font-size: 16px;
+  color: #333;
+  resize: none;
+
+  &:focus {
+    outline: none;
+    border-color: #174579;
+    background: #fff;
+  }
+`;
+
+
+const ButtonRow = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+`;
+
+const BaseButton = styled.button`
+  width: 120px;
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+`;
+
+const SubmitButton = styled(BaseButton)`
+  background: #DDE3EA;
+  color: #174579;
+  border: 1px solid #174579;
+`;
+
+const CancelButton = styled(BaseButton)`
+  background: #ffffff;
+  color: #174579;
+  border: 1px solid #174579;
+
+  &:hover {
+    background: #DDE3EA;
+  }
+`;
