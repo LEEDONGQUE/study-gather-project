@@ -14,41 +14,35 @@ export default function Createpage() {
     openChat: "",
   });
 
-  // ✅ 입력값 변경 핸들러 (추가)
+  // 입력값 변경 핸들러
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  // ✅ 제출 핸들러
+  // 제출 핸들러
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newId = Date.now();
 
-    // ✅ 모집 상태(status) 자동 계산 추가됨
+    // 모집 상태 자동 계산
     const now = new Date();
     const start = new Date(form.startDate);
     const end = new Date(form.endDate);
-    let status = "모집중"; // 기본값
+    let status = "모집중";
 
-    if (now > end) {
-      status = "모집마감";
-    } else if (now >= start) {
-      status = "진행중";
-    }
+    if (now > end) status = "모집마감";
+    else if (now >= start) status = "진행중";
 
-    // 인원 다 찼으면 강제로 마감
-    // current_participants는 기본적으로 1명(주최자)이라 가정
     const current_participants = 1;
     if (current_participants >= Number(form.member)) {
       status = "모집마감";
     }
-    // ✅ 여기까지 추가됨
 
     try {
       await Promise.all([
-        // 1️⃣ study_list에 등록
+        // study_list 등록
         fetch("http://localhost:3001/study_list", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -56,15 +50,15 @@ export default function Createpage() {
             study_id: newId,
             study_title: form.title,
             study_topic: form.topic,
-            current_participants, // ✅ 변경됨 (하드코딩 제거)
+            current_participants,
             max_participants: form.member,
             start_date: form.startDate,
             end_date: form.endDate,
-            status, // ✅ 변경됨 (자동 계산된 값)
+            status,
           }),
         }),
 
-        // 2️⃣ study_details에 등록
+        // study_details 등록
         fetch("http://localhost:3001/study_details", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -76,11 +70,11 @@ export default function Createpage() {
               study_id: newId,
               study_title: form.title,
               study_topic: form.topic,
-              current_participants, // ✅ 변경됨
+              current_participants,
               max_participants: form.member,
               start_date: form.startDate,
               end_date: form.endDate,
-              status, // ✅ 변경됨
+              status,
               description: form.studyIntro,
               open_chat_link: form.openChat,
             },
@@ -110,8 +104,8 @@ export default function Createpage() {
     <PageWrapper>
       <PageTitle>모임 생성하기</PageTitle>
       <PageSubtitle>✨ 새로운 스터디 모임을 만들어보세요!</PageSubtitle>
-      <Container>
 
+      <Container>
         <HeaderBox>
           <HeaderTextWrapper>
             <HeaderTitle>스터디 모임 정보</HeaderTitle>
@@ -120,6 +114,7 @@ export default function Createpage() {
         </HeaderBox>
 
         <StyledForm onSubmit={handleSubmit}>
+          {/* 제목 */}
           <FieldRow>
             <Field fullWidth>
               <Label>제목</Label>
@@ -132,6 +127,7 @@ export default function Createpage() {
             </Field>
           </FieldRow>
 
+          {/* 주최자 + 주제 */}
           <FieldRow>
             <Field>
               <Label>주최자</Label>
@@ -154,6 +150,7 @@ export default function Createpage() {
             </Field>
           </FieldRow>
 
+          {/* 인원 + 장소 */}
           <FieldRow>
             <Field>
               <Label>모집 인원</Label>
@@ -177,6 +174,7 @@ export default function Createpage() {
             </Field>
           </FieldRow>
 
+          {/* 날짜 */}
           <FieldRow>
             <Field>
               <Label>시작 날짜</Label>
@@ -187,6 +185,7 @@ export default function Createpage() {
                 onChange={handleChange}
               />
             </Field>
+
             <Field>
               <Label>종료 날짜</Label>
               <Input
@@ -198,6 +197,7 @@ export default function Createpage() {
             </Field>
           </FieldRow>
 
+          {/* 소개 */}
           <FieldRow>
             <Field fullWidth>
               <Label>스터디 소개</Label>
@@ -210,6 +210,7 @@ export default function Createpage() {
             </Field>
           </FieldRow>
 
+          {/* 오픈채팅 */}
           <FieldRow>
             <Field fullWidth>
               <Label>오픈채팅방 링크</Label>
@@ -233,6 +234,8 @@ export default function Createpage() {
   );
 }
 
+/* ---------------------- Styled Components ---------------------- */
+
 const PageWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -245,53 +248,41 @@ const PageTitle = styled.h1`
   color: #174579;
   font-family: "Noto Sans KR";
   font-size: 35px;
-  font-style: normal;
   font-weight: 800;
-  line-height: normal;
-  height: 48p 
+  height: 48px;
 `;
 
 const PageSubtitle = styled.div`
   display: inline-flex;
   height: 35px;
-  padding: 7px 40px 7px 39px;
+  padding: 7px 40px;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
   border-radius: 30px;
-  background: #F5F5F5;
-
+  background: #f5f5f5;
   font-size: 18px;
-  color: #333333;
+  color: #333;
   margin-top: -15px;
 `;
 
 const Container = styled.main`
   width: 1100px;
   height: 1100px;
-  flex-shrink: 0;
-
   border-radius: 30px;
   border: 1px solid #bec5cd;
+  background: #fff;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
+  margin-top: 35px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  background: #ffffff;
-
-  margin-top: 35px;
 `;
 
 const HeaderBox = styled.div`
   width: 100%;
   height: 130px;
-  flex-shrink: 0;
-
   border-radius: 30px 30px 0 0;
   background: #eef3fa;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
   display: flex;
   align-items: center;
   padding: 0 40px;
@@ -306,7 +297,7 @@ const HeaderTextWrapper = styled.div`
 const HeaderTitle = styled.div`
   font-size: 25px;
   font-weight: 700;
-  color: #333333;
+  color: #333;
 `;
 
 const HeaderSub = styled.div`
@@ -316,7 +307,7 @@ const HeaderSub = styled.div`
 
 const StyledForm = styled.form`
   flex: 1;
-  padding: 30px 40px 40px;
+  padding: 30px 40px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -325,14 +316,14 @@ const StyledForm = styled.form`
 const FieldRow = styled.div`
   display: flex;
   gap: 16px;
-  width: 100%;
 `;
 
 const Field = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6px;
-  flex: ${(props) => (props.fullWidth ? "1 1 100%" : props.small ? "0 0 120px" : "1")};
+  flex: ${(props) =>
+    props.fullWidth ? "1 1 100%" : props.small ? "0 0 120px" : "1"};
 `;
 
 const Label = styled.label`
@@ -343,15 +334,11 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  display: flex;
   width: 100%;
   padding: 16px 20px;
-  align-items: center;
-
   border-radius: 10px;
-  border: 1px solid #BEC5CD;
-  background: #F5F5F5;
-
+  border: 1px solid #bec5cd;
+  background: #f5f5f5;
   font-size: 16px;
   color: #333;
 
@@ -363,15 +350,11 @@ const Input = styled.input`
 `;
 
 const Select = styled.select`
-  display: flex;
   width: 100%;
   padding: 16px 20px;
-  align-items: center;
-
   border-radius: 10px;
-  border: 1px solid #BEC5CD;
-  background: #F5F5F5;
-
+  border: 1px solid #bec5cd;
+  background: #f5f5f5;
   font-size: 16px;
   color: #333;
 
@@ -383,17 +366,12 @@ const Select = styled.select`
 `;
 
 const TextArea = styled.textarea`
-  display: flex;
   width: 100%;
   height: 300px;
-
   padding: 16px 20px;
-  align-items: flex-start;
-
   border-radius: 10px;
-  border: 1px solid #BEC5CD;
-  background: #F5F5F5;
-
+  border: 1px solid #bec5cd;
+  background: #f5f5f5;
   font-size: 16px;
   color: #333;
   resize: none;
@@ -404,7 +382,6 @@ const TextArea = styled.textarea`
     background: #fff;
   }
 `;
-
 
 const ButtonRow = styled.div`
   display: flex;
@@ -424,17 +401,17 @@ const BaseButton = styled.button`
 `;
 
 const SubmitButton = styled(BaseButton)`
-  background: #DDE3EA;
+  background: #dde3ea;
   color: #174579;
   border: 1px solid #174579;
 `;
 
 const CancelButton = styled(BaseButton)`
-  background: #ffffff;
+  background: #fff;
   color: #174579;
   border: 1px solid #174579;
 
   &:hover {
-    background: #DDE3EA;
+    background: #dde3ea;
   }
 `;
