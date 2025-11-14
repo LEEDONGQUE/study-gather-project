@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 export default function Createpage() {
   const [form, setForm] = useState({
@@ -106,19 +107,6 @@ export default function Createpage() {
   };
 
   return (
-<<<<<<< Updated upstream
-    <main>
-      <h1>모임 생성하기</h1>
-
-      <form onSubmit={handleSubmit}>
-        <label>제목</label>
-        <input
-          name="title"
-          value={form.title}
-          onChange={handleChange}
-          placeholder="스터디 제목"
-        />
-=======
     <PageWrapper>
       <PageTitle>모임 생성하기</PageTitle>
       <PageSubtitle>✨ 새로운 스터디 모임을 만들어보세요!</PageSubtitle>
@@ -129,92 +117,98 @@ export default function Createpage() {
             <HeaderSub>정확한 정보를 입력해주세요!</HeaderSub>
           </HeaderTextWrapper>
         </HeaderBox>
->>>>>>> Stashed changes
 
-        <label>주최자</label>
-        <input
-          name="host"
-          value={form.host}
-          onChange={handleChange}
-          placeholder="주최자 이름"
-        />
+        <StyledForm onSubmit={handleSubmit}>
+          <FieldRow>
+            <Field fullWidth>
+              <Label>제목</Label>
+              <Input
+                name="title"
+                value={form.title}
+                onChange={handleChange}
+                placeholder="스터디 모임 제목을 입력해주세요"
+              />
+            </Field>
+          </FieldRow>
 
-        <label>주제</label>
-        <select name="topic" value={form.topic} onChange={handleChange}>
-          <option value="">선택하세요</option>
-          <option value="major">전공</option>
-          <option value="task">과제</option>
-          <option value="interview">면접</option>
-        </select>
+          <FieldRow>
+            <Field>
+              <Label>주최자</Label>
+              <Input
+                name="host"
+                value={form.host}
+                onChange={handleChange}
+                placeholder="주최자 이름을 입력해주세요"
+              />
+            </Field>
 
-<<<<<<< Updated upstream
-        <label>모집 인원</label>
-        <input
-          type="number"
-          name="member"
-          value={form.member}
-          onChange={handleChange}
-        />
-=======
             <Field>
               <Label>주제</Label>
               <Select name="topic" value={form.topic} onChange={handleChange}>
                 <option value="">스터디 주제를 선택해주세요</option>
                 <option value="major">전공</option>
                 <option value="task">과제</option>
-                <option value="thesis">논문</option>
                 <option value="interview">면접</option>
-                <option value="certificate">자격증</option>
-                <option value="contest">공모전</option>
-                <option value="startup">창업</option>
-                <option value="languague">외국어</option>
               </Select>
             </Field>
           </FieldRow>
->>>>>>> Stashed changes
 
-        <label>장소</label>
-        <input
-          name="place"
-          value={form.place}
-          onChange={handleChange}
-          placeholder="모임 장소"
-        />
+          <FieldRow>
+            <Field>
+              <Label>모집 인원</Label>
+              <Input
+                type="number"
+                name="member"
+                value={form.member}
+                onChange={handleChange}
+                placeholder="인원"
+              />
+            </Field>
 
-        <label>시작일</label>
-        <input
-          type="date"
-          name="startDate"
-          value={form.startDate}
-          onChange={handleChange}
-        />
+            <Field>
+              <Label>장소</Label>
+              <Input
+                name="place"
+                value={form.place}
+                onChange={handleChange}
+                placeholder="모임 장소를 입력해주세요"
+              />
+            </Field>
+          </FieldRow>
 
-        <label>종료일</label>
-        <input
-          type="date"
-          name="endDate"
-          value={form.endDate}
-          onChange={handleChange}
-        />
+          <FieldRow>
+            <Field>
+              <Label>시작 날짜</Label>
+              <Input
+                type="date"
+                name="startDate"
+                value={form.startDate}
+                onChange={handleChange}
+              />
+            </Field>
+            <Field>
+              <Label>종료 날짜</Label>
+              <Input
+                type="date"
+                name="endDate"
+                value={form.endDate}
+                onChange={handleChange}
+              />
+            </Field>
+          </FieldRow>
 
-        <label>스터디 소개</label>
-        <textarea
-          name="studyIntro"
-          value={form.studyIntro}
-          onChange={handleChange}
-          placeholder="소개 입력"
-        />
+          <FieldRow>
+            <Field fullWidth>
+              <Label>스터디 소개</Label>
+              <TextArea
+                name="studyIntro"
+                value={form.studyIntro}
+                onChange={handleChange}
+                placeholder="스터디 모임에 대한 소개를 입력해주세요 (예: 목표, 진행방식, 커리큘럼 등)"
+              />
+            </Field>
+          </FieldRow>
 
-<<<<<<< Updated upstream
-        <label>오픈채팅방 링크</label>
-        <input
-          type="url"
-          name="openChat"
-          value={form.openChat}
-          onChange={handleChange}
-          placeholder="https://"
-        />
-=======
           <FieldRow>
             <Field fullWidth>
               <Label>오픈채팅방 링크</Label>
@@ -223,19 +217,20 @@ export default function Createpage() {
                 name="openChat"
                 value={form.openChat}
                 onChange={handleChange}
-                placeholder="https://open.kakao.com/ 로 시작하는 오픈채팅 링크를 입력하세요"
+                placeholder="카카오톡 오픈채팅방 링크를 입력해주세요"
               />
             </Field>
           </FieldRow>
->>>>>>> Stashed changes
 
-        <button type="submit">등록</button>
-      </form>
-    </main>
+          <ButtonRow>
+            <SubmitButton type="submit">등록</SubmitButton>
+            <CancelButton type="button">취소</CancelButton>
+          </ButtonRow>
+        </StyledForm>
+      </Container>
+    </PageWrapper>
   );
 }
-<<<<<<< Updated upstream
-=======
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -442,4 +437,3 @@ const CancelButton = styled(BaseButton)`
     background: #dde3ea;
   }
 `;
->>>>>>> Stashed changes

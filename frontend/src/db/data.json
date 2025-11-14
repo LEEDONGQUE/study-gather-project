@@ -3873,6 +3873,23 @@
           "organizer_name": "송민기"
         }
       }
+    },
+    {
+      "id": 1763106097778,
+      "code": "OK",
+      "message": "스터디 상세 등록 성공",
+      "data": {
+        "study_id": 1763106097778,
+        "study_title": "",
+        "study_topic": "",
+        "current_participants": 1,
+        "max_participants": "",
+        "start_date": "",
+        "end_date": "",
+        "status": "모집마감",
+        "description": "",
+        "open_chat_link": ""
+      }
     }
   ]
 }

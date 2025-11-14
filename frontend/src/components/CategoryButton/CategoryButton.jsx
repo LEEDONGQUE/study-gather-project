@@ -102,4 +102,4 @@ const CategoryBtnBase = styled.div`
   .btn-icon {
     font-size: 16px;
   }
-`;
+`
