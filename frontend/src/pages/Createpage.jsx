@@ -106,6 +106,7 @@ export default function Createpage() {
   };
 
   return (
+<<<<<<< Updated upstream
     <main>
       <h1>모임 생성하기</h1>
 
@@ -117,6 +118,18 @@ export default function Createpage() {
           onChange={handleChange}
           placeholder="스터디 제목"
         />
+=======
+    <PageWrapper>
+      <PageTitle>모임 생성하기</PageTitle>
+      <PageSubtitle>✨ 새로운 스터디 모임을 만들어보세요!</PageSubtitle>
+      <Container>
+        <HeaderBox>
+          <HeaderTextWrapper>
+            <HeaderTitle>스터디 모임 정보</HeaderTitle>
+            <HeaderSub>정확한 정보를 입력해주세요!</HeaderSub>
+          </HeaderTextWrapper>
+        </HeaderBox>
+>>>>>>> Stashed changes
 
         <label>주최자</label>
         <input
@@ -134,6 +147,7 @@ export default function Createpage() {
           <option value="interview">면접</option>
         </select>
 
+<<<<<<< Updated upstream
         <label>모집 인원</label>
         <input
           type="number"
@@ -141,6 +155,23 @@ export default function Createpage() {
           value={form.member}
           onChange={handleChange}
         />
+=======
+            <Field>
+              <Label>주제</Label>
+              <Select name="topic" value={form.topic} onChange={handleChange}>
+                <option value="">스터디 주제를 선택해주세요</option>
+                <option value="major">전공</option>
+                <option value="task">과제</option>
+                <option value="thesis">논문</option>
+                <option value="interview">면접</option>
+                <option value="certificate">자격증</option>
+                <option value="contest">공모전</option>
+                <option value="startup">창업</option>
+                <option value="languague">외국어</option>
+              </Select>
+            </Field>
+          </FieldRow>
+>>>>>>> Stashed changes
 
         <label>장소</label>
         <input
@@ -174,6 +205,7 @@ export default function Createpage() {
           placeholder="소개 입력"
         />
 
+<<<<<<< Updated upstream
         <label>오픈채팅방 링크</label>
         <input
           type="url"
@@ -182,9 +214,232 @@ export default function Createpage() {
           onChange={handleChange}
           placeholder="https://"
         />
+=======
+          <FieldRow>
+            <Field fullWidth>
+              <Label>오픈채팅방 링크</Label>
+              <Input
+                type="url"
+                name="openChat"
+                value={form.openChat}
+                onChange={handleChange}
+                placeholder="https://open.kakao.com/ 로 시작하는 오픈채팅 링크를 입력하세요"
+              />
+            </Field>
+          </FieldRow>
+>>>>>>> Stashed changes
 
         <button type="submit">등록</button>
       </form>
     </main>
   );
 }
+<<<<<<< Updated upstream
+=======
+
+const PageWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+`;
+
+const PageTitle = styled.h1`
+  color: #174579;
+  font-family: "Noto Sans KR";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  height: 48p;
+`;
+
+const PageSubtitle = styled.div`
+  display: inline-flex;
+  height: 35px;
+  padding: 7px 40px 7px 39px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #f5f5f5;
+
+  font-size: 18px;
+  color: #333333;
+  margin-top: -15px;
+`;
+
+const Container = styled.main`
+  width: 1100px;
+  height: 1100px;
+  flex-shrink: 0;
+
+  border-radius: 30px;
+  border: 1px solid #bec5cd;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+
+  margin-top: 35px;
+`;
+
+const HeaderBox = styled.div`
+  width: 100%;
+  height: 130px;
+  flex-shrink: 0;
+
+  border-radius: 30px 30px 0 0;
+  background: #eef3fa;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+`;
+
+const HeaderTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
+const HeaderTitle = styled.div`
+  font-size: 25px;
+  font-weight: 700;
+  color: #333333;
+`;
+
+const HeaderSub = styled.div`
+  font-size: 13px;
+  color: #174579;
+`;
+
+const StyledForm = styled.form`
+  flex: 1;
+  padding: 30px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+const FieldRow = styled.div`
+  display: flex;
+  gap: 16px;
+  width: 100%;
+`;
+
+const Field = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: ${(props) =>
+    props.fullWidth ? "1 1 100%" : props.small ? "0 0 120px" : "1"};
+`;
+
+const Label = styled.label`
+  margin-left: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #174579;
+`;
+
+const Input = styled.input`
+  display: flex;
+  width: 100%;
+  padding: 16px 20px;
+  align-items: center;
+
+  border-radius: 10px;
+  border: 1px solid #bec5cd;
+  background: #f5f5f5;
+
+  font-size: 16px;
+  color: #333;
+
+  &:focus {
+    outline: none;
+    border-color: #174579;
+    background: #fff;
+  }
+`;
+
+const Select = styled.select`
+  display: flex;
+  width: 100%;
+  padding: 16px 20px;
+  align-items: center;
+
+  border-radius: 10px;
+  border: 1px solid #bec5cd;
+  background: #f5f5f5;
+
+  font-size: 16px;
+  color: #333;
+
+  &:focus {
+    outline: none;
+    border-color: #174579;
+    background: #fff;
+  }
+`;
+
+const TextArea = styled.textarea`
+  display: flex;
+  width: 100%;
+  height: 300px;
+
+  padding: 16px 20px;
+  align-items: flex-start;
+
+  border-radius: 10px;
+  border: 1px solid #bec5cd;
+  background: #f5f5f5;
+
+  font-size: 16px;
+  color: #333;
+  resize: none;
+
+  &:focus {
+    outline: none;
+    border-color: #174579;
+    background: #fff;
+  }
+`;
+
+const ButtonRow = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+`;
+
+const BaseButton = styled.button`
+  width: 120px;
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+`;
+
+const SubmitButton = styled(BaseButton)`
+  background: #dde3ea;
+  color: #174579;
+  border: 1px solid #174579;
+`;
+
+const CancelButton = styled(BaseButton)`
+  background: #ffffff;
+  color: #174579;
+  border: 1px solid #174579;
+
+  &:hover {
+    background: #dde3ea;
+  }
+`;
+>>>>>>> Stashed changes
