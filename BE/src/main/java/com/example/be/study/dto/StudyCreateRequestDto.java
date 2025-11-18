@@ -4,10 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
-@NoArgsConstructor
-public class StudyCreateRequestDto { // 2. 클래스 이름이 DTO인지 확인!
+@Setter
+public class StudyCreateRequestDto {
 
     @JsonProperty("study_title")
     @NotBlank
@@ -31,12 +32,12 @@ public class StudyCreateRequestDto { // 2. 클래스 이름이 DTO인지 확인!
 
     @JsonProperty("start_date")
     @NotBlank
-    @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$", message = "날짜 형식은 YYYY-MM-DD 여야 합니다.") // 3. 날짜 검증
+    @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$", message = "날짜 형식은 YYYY-MM-DD 여야 합니다.")
     private String startDate;
 
     @JsonProperty("end_date")
     @NotBlank
-    @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$", message = "날짜 형식은 YYYY-MM-DD 여야 합니다.") // 4. 날짜 검증
+    @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$", message = "날짜 형식은 YYYY-MM-DD 여야 합니다.")
     private String endDate;
 
     @JsonProperty("chat_link")
