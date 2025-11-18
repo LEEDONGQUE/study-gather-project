@@ -3,24 +3,36 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import StatusBadge from "../StatusBadge";
+import {
+  MajorButton,
+  AssignmentButton,
+  ThesisButton,
+  InterviewButton,
+  CertificateButton,
+  ContestButton,
+  StartupButton,
+  LanguageButton,
+} from "../CategoryButton/CategoryButton.jsx";
 
+// 실제 배포 서버 생기면 .env만 바꾸기
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";
 const endpoint = "/study_list";
 
 export default function Pagecontrol() {
-  const [studies, setStudies] = useState([]);
-  const [page, setPage] = useState(1);
-  const navigate = useNavigate();
+  const [studies, setStudies] = useState([]); //스터디 전체 목록을 담음
+  const [page, setPage] = useState(1); // 현재 페이지 번호를 저장하는 상태
+  const navigate = useNavigate(); //클릭한 스터디의 상세페이지로 이동
 
-  const itemsPerPage = 5; // 한 페이지당 표시 개수
-  const groupSize = 4; // ✅ 한 번에 표시할 페이지 번호 수 (1~4)
+  const itemsPerPage = 10; // 한 페이지당 표시 개수
+  const groupSize = 5; // ✅ 한 번에 표시할 페이지 번호 수 (1~4)
 
   useEffect(() => {
     const fetchStudy = async () => {
       try {
         const res = await axios(`${BASE_URL}${endpoint}`, {
           method: "GET",
-          headers: { "Content-Type": "application/json" },
+          // headers: { "Content-Type": "application/json" }, 이건 보내는 데이터의 형식을 말하는데 get은 데이터를
+          //달라고 하는 것이니깐 no 필요
         });
         const payload = res?.data;
         const next = payload?.data?.studies ?? [];
@@ -32,25 +44,29 @@ export default function Pagecontrol() {
     fetchStudy();
   }, []);
 
-  // 전체 페이지 수 계산
+  // 전체 페이지 수 계산: 전체스터디 개수 / 한페이지당 출력할 스터디 개수(Math.ceil= 올림)
   const totalPages = Math.ceil(studies.length / itemsPerPage);
 
-  // 현재 페이지 데이터
+  // 현재 페이지에서 보여줄 데이터 잘라오기
   const currentStudies = studies.slice(
-    (page - 1) * itemsPerPage,
-    page * itemsPerPage
+    (page - 1) * itemsPerPage, // 시작 인덱스 계산
+    page * itemsPerPage // 끝 인덱스 계산(끝인덱스는 미포함)
   );
 
-  // ✅ 현재 그룹 계산 (예: 1~4, 5~8, 9~12 ...)
+  // 현재 그룹 계산 (예: 1~4, 5~8, 9~12 ...)
   const currentGroup = Math.ceil(page / groupSize);
+  //그룹의 시작 페이지 계산
   const startPage = (currentGroup - 1) * groupSize + 1;
-  const endPage = Math.min(startPage + groupSize , totalPages);
+  //그룹의 끝페이지
+  const endPage = Math.min(startPage + groupSize - 1, totalPages);
 
   // 이동 함수
   const goToPage = (num) => setPage(num);
+  //다음 그룹으로 이동
   const goToNextGroup = () => {
     if (endPage < totalPages) setPage(endPage + 1);
   };
+  //이전 그룹으로 이동
   const goToPrevGroup = () => {
     if (startPage > 1) setPage(startPage - groupSize);
   };
@@ -81,9 +97,28 @@ export default function Pagecontrol() {
                   onClick={() => navigate(`/studies/${item?.study_id}`)}
                   style={{ cursor: "pointer" }}
                 >
-                  <td>
-                    <TopicBadge>{item?.study_topic ?? ""}</TopicBadge>
+                  <td className="badge_style">
+                    {item?.study_topic === "전공" ? (
+                      <MajorButton />
+                    ) : item?.study_topic === "과제" ? (
+                      <AssignmentButton />
+                    ) : item?.study_topic === "논문" ? (
+                      <ThesisButton />
+                    ) : item?.study_topic === "면접" ? (
+                      <InterviewButton />
+                    ) : item?.study_topic === "자격증" ? (
+                      <CertificateButton />
+                    ) : item?.study_topic === "공모전" ? (
+                      <ContestButton />
+                    ) : item?.study_topic === "창업" ? (
+                      <StartupButton />
+                    ) : item?.study_topic === "외국어" ? (
+                      <LanguageButton />
+                    ) : (
+                      <TopicBadge>{item?.study_topic ?? ""}</TopicBadge>
+                    )}
                   </td>
+
                   <td>{item?.study_title ?? ""}</td>
                   <td>
                     {item?.current_participants ?? 0}/
@@ -102,7 +137,7 @@ export default function Pagecontrol() {
         </Table>
       </TableWrap>
 
-      {/* ✅ 페이지네이션 */}
+      {/* 페이지네이션 */}
       <PaginationWrapper>
         <NavButton disabled={page === 1} onClick={goToPrevGroup}>
           {"<"}
@@ -121,10 +156,7 @@ export default function Pagecontrol() {
           );
         })}
 
-        <NavButton
-          disabled={endPage >= totalPages}
-          onClick={goToNextGroup}
-        >
+        <NavButton disabled={endPage >= totalPages} onClick={goToNextGroup}>
           {">"}
         </NavButton>
       </PaginationWrapper>
@@ -209,20 +241,20 @@ const BaseButton = styled.button`
 `;
 
 const NavButton = styled(BaseButton)`
-  background-color: #dda5e3;
+  background-color: #rgba(23,69,121,1)
   color: white;
 
-  &:hover:not(:disabled) {
-    background-color: #b2dab1;
+ ;
   }
 `;
 
 const PageButton = styled(BaseButton)`
-  background-color: ${({ $active }) => ($active ? "#dda5e3" : "white")};
-  color: ${({ $active }) => ($active ? "white" : "#dda5e3")};
-  border: 1px solid #dda5e3;
+  background-color: ${({ $active }) => ($active ? " #174579;" : "white")};
+  color: ${({ $active }) => ($active ? "white" : "#174579")};
+  border: 1px solid #174579;
 
   &:hover:not(:disabled) {
-    background-color: ${({ $active }) => ($active ? "#dda5e3" : "#f3e4f7")};
+    background-color: ${({ $active }) => ($active ? "#2366A3" : "#D6E8FF")};
+    //$active 현재 선택된 페이지(지금 보고 있는페이지)
   }
 `;
