@@ -27,7 +27,9 @@ export default function Studydetail() {
     return (
       <Container>
         <Title>모임상세보기</Title>
-        <Board>{error ? `오류: ${error}` : "해당 스터디를 찾을 수 없습니다."}</Board>
+        <Board>
+          {error ? `오류: ${error}` : "해당 스터디를 찾을 수 없습니다."}
+        </Board>
       </Container>
     );
   }
@@ -47,8 +49,12 @@ export default function Studydetail() {
 
   async function deleteClick() {
     if (window.confirm("삭제 하시겠습니까?")) {
-      await fetch(`http://localhost:3001/study_details/${id}`, { method: "DELETE" });
-      await fetch(`http://localhost:3002/study_list/${id}`, { method: "DELETE" });
+      await fetch(`http://localhost:3001/study_details/${id}`, {
+        method: "DELETE",
+      });
+      await fetch(`http://localhost:3002/study_list/${id}`, {
+        method: "DELETE",
+      });
       navigate("/status", { replace: true });
     }
   }
