@@ -7,7 +7,7 @@
         {
           "study_id": 110,
           "study_title": "알고리즘 코딩 테스트 준비반",
-          "study_topic": "코딩 테스트",
+          "study_topic": "전공",
           "current_participants": 1,
           "max_participants": 10,
           "start_date": "2025-10-01",
@@ -17,7 +17,7 @@
         {
           "study_id": 109,
           "study_title": "토익 900점 목표 스터디",
-          "study_topic": "어학",
+          "study_topic": "외국어",
           "current_participants": 5,
           "max_participants": 6,
           "start_date": "2025-10-01",
@@ -25,796 +25,2085 @@
           "status": "모집중"
         },
         {
-          "study_id": 108,
-          "study_title": "리액트 프론트엔드 실무반",
-          "study_topic": "웹 개발",
-          "current_participants": 4,
-          "max_participants": 8,
-          "start_date": "2025-09-25",
-          "end_date": "2025-12-31",
+          "study_id": 107,
+          "study_title": "SQL 데이터 분석 기초반",
+          "study_topic": "전공",
+          "current_participants": 3,
+          "max_participants": 10,
+          "start_date": "2025-09-20",
+          "end_date": "2025-12-01",
           "status": "모집중"
         },
         {
-          "study_id": 107,
-          "study_title": "CS 면접 대비 스터디",
-          "study_topic": "전공심화",
-          "current_participants": 6,
-          "max_participants": 6,
-          "start_date": "2025-09-10",
-          "end_date": "2025-11-30",
-          "status": "모집마감"
-        },
-        {
           "study_id": 106,
-          "study_title": "AI 논문 리딩 스터디",
-          "study_topic": "AI",
-          "current_participants": 3,
-          "max_participants": 5,
-          "start_date": "2025-09-15",
-          "end_date": "2025-12-15",
+          "study_title": "디자인 시스템 구축 스터디",
+          "study_topic": "과제",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-10",
+          "end_date": "2025-11-10",
           "status": "모집중"
         },
         {
           "study_id": 105,
-          "study_title": "금융 데이터 분석 입문",
-          "study_topic": "데이터 분석",
-          "current_participants": 2,
-          "max_participants": 6,
-          "start_date": "2025-09-20",
-          "end_date": "2025-12-10",
+          "study_title": "논문 작성 워크숍",
+          "study_topic": "논문",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-08-20",
+          "end_date": "2025-11-20",
           "status": "모집중"
         },
         {
           "study_id": 104,
-          "study_title": "C 언어 기초부터 프로젝트까지",
-          "study_topic": "프로그래밍",
-          "current_participants": 7,
-          "max_participants": 10,
+          "study_title": "취업 자기소개서 첨삭반",
+          "study_topic": "면접",
+          "current_participants": 4,
+          "max_participants": 5,
           "start_date": "2025-09-01",
-          "end_date": "2025-11-30",
-          "status": "모집중"
+          "end_date": "2025-09-30",
+          "status": "모집완료"
         },
         {
           "study_id": 103,
-          "study_title": "UI/UX 디자인 워크샵",
-          "study_topic": "디자인",
-          "current_participants": 4,
-          "max_participants": 6,
-          "start_date": "2025-10-05",
-          "end_date": "2025-12-05",
+          "study_title": "SQLD 자격증 준비반",
+          "study_topic": "자격증",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-08-15",
+          "end_date": "2025-10-30",
           "status": "모집중"
         },
         {
           "study_id": 102,
-          "study_title": "스프링 부트 백엔드 개발",
-          "study_topic": "웹 개발",
-          "current_participants": 5,
-          "max_participants": 7,
-          "start_date": "2025-09-10",
-          "end_date": "2025-12-15",
-          "status": "모집중"
+          "study_title": "캡스톤 공모전 대비반",
+          "study_topic": "공모전",
+          "current_participants": 6,
+          "max_participants": 8,
+          "start_date": "2025-07-01",
+          "end_date": "2025-09-01",
+          "status": "모집완료"
         },
         {
           "study_id": 101,
-          "study_title": "정보처리기사 실기 대비",
-          "study_topic": "자격증",
-          "current_participants": 8,
-          "max_participants": 10,
-          "start_date": "2025-09-01",
-          "end_date": "2025-11-15",
-          "status": "모집중"
-        },
-        {
-          "study_id": 100,
-          "study_title": "토플 100점 달성반",
-          "study_topic": "어학",
-          "current_participants": 6,
-          "max_participants": 8,
-          "start_date": "2025-09-10",
-          "end_date": "2025-12-10",
-          "status": "모집중"
-        },
-        {
-          "study_id": 99,
-          "study_title": "창업 아이디어 피칭 스터디",
+          "study_title": "창업 아이디어 실현 스터디",
           "study_topic": "창업",
           "current_participants": 3,
           "max_participants": 6,
-          "start_date": "2025-10-10",
-          "end_date": "2025-12-31",
+          "start_date": "2025-09-10",
+          "end_date": "2025-10-15",
           "status": "모집중"
         },
         {
-          "study_id": 98,
-          "study_title": "영화로 배우는 영어 회화",
-          "study_topic": "어학",
+          "study_id": 201,
+          "study_title": "파이썬 데이터 분석 초급반",
+          "study_topic": "전공",
           "current_participants": 4,
-          "max_participants": 8,
-          "start_date": "2025-09-15",
-          "end_date": "2025-11-30",
-          "status": "모집중"
-        },
-        {
-          "study_id": 97,
-          "study_title": "SQL 데이터베이스 마스터",
-          "study_topic": "데이터베이스",
-          "current_participants": 5,
           "max_participants": 10,
           "start_date": "2025-09-01",
           "end_date": "2025-12-01",
           "status": "모집중"
         },
         {
-          "study_id": 96,
-          "study_title": "공모전 기획 실무반",
-          "study_topic": "기획",
-          "current_participants": 2,
-          "max_participants": 5,
-          "start_date": "2025-09-10",
+          "study_id": 202,
+          "study_title": "웹 서비스 UI/UX 과제 스터디",
+          "study_topic": "과제",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-05",
+          "end_date": "2025-11-25",
+          "status": "모집중"
+        },
+        {
+          "study_id": 203,
+          "study_title": "논문 연구 설계 기초반",
+          "study_topic": "논문",
+          "current_participants": 3,
+          "max_participants": 8,
+          "start_date": "2025-08-20",
           "end_date": "2025-11-30",
           "status": "모집중"
         },
         {
-          "study_id": 95,
-          "study_title": "네트워크 기초 & 실습",
-          "study_topic": "전공심화",
-          "current_participants": 3,
-          "max_participants": 7,
-          "start_date": "2025-09-05",
-          "end_date": "2025-12-05",
+          "study_id": 204,
+          "study_title": "대기업 실무 면접 대비반",
+          "study_topic": "면접",
+          "current_participants": 5,
+          "max_participants": 6,
+          "start_date": "2025-10-01",
+          "end_date": "2025-10-30",
+          "status": "모집완료"
+        },
+        {
+          "study_id": 205,
+          "study_title": "SQLD 자격증 문제풀이 스터디",
+          "study_topic": "자격증",
+          "current_participants": 7,
+          "max_participants": 10,
+          "start_date": "2025-08-10",
+          "end_date": "2025-10-30",
           "status": "모집중"
         },
         {
-          "study_id": 94,
-          "study_title": "딥러닝 모델 구현반",
-          "study_topic": "AI",
-          "current_participants": 4,
+          "study_id": 206,
+          "study_title": "캡스톤 공모전 실전 대비반",
+          "study_topic": "공모전",
+          "current_participants": 8,
           "max_participants": 8,
+          "start_date": "2025-07-15",
+          "end_date": "2025-09-20",
+          "status": "모집완료"
+        },
+        {
+          "study_id": 207,
+          "study_title": "스타트업 비즈니스 모델 워크숍",
+          "study_topic": "창업",
+          "current_participants": 3,
+          "max_participants": 6,
           "start_date": "2025-09-20",
+          "end_date": "2025-12-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 208,
+          "study_title": "토익 850+ 집중반",
+          "study_topic": "외국어",
+          "current_participants": 4,
+          "max_participants": 6,
+          "start_date": "2025-09-01",
+          "end_date": "2025-10-15",
+          "status": "모집중"
+        },
+        {
+          "study_id": 209,
+          "study_title": "네트워크 기초 초급반",
+          "study_topic": "전공",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-10-05",
           "end_date": "2025-12-20",
           "status": "모집중"
         },
         {
-          "study_id": 93,
-          "study_title": "자바 자료구조 완전정복",
-          "study_topic": "프로그래밍",
-          "current_participants": 5,
-          "max_participants": 9,
-          "start_date": "2025-09-01",
-          "end_date": "2025-11-30",
+          "study_id": 210,
+          "study_title": "반응형 웹 과제 수행 스터디",
+          "study_topic": "과제",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-03",
+          "end_date": "2025-11-03",
           "status": "모집중"
         },
         {
-          "study_id": 92,
-          "study_title": "UX 기획 & 감정 인터랙션 연구",
-          "study_topic": "UX 기획",
-          "current_participants": 3,
-          "max_participants": 6,
-          "start_date": "2025-10-01",
+          "study_id": 211,
+          "study_title": "논문 분석 및 리뷰 스터디",
+          "study_topic": "논문",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-09-05",
           "end_date": "2025-12-15",
           "status": "모집중"
         },
         {
-          "study_id": 91,
-          "study_title": "심리학 기반 감정 챗봇 연구반",
-          "study_topic": "AI+인문",
-          "current_participants": 2,
+          "study_id": 212,
+          "study_title": "AI 기업 면접 대비 실전반",
+          "study_topic": "면접",
+          "current_participants": 4,
           "max_participants": 5,
           "start_date": "2025-09-15",
-          "end_date": "2025-12-31",
+          "end_date": "2025-10-15",
+          "status": "모집완료"
+        },
+        {
+          "study_id": 213,
+          "study_title": "ADsP 기출 분석 스터디",
+          "study_topic": "자격증",
+          "current_participants": 8,
+          "max_participants": 10,
+          "start_date": "2025-08-10",
+          "end_date": "2025-11-01",
           "status": "모집중"
         },
         {
-          "study_id": 170,
-          "study_title": "AI 기반 감정 분석 프로젝트",
-          "study_topic": "AI",
+          "study_id": 214,
+          "study_title": "UX/UI 공모전 대비 팀",
+          "study_topic": "공모전",
+          "current_participants": 6,
+          "max_participants": 6,
+          "start_date": "2025-08-01",
+          "end_date": "2025-09-10",
+          "status": "모집완료"
+        },
+        {
+          "study_id": 215,
+          "study_title": "스타트업 MVP 프로토타입 제작반",
+          "study_topic": "창업",
           "current_participants": 3,
+          "max_participants": 6,
+          "start_date": "2025-09-01",
+          "end_date": "2025-12-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 216,
+          "study_title": "HSK 5급 대비반",
+          "study_topic": "외국어",
+          "current_participants": 4,
+          "max_participants": 6,
+          "start_date": "2025-10-01",
+          "end_date": "2025-12-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 217,
+          "study_title": "React 실무 전공 스터디",
+          "study_topic": "전공",
+          "current_participants": 7,
+          "max_participants": 10,
+          "start_date": "2025-10-01",
+          "end_date": "2025-12-25",
+          "status": "모집중"
+        },
+        {
+          "study_id": 218,
+          "study_title": "DB 설계 과제 수행팀",
+          "study_topic": "과제",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-09-10",
+          "end_date": "2025-11-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 219,
+          "study_title": "연구 가설·모형 설계 스터디",
+          "study_topic": "논문",
+          "current_participants": 2,
           "max_participants": 6,
           "start_date": "2025-10-10",
           "end_date": "2026-01-10",
           "status": "모집중"
         },
         {
-          "study_id": 169,
-          "study_title": "핀테크 알고리즘 트레이딩 입문",
-          "study_topic": "핀테크",
-          "current_participants": 4,
-          "max_participants": 8,
-          "start_date": "2025-09-25",
-          "end_date": "2025-12-25",
-          "status": "모집중"
-        },
-        {
-          "study_id": 168,
-          "study_title": "클라우드 서비스 구축 실습",
-          "study_topic": "클라우드",
+          "study_id": 220,
+          "study_title": "IT 직무 인성+기술 면접반",
+          "study_topic": "면접",
           "current_participants": 5,
-          "max_participants": 9,
-          "start_date": "2025-09-20",
-          "end_date": "2025-12-20",
-          "status": "모집중"
+          "max_participants": 6,
+          "start_date": "2025-09-05",
+          "end_date": "2025-10-05",
+          "status": "모집완료"
         },
         {
-          "study_id": 167,
-          "study_title": "UX 감정 리서치 워크샵",
-          "study_topic": "UX 기획",
-          "current_participants": 2,
-          "max_participants": 5,
-          "start_date": "2025-10-05",
-          "end_date": "2025-12-30",
-          "status": "모집중"
-        },
-        {
-          "study_id": 166,
-          "study_title": "딥러닝 영상 처리 입문",
-          "study_topic": "AI",
+          "study_id": 201,
+          "study_title": "파이썬 데이터 분석 초급반",
+          "study_topic": "전공",
           "current_participants": 4,
-          "max_participants": 7,
-          "start_date": "2025-09-15",
-          "end_date": "2025-12-15",
-          "status": "모집중"
-        },
-        {
-          "study_id": 165,
-          "study_title": "AI 윤리 커뮤니티 세미나",
-          "study_topic": "AI+인문",
-          "current_participants": 2,
-          "max_participants": 6,
-          "start_date": "2025-10-01",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 164,
-          "study_title": "데이터 기반 UX 개선 실험",
-          "study_topic": "데이터 분석",
-          "current_participants": 3,
-          "max_participants": 8,
-          "start_date": "2025-09-25",
-          "end_date": "2025-12-25",
-          "status": "모집중"
-        },
-        {
-          "study_id": 163,
-          "study_title": "AI 모델 경량화 실습반",
-          "study_topic": "AI",
-          "current_participants": 4,
-          "max_participants": 8,
-          "start_date": "2025-09-10",
-          "end_date": "2025-12-10",
-          "status": "모집중"
-        },
-        {
-          "study_id": 162,
-          "study_title": "데이터 시각화 with D3.js",
-          "study_topic": "웹 개발",
-          "current_participants": 5,
-          "max_participants": 10,
-          "start_date": "2025-09-15",
-          "end_date": "2025-12-20",
-          "status": "모집중"
-        },
-        {
-          "study_id": 161,
-          "study_title": "AI 챗봇 서비스 기획 스터디",
-          "study_topic": "AI 기획",
-          "current_participants": 3,
-          "max_participants": 7,
-          "start_date": "2025-09-25",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 160,
-          "study_title": "머신러닝 모델 평가와 개선",
-          "study_topic": "AI",
-          "current_participants": 5,
-          "max_participants": 9,
-          "start_date": "2025-09-10",
-          "end_date": "2025-12-15",
-          "status": "모집중"
-        },
-        {
-          "study_id": 159,
-          "study_title": "UX 감정 인터뷰 연구반",
-          "study_topic": "UX 기획",
-          "current_participants": 2,
-          "max_participants": 5,
-          "start_date": "2025-10-05",
-          "end_date": "2025-12-20",
-          "status": "모집중"
-        },
-        {
-          "study_id": 158,
-          "study_title": "AI 시스템 디자인 & 프로토타이핑",
-          "study_topic": "AI+디자인",
-          "current_participants": 3,
-          "max_participants": 6,
-          "start_date": "2025-09-15",
-          "end_date": "2025-12-25",
-          "status": "모집중"
-        },
-        {
-          "study_id": 157,
-          "study_title": "모바일 앱 개발 실전반",
-          "study_topic": "앱 개발",
-          "current_participants": 4,
-          "max_participants": 8,
-          "start_date": "2025-09-20",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 156,
-          "study_title": "UX 감정 데이터 분석",
-          "study_topic": "UX 기획",
-          "current_participants": 3,
-          "max_participants": 6,
-          "start_date": "2025-09-25",
-          "end_date": "2025-12-25",
-          "status": "모집중"
-        },
-        {
-          "study_id": 155,
-          "study_title": "AI 기반 음악 생성 스터디",
-          "study_topic": "AI+예술",
-          "current_participants": 2,
-          "max_participants": 5,
-          "start_date": "2025-10-05",
-          "end_date": "2025-12-30",
-          "status": "모집중"
-        },
-        {
-          "study_id": 154,
-          "study_title": "데이터베이스 최적화 실습",
-          "study_topic": "데이터베이스",
-          "current_participants": 5,
-          "max_participants": 9,
-          "start_date": "2025-09-01",
-          "end_date": "2025-12-10",
-          "status": "모집중"
-        },
-        {
-          "study_id": 153,
-          "study_title": "영상 기반 감정 인식 프로젝트",
-          "study_topic": "AI",
-          "current_participants": 4,
-          "max_participants": 7,
-          "start_date": "2025-09-10",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 152,
-          "study_title": "인공지능 윤리 및 사회 이슈 토론",
-          "study_topic": "AI+인문",
-          "current_participants": 3,
-          "max_participants": 6,
-          "start_date": "2025-10-01",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 151,
-          "study_title": "파이썬 데이터 사이언스 스터디",
-          "study_topic": "데이터 분석",
-          "current_participants": 4,
-          "max_participants": 8,
-          "start_date": "2025-09-15",
-          "end_date": "2025-12-20",
-          "status": "모집중"
-        },
-        {
-          "study_id": 150,
-          "study_title": "자연어 감정 분석 심화반",
-          "study_topic": "AI+언어",
-          "current_participants": 3,
-          "max_participants": 7,
-          "start_date": "2025-09-10",
-          "end_date": "2025-12-25",
-          "status": "모집중"
-        },
-        {
-          "study_id": 149,
-          "study_title": "웹 백엔드 시스템 구조 설계",
-          "study_topic": "웹 개발",
-          "current_participants": 5,
-          "max_participants": 9,
-          "start_date": "2025-09-25",
-          "end_date": "2025-12-20",
-          "status": "모집중"
-        },
-        {
-          "study_id": 148,
-          "study_title": "UX 스토리텔링과 감정 서사",
-          "study_topic": "UX 기획",
-          "current_participants": 2,
-          "max_participants": 6,
-          "start_date": "2025-10-01",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 147,
-          "study_title": "AI 음악 추천 알고리즘 개발",
-          "study_topic": "AI",
-          "current_participants": 4,
-          "max_participants": 8,
-          "start_date": "2025-09-15",
-          "end_date": "2025-12-15",
-          "status": "모집중"
-        },
-        {
-          "study_id": 146,
-          "study_title": "감성 UX 인터랙션 디자인",
-          "study_topic": "UX 디자인",
-          "current_participants": 3,
-          "max_participants": 6,
-          "start_date": "2025-10-05",
-          "end_date": "2025-12-20",
-          "status": "모집중"
-        },
-        {
-          "study_id": 145,
-          "study_title": "AI 음성 합성 실습반",
-          "study_topic": "AI",
-          "current_participants": 5,
-          "max_participants": 9,
-          "start_date": "2025-09-20",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 144,
-          "study_title": "AI 윤리 리서치 세션",
-          "study_topic": "AI+인문",
-          "current_participants": 2,
-          "max_participants": 5,
-          "start_date": "2025-10-10",
-          "end_date": "2025-12-30",
-          "status": "모집중"
-        },
-        {
-          "study_id": 143,
-          "study_title": "데이터 기반 감정 예측 모델링",
-          "study_topic": "AI",
-          "current_participants": 4,
-          "max_participants": 8,
-          "start_date": "2025-09-25",
-          "end_date": "2025-12-25",
-          "status": "모집중"
-        },
-        {
-          "study_id": 142,
-          "study_title": "심리학 + AI 통합 세미나",
-          "study_topic": "AI+심리학",
-          "current_participants": 3,
-          "max_participants": 6,
-          "start_date": "2025-09-15",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 141,
-          "study_title": "UX 감정 테스트 실습반",
-          "study_topic": "UX 디자인",
-          "current_participants": 2,
-          "max_participants": 6,
-          "start_date": "2025-10-05",
-          "end_date": "2025-12-25",
-          "status": "모집중"
-        },
-        {
-          "study_id": 140,
-          "study_title": "AI 서비스 데이터 구축",
-          "study_topic": "데이터 엔지니어링",
-          "current_participants": 5,
-          "max_participants": 9,
-          "start_date": "2025-09-10",
-          "end_date": "2025-12-15",
-          "status": "모집중"
-        },
-        {
-          "study_id": 139,
-          "study_title": "AI 감정 데이터 수집 프로젝트",
-          "study_topic": "AI",
-          "current_participants": 4,
-          "max_participants": 7,
-          "start_date": "2025-09-20",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 138,
-          "study_title": "AI 이미지 생성 모델 구현",
-          "study_topic": "AI",
-          "current_participants": 3,
-          "max_participants": 6,
-          "start_date": "2025-09-25",
-          "end_date": "2025-12-20",
-          "status": "모집중"
-        },
-        {
-          "study_id": 137,
-          "study_title": "UX 감정 지도 시각화 프로젝트",
-          "study_topic": "UX 기획",
-          "current_participants": 2,
-          "max_participants": 5,
-          "start_date": "2025-10-10",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 136,
-          "study_title": "AI 데이터 레이블링 자동화",
-          "study_topic": "데이터 엔지니어링",
-          "current_participants": 4,
-          "max_participants": 8,
-          "start_date": "2025-09-15",
-          "end_date": "2025-12-25",
-          "status": "모집중"
-        },
-        {
-          "study_id": 135,
-          "study_title": "AI 감정 음성 데이터 연구반",
-          "study_topic": "AI+언어",
-          "current_participants": 3,
-          "max_participants": 6,
-          "start_date": "2025-09-20",
-          "end_date": "2025-12-20",
-          "status": "모집중"
-        },
-        {
-          "study_id": 134,
-          "study_title": "AI 윤리 프레임워크 연구",
-          "study_topic": "AI+인문",
-          "current_participants": 2,
-          "max_participants": 5,
-          "start_date": "2025-10-01",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 133,
-          "study_title": "AI 창작 콘텐츠 실험실",
-          "study_topic": "AI+예술",
-          "current_participants": 4,
-          "max_participants": 7,
-          "start_date": "2025-09-15",
-          "end_date": "2025-12-25",
-          "status": "모집중"
-        },
-        {
-          "study_id": 132,
-          "study_title": "AI 모델 배포 자동화 실습",
-          "study_topic": "AI",
-          "current_participants": 5,
-          "max_participants": 9,
-          "start_date": "2025-09-10",
-          "end_date": "2025-12-20",
-          "status": "모집중"
-        },
-        {
-          "study_id": 131,
-          "study_title": "AI 기반 감정 인터랙션 UX 연구",
-          "study_topic": "UX 기획",
-          "current_participants": 3,
-          "max_participants": 6,
-          "start_date": "2025-10-05",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 130,
-          "study_title": "딥러닝 모델 서빙 실전반",
-          "study_topic": "AI",
-          "current_participants": 3,
-          "max_participants": 7,
-          "start_date": "2025-10-05",
-          "end_date": "2025-12-25",
-          "status": "모집중"
-        },
-        {
-          "study_id": 129,
-          "study_title": "블록체인 스마트컨트랙트 개발",
-          "study_topic": "블록체인",
-          "current_participants": 4,
-          "max_participants": 8,
-          "start_date": "2025-09-15",
-          "end_date": "2025-12-20",
-          "status": "모집중"
-        },
-        {
-          "study_id": 128,
-          "study_title": "UX 감정 디자인 프로젝트",
-          "study_topic": "UX 디자인",
-          "current_participants": 2,
-          "max_participants": 6,
-          "start_date": "2025-10-10",
-          "end_date": "2025-12-30",
-          "status": "모집중"
-        },
-        {
-          "study_id": 127,
-          "study_title": "IoT 센서 제어 실습반",
-          "study_topic": "IoT",
-          "current_participants": 5,
-          "max_participants": 9,
-          "start_date": "2025-09-10",
-          "end_date": "2025-12-15",
-          "status": "모집중"
-        },
-        {
-          "study_id": 126,
-          "study_title": "데이터 시각화 대시보드 제작",
-          "study_topic": "데이터 분석",
-          "current_participants": 4,
-          "max_participants": 7,
-          "start_date": "2025-09-25",
-          "end_date": "2025-12-10",
-          "status": "모집중"
-        },
-        {
-          "study_id": 125,
-          "study_title": "파이썬 알고리즘 마스터반",
-          "study_topic": "프로그래밍",
-          "current_participants": 6,
-          "max_participants": 10,
-          "start_date": "2025-09-01",
-          "end_date": "2025-11-30",
-          "status": "모집중"
-        },
-        {
-          "study_id": 124,
-          "study_title": "AI 서비스 기획 워크샵",
-          "study_topic": "AI 기획",
-          "current_participants": 3,
-          "max_participants": 6,
-          "start_date": "2025-10-05",
-          "end_date": "2025-12-20",
-          "status": "모집중"
-        },
-        {
-          "study_id": 123,
-          "study_title": "게임 개발 프로젝트 스터디",
-          "study_topic": "게임 개발",
-          "current_participants": 5,
-          "max_participants": 8,
-          "start_date": "2025-09-20",
-          "end_date": "2025-12-31",
-          "status": "모집중"
-        },
-        {
-          "study_id": 122,
-          "study_title": "R로 하는 통계 분석",
-          "study_topic": "데이터 분석",
-          "current_participants": 4,
-          "max_participants": 8,
-          "start_date": "2025-09-15",
-          "end_date": "2025-12-10",
-          "status": "모집중"
-        },
-        {
-          "study_id": 121,
-          "study_title": "정보보안 기초 스터디",
-          "study_topic": "보안",
-          "current_participants": 2,
-          "max_participants": 6,
-          "start_date": "2025-09-10",
-          "end_date": "2025-11-30",
-          "status": "모집중"
-        },
-        {
-          "study_id": 120,
-          "study_title": "데이터베이스 설계 실습반",
-          "study_topic": "데이터베이스",
-          "current_participants": 6,
           "max_participants": 10,
           "start_date": "2025-09-01",
           "end_date": "2025-12-01",
           "status": "모집중"
         },
         {
-          "study_id": 119,
-          "study_title": "영화 속 인물 심리 분석 스터디",
-          "study_topic": "심리학",
-          "current_participants": 3,
-          "max_participants": 5,
-          "start_date": "2025-10-01",
+          "study_id": 202,
+          "study_title": "SQLD 자격증 준비반",
+          "study_topic": "자격증",
+          "current_participants": 7,
+          "max_participants": 8,
+          "start_date": "2025-08-20",
+          "end_date": "2025-10-05",
+          "status": "모집중"
+        },
+        {
+          "study_id": 203,
+          "study_title": "컴퓨터구조 완전 정복반",
+          "study_topic": "전공",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-09-10",
           "end_date": "2025-12-10",
           "status": "모집중"
         },
         {
-          "study_id": 118,
-          "study_title": "디지털 금융 서비스 UX 분석",
-          "study_topic": "핀테크",
+          "study_id": 204,
+          "study_title": "토익 900 목표 스터디",
+          "study_topic": "어학",
+          "current_participants": 6,
+          "max_participants": 6,
+          "start_date": "2025-09-01",
+          "end_date": "2025-10-01",
+          "status": "모집완료"
+        },
+        {
+          "study_id": 205,
+          "study_title": "백엔드 알고리즘 심화반",
+          "study_topic": "코딩 테스트",
+          "current_participants": 7,
+          "max_participants": 10,
+          "start_date": "2025-09-15",
+          "end_date": "2025-11-15",
+          "status": "모집중"
+        },
+        {
+          "study_id": 206,
+          "study_title": "UX 기획 케이스 스터디",
+          "study_topic": "기획",
+          "current_participants": 2,
+          "max_participants": 6,
+          "start_date": "2025-09-20",
+          "end_date": "2025-11-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 207,
+          "study_title": "창업 아이디어 브레인스토밍",
+          "study_topic": "창업",
+          "current_participants": 1,
+          "max_participants": 5,
+          "start_date": "2025-10-01",
+          "end_date": "2025-12-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 208,
+          "study_title": "IT 직무 기술 면접 대비반",
+          "study_topic": "면접",
           "current_participants": 4,
+          "max_participants": 6,
+          "start_date": "2025-09-05",
+          "end_date": "2025-10-05",
+          "status": "모집중"
+        },
+        {
+          "study_id": 209,
+          "study_title": "영화 기반 영어 회화 스터디",
+          "study_topic": "어학",
+          "current_participants": 7,
+          "max_participants": 8,
+          "start_date": "2025-09-15",
+          "end_date": "2025-11-15",
+          "status": "모집중"
+        },
+        {
+          "study_id": 210,
+          "study_title": "응용통계 프로젝트 스터디",
+          "study_topic": "전공",
+          "current_participants": 3,
           "max_participants": 7,
+          "start_date": "2025-09-12",
+          "end_date": "2025-11-12",
+          "status": "모집중"
+        },
+        {
+          "study_id": 211,
+          "study_title": "리액트 실전 프로젝트 마스터",
+          "study_topic": "전공",
+          "current_participants": 3,
+          "max_participants": 8,
+          "start_date": "2025-09-10",
+          "end_date": "2025-12-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 212,
+          "study_title": "자료구조 코테 실전 대비반",
+          "study_topic": "코딩 테스트",
+          "current_participants": 8,
+          "max_participants": 10,
+          "start_date": "2025-09-08",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 213,
+          "study_title": "일본어 N4 회화 집중반",
+          "study_topic": "어학",
+          "current_participants": 5,
+          "max_participants": 6,
+          "start_date": "2025-09-02",
+          "end_date": "2025-10-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 214,
+          "study_title": "스프링 백엔드 실무반",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 6,
+          "start_date": "2025-09-10",
+          "end_date": "2025-11-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 215,
+          "study_title": "서비스 기획 포트폴리오 제작반",
+          "study_topic": "기획",
+          "current_participants": 6,
+          "max_participants": 8,
+          "start_date": "2025-09-08",
+          "end_date": "2025-10-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 216,
+          "study_title": "R 통계 분석 입문반",
+          "study_topic": "전공",
+          "current_participants": 2,
+          "max_participants": 6,
+          "start_date": "2025-09-04",
+          "end_date": "2025-11-04",
+          "status": "모집중"
+        },
+        {
+          "study_id": 217,
+          "study_title": "카카오 코테 대비 모의고사반",
+          "study_topic": "코딩 테스트",
+          "current_participants": 9,
+          "max_participants": 10,
+          "start_date": "2025-09-18",
+          "end_date": "2025-10-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 218,
+          "study_title": "머신러닝 기초 개념 정리반",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-09-05",
+          "end_date": "2025-12-05",
+          "status": "모집중"
+        },
+        {
+          "study_id": 219,
+          "study_title": "기업 분석 & 자소서 피드백반",
+          "study_topic": "면접",
+          "current_participants": 5,
+          "max_participants": 6,
+          "start_date": "2025-09-07",
+          "end_date": "2025-10-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 220,
+          "study_title": "IT 직무 인성+기술 면접반",
+          "study_topic": "면접",
+          "current_participants": 5,
+          "max_participants": 6,
+          "start_date": "2025-09-05",
+          "end_date": "2025-10-05",
+          "status": "모집완료"
+        },
+        {
+          "study_id": 120,
+          "study_title": "파이썬 머신러닝 입문반",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 10,
+          "start_date": "2025-09-10",
+          "end_date": "2025-12-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 121,
+          "study_title": "토익 850 달성 스터디",
+          "study_topic": "외국어",
+          "current_participants": 6,
+          "max_participants": 8,
+          "start_date": "2025-10-01",
+          "end_date": "2025-11-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 122,
+          "study_title": "웹 개발 기초 HTML/CSS",
+          "study_topic": "전공",
+          "current_participants": 3,
+          "max_participants": 10,
+          "start_date": "2025-09-05",
+          "end_date": "2025-10-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 123,
+          "study_title": "자바스크립트 심화반",
+          "study_topic": "전공",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-09-15",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 124,
+          "study_title": "React 실무 프로젝트 스터디",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 6,
+          "start_date": "2025-09-20",
+          "end_date": "2025-12-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 125,
+          "study_title": "SQL 고급 분석 스터디",
+          "study_topic": "전공",
+          "current_participants": 2,
+          "max_participants": 8,
+          "start_date": "2025-10-02",
+          "end_date": "2025-12-15",
+          "status": "모집중"
+        },
+        {
+          "study_id": 126,
+          "study_title": "코딩 테스트 알고리즘 중급반",
+          "study_topic": "코딩 테스트",
+          "current_participants": 3,
+          "max_participants": 10,
           "start_date": "2025-09-20",
           "end_date": "2025-12-20",
           "status": "모집중"
         },
         {
-          "study_id": 117,
-          "study_title": "포트폴리오 웹사이트 제작반",
-          "study_topic": "웹 개발",
+          "study_id": 127,
+          "study_title": "데이터 시각화 실전반",
+          "study_topic": "전공",
           "current_participants": 5,
-          "max_participants": 9,
+          "max_participants": 10,
+          "start_date": "2025-09-01",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 128,
+          "study_title": "UXUI 포트폴리오 스터디",
+          "study_topic": "과제",
+          "current_participants": 4,
+          "max_participants": 6,
           "start_date": "2025-09-10",
-          "end_date": "2025-12-31",
+          "end_date": "2025-11-10",
           "status": "모집중"
         },
         {
-          "study_id": 116,
-          "study_title": "AI 윤리와 사회적 책임",
-          "study_topic": "AI+인문",
-          "current_participants": 2,
-          "max_participants": 5,
+          "study_id": 129,
+          "study_title": "JLPT N2 대비 스터디",
+          "study_topic": "외국어",
+          "current_participants": 7,
+          "max_participants": 10,
           "start_date": "2025-10-05",
-          "end_date": "2025-12-25",
+          "end_date": "2025-12-05",
           "status": "모집중"
         },
         {
-          "study_id": 115,
-          "study_title": "자연어처리 논문 구현반",
-          "study_topic": "AI",
+          "study_id": 130,
+          "study_title": "빅데이터 분석기사 실기 대비반",
+          "study_topic": "자격증",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-09-15",
+          "end_date": "2025-12-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 131,
+          "study_title": "CS 기초 이론 스터디",
+          "study_topic": "전공",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-20",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 132,
+          "study_title": "면접 스피치 실전 대비반",
+          "study_topic": "면접",
           "current_participants": 3,
           "max_participants": 6,
+          "start_date": "2025-09-25",
+          "end_date": "2025-11-25",
+          "status": "모집중"
+        },
+        {
+          "study_id": 133,
+          "study_title": "창업 아이디어 기획 스터디",
+          "study_topic": "창업",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-09-10",
+          "end_date": "2025-12-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 134,
+          "study_title": "경제신문 읽기 스터디",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-10-01",
+          "end_date": "2025-11-15",
+          "status": "모집중"
+        },
+        {
+          "study_id": 135,
+          "study_title": "R 데이터 분석 스터디",
+          "study_topic": "전공",
+          "current_participants": 3,
+          "max_participants": 8,
+          "start_date": "2025-09-05",
+          "end_date": "2025-12-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 136,
+          "study_title": "논문 작성 기초반",
+          "study_topic": "논문",
+          "current_participants": 4,
+          "max_participants": 6,
+          "start_date": "2025-09-18",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 137,
+          "study_title": "자료구조 기초 스터디",
+          "study_topic": "전공",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-09-05",
+          "end_date": "2025-11-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 138,
+          "study_title": "영어 회화 실전 스터디",
+          "study_topic": "외국어",
+          "current_participants": 6,
+          "max_participants": 8,
+          "start_date": "2025-09-25",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 139,
+          "study_title": "React Native 앱 개발반",
+          "study_topic": "전공",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-10-02",
+          "end_date": "2025-12-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 140,
+          "study_title": "파이썬 크롤링 자동화 스터디",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 8,
           "start_date": "2025-09-15",
+          "end_date": "2025-11-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 141,
+          "study_title": "알고리즘 실전 문제풀이반",
+          "study_topic": "코딩 테스트",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-10",
+          "end_date": "2025-12-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 142,
+          "study_title": "해커톤 준비 개발 스터디",
+          "study_topic": "전공",
+          "current_participants": 3,
+          "max_participants": 6,
+          "start_date": "2025-09-18",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 143,
+          "study_title": "토플 95+ 목표 스터디",
+          "study_topic": "외국어",
+          "current_participants": 7,
+          "max_participants": 10,
+          "start_date": "2025-10-01",
+          "end_date": "2025-12-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 144,
+          "study_title": "피그마 UI 컴포넌트 제작반",
+          "study_topic": "과제",
+          "current_participants": 5,
+          "max_participants": 8,
+          "start_date": "2025-09-25",
+          "end_date": "2025-11-25",
+          "status": "모집중"
+        },
+        {
+          "study_id": 145,
+          "study_title": "React 상태관리 심화반",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 10,
+          "start_date": "2025-10-05",
           "end_date": "2025-12-15",
           "status": "모집중"
         },
         {
-          "study_id": 114,
-          "study_title": "프론트엔드 성능 최적화 실전반",
-          "study_topic": "웹 개발",
-          "current_participants": 4,
-          "max_participants": 8,
-          "start_date": "2025-09-25",
-          "end_date": "2025-12-31",
+          "study_id": 146,
+          "study_title": "컴퓨터구조 기초 스터디",
+          "study_topic": "전공",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-08",
+          "end_date": "2025-11-05",
           "status": "모집중"
         },
         {
-          "study_id": 113,
-          "study_title": "UX 글쓰기와 감정 표현 연구",
-          "study_topic": "UX 기획",
-          "current_participants": 2,
+          "study_id": 147,
+          "study_title": "경영학 입문 스터디",
+          "study_topic": "전공",
+          "current_participants": 5,
+          "max_participants": 8,
+          "start_date": "2025-09-12",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 148,
+          "study_title": "영어 스피킹 실전 모임",
+          "study_topic": "외국어",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-09-28",
+          "end_date": "2025-12-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 149,
+          "study_title": "자료구조 중급 스터디",
+          "study_topic": "전공",
+          "current_participants": 3,
+          "max_participants": 10,
+          "start_date": "2025-10-02",
+          "end_date": "2025-12-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 150,
+          "study_title": "AI 서비스 기획 스터디",
+          "study_topic": "창업",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-20",
+          "end_date": "2025-12-05",
+          "status": "모집중"
+        },
+        {
+          "study_id": 151,
+          "study_title": "프로덕트 매니저 기본반",
+          "study_topic": "창업",
+          "current_participants": 5,
           "max_participants": 6,
+          "start_date": "2025-10-05",
+          "end_date": "2025-12-15",
+          "status": "모집중"
+        },
+        {
+          "study_id": 152,
+          "study_title": "경제지 분석 스터디",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-09-01",
+          "end_date": "2025-11-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 153,
+          "study_title": "면접 포트폴리오 첨삭반",
+          "study_topic": "면접",
+          "current_participants": 3,
+          "max_participants": 6,
+          "start_date": "2025-09-25",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 154,
+          "study_title": "정보보안 기초 스터디",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 10,
+          "start_date": "2025-09-18",
+          "end_date": "2025-12-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 155,
+          "study_title": "머신러닝 논문 리뷰 모임",
+          "study_topic": "논문",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-10-01",
+          "end_date": "2025-12-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 156,
+          "study_title": "시각 디자인 기초 스터디",
+          "study_topic": "과제",
+          "current_participants": 5,
+          "max_participants": 8,
+          "start_date": "2025-09-30",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 157,
+          "study_title": "프랑스어 기초 스터디",
+          "study_topic": "외국어",
+          "current_participants": 3,
+          "max_participants": 6,
+          "start_date": "2025-09-22",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 158,
+          "study_title": "리눅스 운영 실습 스터디",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-09-10",
+          "end_date": "2025-12-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 159,
+          "study_title": "파이썬 알고리즘 최적화반",
+          "study_topic": "전공",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-10-03",
+          "end_date": "2025-12-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 160,
+          "study_title": "AI 윤리와 모델 편향 분석",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-09-20",
+          "end_date": "2025-11-25",
+          "status": "모집중"
+        },
+        {
+          "study_id": 161,
+          "study_title": "딥러닝 모델 구현 스터디",
+          "study_topic": "전공",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-10",
+          "end_date": "2025-12-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 162,
+          "study_title": "영어 뉴스 리딩 스터디",
+          "study_topic": "외국어",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-09-05",
+          "end_date": "2025-10-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 163,
+          "study_title": "리액트 네이티브 앱 제작반",
+          "study_topic": "전공",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-09-25",
+          "end_date": "2025-12-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 164,
+          "study_title": "토익 스피킹 레벨6 목표반",
+          "study_topic": "외국어",
+          "current_participants": 6,
+          "max_participants": 8,
+          "start_date": "2025-10-01",
+          "end_date": "2025-11-25",
+          "status": "모집중"
+        },
+        {
+          "study_id": 165,
+          "study_title": "UX 글쓰기 & 마이크로카피",
+          "study_topic": "과제",
+          "current_participants": 3,
+          "max_participants": 6,
+          "start_date": "2025-09-15",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 166,
+          "study_title": "React + Firebase 실전반",
+          "study_topic": "전공",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-18",
+          "end_date": "2025-12-15",
+          "status": "모집중"
+        },
+        {
+          "study_id": 167,
+          "study_title": "디지털 마케팅 실전 스터디",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-10-02",
+          "end_date": "2025-12-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 168,
+          "study_title": "JLPT N3 기초 문법반",
+          "study_topic": "외국어",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-09-22",
+          "end_date": "2025-11-25",
+          "status": "모집중"
+        },
+        {
+          "study_id": 169,
+          "study_title": "데이터베이스 설계 스터디",
+          "study_topic": "전공",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-08",
+          "end_date": "2025-11-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 170,
+          "study_title": "포트폴리오 발표 스터디",
+          "study_topic": "면접",
+          "current_participants": 4,
+          "max_participants": 6,
+          "start_date": "2025-09-29",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 171,
+          "study_title": "캡스톤 디자인 연구 기획반",
+          "study_topic": "과제",
+          "current_participants": 6,
+          "max_participants": 8,
+          "start_date": "2025-10-05",
+          "end_date": "2025-12-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 172,
+          "study_title": "바이오AI 개론 스터디",
+          "study_topic": "전공",
+          "current_participants": 3,
+          "max_participants": 6,
+          "start_date": "2025-09-12",
+          "end_date": "2025-11-12",
+          "status": "모집중"
+        },
+        {
+          "study_id": 173,
+          "study_title": "창업 브랜딩 기초반",
+          "study_topic": "창업",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-09-18",
+          "end_date": "2025-12-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 174,
+          "study_title": "금융 데이터 분석 실전반",
+          "study_topic": "전공",
+          "current_participants": 7,
+          "max_participants": 10,
+          "start_date": "2025-09-10",
+          "end_date": "2025-12-05",
+          "status": "모집중"
+        },
+        {
+          "study_id": 175,
+          "study_title": "논문 요약 & 리뷰 스터디",
+          "study_topic": "논문",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-09-28",
+          "end_date": "2025-11-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 176,
+          "study_title": "리눅스 네트워크 프로그래밍",
+          "study_topic": "전공",
+          "current_participants": 3,
+          "max_participants": 6,
+          "start_date": "2025-09-05",
+          "end_date": "2025-12-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 177,
+          "study_title": "영어 말하기 즉흥 토론반",
+          "study_topic": "외국어",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-22",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 178,
+          "study_title": "데이터 엔지니어링 입문반",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-09-17",
+          "end_date": "2025-12-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 179,
+          "study_title": "React 포트폴리오 완성반",
+          "study_topic": "전공",
+          "current_participants": 5,
+          "max_participants": 10,
           "start_date": "2025-10-01",
           "end_date": "2025-12-20",
           "status": "모집중"
         },
         {
-          "study_id": 112,
-          "study_title": "딥러닝 모델 튜닝 실습",
-          "study_topic": "AI",
+          "study_id": 180,
+          "study_title": "백엔드 REST API 기초반",
+          "study_topic": "전공",
           "current_participants": 4,
           "max_participants": 8,
+          "start_date": "2025-09-12",
+          "end_date": "2025-11-28",
+          "status": "모집중"
+        },
+        {
+          "study_id": 181,
+          "study_title": "HTML/CSS 웹 퍼블리싱 스터디",
+          "study_topic": "전공",
+          "current_participants": 7,
+          "max_participants": 10,
+          "start_date": "2025-09-07",
+          "end_date": "2025-11-15",
+          "status": "모집중"
+        },
+        {
+          "study_id": 182,
+          "study_title": "영어 일상회화 실전반",
+          "study_topic": "외국어",
+          "current_participants": 5,
+          "max_participants": 8,
+          "start_date": "2025-09-22",
+          "end_date": "2025-11-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 183,
+          "study_title": "리눅스 명령어 마스터 스터디",
+          "study_topic": "전공",
+          "current_participants": 3,
+          "max_participants": 6,
+          "start_date": "2025-09-02",
+          "end_date": "2025-11-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 184,
+          "study_title": "면접 인성 질문 대비반",
+          "study_topic": "면접",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-10-01",
+          "end_date": "2025-11-25",
+          "status": "모집중"
+        },
+        {
+          "study_id": 185,
+          "study_title": "UI/UX 사용자 흐름 설계반",
+          "study_topic": "과제",
+          "current_participants": 5,
+          "max_participants": 8,
+          "start_date": "2025-09-18",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 186,
+          "study_title": "Algorithm Graph 실전풀이반",
+          "study_topic": "코딩 테스트",
+          "current_participants": 4,
+          "max_participants": 10,
           "start_date": "2025-09-15",
           "end_date": "2025-12-15",
           "status": "모집중"
         },
         {
-          "study_id": 111,
-          "study_title": "네트워크 해킹 & 보안 스터디",
-          "study_topic": "보안",
-          "current_participants": 5,
-          "max_participants": 7,
+          "study_id": 187,
+          "study_title": "스페인어 기초 스터디",
+          "study_topic": "외국어",
+          "current_participants": 3,
+          "max_participants": 6,
           "start_date": "2025-09-10",
-          "end_date": "2025-11-30",
+          "end_date": "2025-11-12",
+          "status": "모집중"
+        },
+        {
+          "study_id": 188,
+          "study_title": "컴퓨터 네트워크 입문반",
+          "study_topic": "전공",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-09",
+          "end_date": "2025-11-25",
+          "status": "모집중"
+        },
+        {
+          "study_id": 189,
+          "study_title": "창업 아이디어 발굴 워크숍",
+          "study_topic": "창업",
+          "current_participants": 5,
+          "max_participants": 8,
+          "start_date": "2025-09-27",
+          "end_date": "2025-12-02",
+          "status": "모집중"
+        },
+        {
+          "study_id": 190,
+          "study_title": "딥러닝으로 만드는 이미지 분류기",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 6,
+          "start_date": "2025-10-03",
+          "end_date": "2025-12-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 191,
+          "study_title": "전공 기말 대비 스터디",
+          "study_topic": "전공",
+          "current_participants": 7,
+          "max_participants": 10,
+          "start_date": "2025-10-01",
+          "end_date": "2025-12-18",
+          "status": "모집중"
+        },
+        {
+          "study_id": 192,
+          "study_title": "면접 코딩테스트 준비반",
+          "study_topic": "코딩 테스트",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-23",
+          "end_date": "2025-12-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 193,
+          "study_title": "포토샵 이미지 편집 기초",
+          "study_topic": "과제",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-09-17",
+          "end_date": "2025-11-25",
+          "status": "모집중"
+        },
+        {
+          "study_id": 194,
+          "study_title": "프론트엔드 프로젝트 완주반",
+          "study_topic": "전공",
+          "current_participants": 8,
+          "max_participants": 12,
+          "start_date": "2025-09-20",
+          "end_date": "2025-12-20",
+          "status": "모집중"
+        },
+        {
+          "study_id": 195,
+          "study_title": "디자인 포트폴리오 제작반",
+          "study_topic": "과제",
+          "current_participants": 3,
+          "max_participants": 6,
+          "start_date": "2025-10-04",
+          "end_date": "2025-12-05",
+          "status": "모집중"
+        },
+        {
+          "study_id": 196,
+          "study_title": "리눅스 서버 구축 실습반",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 8,
+          "start_date": "2025-09-13",
+          "end_date": "2025-12-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 197,
+          "study_title": "일본어 회화 중급반",
+          "study_topic": "외국어",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-28",
+          "end_date": "2025-12-05",
+          "status": "모집중"
+        },
+        {
+          "study_id": 198,
+          "study_title": "데이터 분석 프로젝트반",
+          "study_topic": "전공",
+          "current_participants": 5,
+          "max_participants": 8,
+          "start_date": "2025-10-01",
+          "end_date": "2025-12-15",
+          "status": "모집중"
+        },
+        {
+          "study_id": 199,
+          "study_title": "JS 비동기 로직 마스터 스터디",
+          "study_topic": "전공",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-21",
+          "end_date": "2025-12-08",
           "status": "모집중"
         }
       ]
     }
   },
-
   "study_details": [
     {
-      "id": 110,
+      "id": "201",
+      "data": {
+        "study_id": 201,
+        "study_title": "파이썬 데이터 분석 초급반",
+        "study_topic": "전공",
+        "description": "Pandas, Numpy 등 기본 문법부터 데이터 전처리 실습까지 진행합니다.",
+        "max_participants": 10,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "공학관 301호",
+        "start_date": "2025-09-01",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/python201",
+        "organizer": {
+          "organizer_id": 41,
+          "organizer_name": "이서준"
+        }
+      }
+    },
+    {
+      "id": "202",
+      "data": {
+        "study_id": 202,
+        "study_title": "웹 서비스 UI/UX 과제 스터디",
+        "study_topic": "과제",
+        "description": "피그마, 와이어프레임, 디자인 토큰 등 실무 UI/UX 과제를 수행합니다.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "디자인관 102호",
+        "start_date": "2025-09-05",
+        "end_date": "2025-11-25",
+        "chat_link": "https://open.kakao.com/o/ux202",
+        "organizer": {
+          "organizer_id": 52,
+          "organizer_name": "최유리"
+        }
+      }
+    },
+    {
+      "id": "120",
+      "data": {
+        "study_id": 120,
+        "study_title": "파이썬 머신러닝 입문반",
+        "study_topic": "전공",
+        "description": "머신러닝 핵심 개념과 사이킷런 실습을 중심으로 진행합니다.",
+        "max_participants": 10,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "IT관 102호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/ml120",
+        "organizer": {
+          "organizer_id": 51,
+          "organizer_name": "김도현"
+        }
+      }
+    },
+    {
+      "id": "121",
+      "data": {
+        "study_id": 121,
+        "study_title": "토익 850 달성 스터디",
+        "study_topic": "외국어",
+        "description": "LC·RC 기출 분석과 실전 모의고사 기반 학습을 진행합니다.",
+        "max_participants": 8,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "언어교육원 203호",
+        "start_date": "2025-10-01",
+        "end_date": "2025-11-01",
+        "chat_link": "https://open.kakao.com/o/toeic121",
+        "organizer": {
+          "organizer_id": 18,
+          "organizer_name": "박지원"
+        }
+      }
+    },
+    {
+      "id": "122",
+      "data": {
+        "study_id": 122,
+        "study_title": "웹 개발 기초 HTML/CSS",
+        "study_topic": "전공",
+        "description": "HTML 태그와 CSS 레이아웃을 실습 위주로 배웁니다.",
+        "max_participants": 10,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "공학관 202호",
+        "start_date": "2025-09-05",
+        "end_date": "2025-10-30",
+        "chat_link": "https://open.kakao.com/o/html122",
+        "organizer": {
+          "organizer_id": 32,
+          "organizer_name": "최윤서"
+        }
+      }
+    },
+    {
+      "id": "123",
+      "data": {
+        "study_id": 123,
+        "study_title": "자바스크립트 심화반",
+        "study_topic": "전공",
+        "description": "ES6 문법, 비동기 처리, fetch API까지 실무 기반으로 학습합니다.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "IT관 207호",
+        "start_date": "2025-09-15",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/js123",
+        "organizer": {
+          "organizer_id": 27,
+          "organizer_name": "문성우"
+        }
+      }
+    },
+    {
+      "id": "124",
+      "data": {
+        "study_id": 124,
+        "study_title": "React 실무 프로젝트 스터디",
+        "study_topic": "전공",
+        "description": "컴포넌트 구조화, API 연동, 라우터 기반 프로젝트를 진행합니다.",
+        "max_participants": 6,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "IT관 205호",
+        "start_date": "2025-09-20",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/react124",
+        "organizer": {
+          "organizer_id": 42,
+          "organizer_name": "정예린"
+        }
+      }
+    },
+    {
+      "id": "125",
+      "data": {
+        "study_id": 125,
+        "study_title": "SQL 고급 분석 스터디",
+        "study_topic": "전공",
+        "description": "서브쿼리·윈도우 함수·분석함수 등 고급 SQL을 학습합니다.",
+        "max_participants": 8,
+        "current_participants": 2,
+        "status": "모집중",
+        "place": "경제관 105호",
+        "start_date": "2025-10-02",
+        "end_date": "2025-12-15",
+        "chat_link": "https://open.kakao.com/o/sql125",
+        "organizer": {
+          "organizer_id": 64,
+          "organizer_name": "강예진"
+        }
+      }
+    },
+    {
+      "id": "126",
+      "data": {
+        "study_id": 126,
+        "study_title": "코딩 테스트 알고리즘 중급반",
+        "study_topic": "코딩 테스트",
+        "description": "DFS/BFS, 백트래킹, 그리디 등 실전 문제 풀이 중심.",
+        "max_participants": 10,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "공학관 210호",
+        "start_date": "2025-09-20",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/algo126",
+        "organizer": {
+          "organizer_id": 51,
+          "organizer_name": "김성훈"
+        }
+      }
+    },
+    {
+      "id": "127",
+      "data": {
+        "study_id": 127,
+        "study_title": "데이터 시각화 실전반",
+        "study_topic": "전공",
+        "description": "Chart.js와 D3.js를 활용한 데이터 시각화 실습.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "IT관 301호",
+        "start_date": "2025-09-01",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/datav127",
+        "organizer": {
+          "organizer_id": 73,
+          "organizer_name": "오채린"
+        }
+      }
+    },
+    {
+      "id": "128",
+      "data": {
+        "study_id": 128,
+        "study_title": "UXUI 포트폴리오 스터디",
+        "study_topic": "과제",
+        "description": "Figma를 기반으로 개인 포트폴리오 제작을 진행합니다.",
+        "max_participants": 6,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "디자인관 102호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-11-10",
+        "chat_link": "https://open.kakao.com/o/ux128",
+        "organizer": {
+          "organizer_id": 44,
+          "organizer_name": "최수연"
+        }
+      }
+    },
+    {
+      "id": "129",
+      "data": {
+        "study_id": 129,
+        "study_title": "JLPT N2 대비 스터디",
+        "study_topic": "외국어",
+        "description": "문법 정리, 독해, 청해를 중심으로 N2 실전 대비.",
+        "max_participants": 10,
+        "current_participants": 7,
+        "status": "모집중",
+        "place": "언어교육원 305호",
+        "start_date": "2025-10-05",
+        "end_date": "2025-12-05",
+        "chat_link": "https://open.kakao.com/o/jlpt129",
+        "organizer": {
+          "organizer_id": 35,
+          "organizer_name": "김나래"
+        }
+      }
+    },
+    {
+      "id": "130",
+      "data": {
+        "study_id": 130,
+        "study_title": "빅데이터 분석기사 실기 대비반",
+        "study_topic": "자격증",
+        "description": "실기 중심 문제 풀이를 통해 실전 감각을 높입니다.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "IT관 110호",
+        "start_date": "2025-09-15",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/bigdata130",
+        "organizer": {
+          "organizer_id": 99,
+          "organizer_name": "윤현지"
+        }
+      }
+    },
+    {
+      "id": "131",
+      "data": {
+        "study_id": 131,
+        "study_title": "CS 기초 이론 스터디",
+        "study_topic": "전공",
+        "description": "운영체제, 네트워크, DB 기본 이론을 학습합니다.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "공학관 205호",
+        "start_date": "2025-09-20",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/cs131",
+        "organizer": {
+          "organizer_id": 11,
+          "organizer_name": "박성현"
+        }
+      }
+    },
+    {
+      "id": "132",
+      "data": {
+        "study_id": 132,
+        "study_title": "면접 스피치 실전 대비반",
+        "study_topic": "면접",
+        "description": "자기소개서 기반 1:1 모의면접 및 스피치 훈련.",
+        "max_participants": 6,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "취창업지원센터",
+        "start_date": "2025-09-25",
+        "end_date": "2025-11-25",
+        "chat_link": "https://open.kakao.com/o/inter132",
+        "organizer": {
+          "organizer_id": 24,
+          "organizer_name": "장세미"
+        }
+      }
+    },
+    {
+      "id": "133",
+      "data": {
+        "study_id": 133,
+        "study_title": "창업 아이디어 기획 스터디",
+        "study_topic": "창업",
+        "description": "사용자 리서치, BM 기획, 시장조사를 기반으로 창업 아이디어를 다듬습니다.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "창업보육센터 101호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/start133",
+        "organizer": {
+          "organizer_id": 65,
+          "organizer_name": "조예원"
+        }
+      }
+    },
+    {
+      "id": "134",
+      "data": {
+        "study_id": 134,
+        "study_title": "경제신문 읽기 스터디",
+        "study_topic": "전공",
+        "description": "매일 주요 경제 기사 핵심 정리 및 발표를 진행합니다.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "경제관 202호",
+        "start_date": "2025-10-01",
+        "end_date": "2025-11-15",
+        "chat_link": "https://open.kakao.com/o/econ134",
+        "organizer": {
+          "organizer_id": 38,
+          "organizer_name": "송다영"
+        }
+      }
+    },
+    {
+      "id": "135",
+      "data": {
+        "study_id": 135,
+        "study_title": "R 데이터 분석 스터디",
+        "study_topic": "전공",
+        "description": "R 기본 문법부터 dplyr, ggplot2까지 실습합니다.",
+        "max_participants": 8,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "IT관 107호",
+        "start_date": "2025-09-05",
+        "end_date": "2025-12-10",
+        "chat_link": "https://open.kakao.com/o/r135",
+        "organizer": {
+          "organizer_id": 88,
+          "organizer_name": "이유정"
+        }
+      }
+    },
+    {
+      "id": "136",
+      "data": {
+        "study_id": 136,
+        "study_title": "논문 작성 기초반",
+        "study_topic": "논문",
+        "description": "논문 구성요소 분석, 인용법, 글쓰기 기초 훈련을 진행합니다.",
+        "max_participants": 6,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "인문관 105호",
+        "start_date": "2025-09-18",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/thesis136",
+        "organizer": {
+          "organizer_id": 59,
+          "organizer_name": "정유나"
+        }
+      }
+    },
+    {
+      "id": "137",
+      "data": {
+        "study_id": 137,
+        "study_title": "자료구조 기초 스터디",
+        "study_topic": "전공",
+        "description": "스택, 큐, 트리, 그래프 등 자료구조 기초를 학습합니다.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "공학관 102호",
+        "start_date": "2025-09-05",
+        "end_date": "2025-11-01",
+        "chat_link": "https://open.kakao.com/o/ds137",
+        "organizer": {
+          "organizer_id": 33,
+          "organizer_name": "한유림"
+        }
+      }
+    },
+    {
+      "id": "138",
+      "data": {
+        "study_id": 138,
+        "study_title": "영어 회화 실전 스터디",
+        "study_topic": "외국어",
+        "description": "일상 회화·토론·실전 인터뷰 형식으로 진행합니다.",
+        "max_participants": 8,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "언어교육원 203호",
+        "start_date": "2025-09-25",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/eng138",
+        "organizer": {
+          "organizer_id": 40,
+          "organizer_name": "이지수"
+        }
+      }
+    },
+    {
+      "id": "139",
+      "data": {
+        "study_id": 139,
+        "study_title": "React Native 앱 개발반",
+        "study_topic": "전공",
+        "description": "React Native와 Expo를 활용해 모바일 앱을 제작합니다.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "IT관 205호",
+        "start_date": "2025-10-02",
+        "end_date": "2025-12-10",
+        "chat_link": "https://open.kakao.com/o/rn139",
+        "organizer": {
+          "organizer_id": 21,
+          "organizer_name": "전지훈"
+        }
+      }
+    },
+    {
+      "id": "203",
+      "data": {
+        "study_id": 203,
+        "study_title": "논문 연구 설계 기초반",
+        "study_topic": "논문",
+        "description": "연구 질문·가설 설정부터 논문 구조 잡기까지 함께 작성합니다.",
+        "max_participants": 8,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "도서관 세미나실 A",
+        "start_date": "2025-08-20",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/paper203",
+        "organizer": {
+          "organizer_id": 48,
+          "organizer_name": "한지민"
+        }
+      }
+    },
+    {
+      "id": "204",
+      "data": {
+        "study_id": 204,
+        "study_title": "대기업 실무 면접 대비반",
+        "study_topic": "면접",
+        "description": "삼성·LG·네이버 등 주요 대기업 기출 기반 실전 면접 스터디입니다.",
+        "max_participants": 6,
+        "current_participants": 5,
+        "status": "모집완료",
+        "place": "학생회관 204호",
+        "start_date": "2025-10-01",
+        "end_date": "2025-10-30",
+        "chat_link": "https://open.kakao.com/o/interview204",
+        "organizer": {
+          "organizer_id": 30,
+          "organizer_name": "박민수"
+        }
+      }
+    },
+    {
+      "id": "205",
+      "data": {
+        "study_id": 205,
+        "study_title": "SQLD 자격증 문제풀이 스터디",
+        "study_topic": "자격증",
+        "description": "SQLD 기출·실전 문제 풀이 중심의 집중 대비반입니다.",
+        "max_participants": 10,
+        "current_participants": 7,
+        "status": "모집중",
+        "place": "경제관 205호",
+        "start_date": "2025-08-10",
+        "end_date": "2025-10-30",
+        "chat_link": "https://open.kakao.com/o/sqld205",
+        "organizer": {
+          "organizer_id": 55,
+          "organizer_name": "장하늘"
+        }
+      }
+    },
+    {
+      "id": "206",
+      "data": {
+        "study_id": 206,
+        "study_title": "캡스톤 공모전 실전 대비반",
+        "study_topic": "공모전",
+        "description": "캡스톤 공모전 제출용 프로젝트 기획부터 발표까지 실전형 스터디입니다.",
+        "max_participants": 8,
+        "current_participants": 8,
+        "status": "모집완료",
+        "place": "공학관 214호",
+        "start_date": "2025-07-15",
+        "end_date": "2025-09-20",
+        "chat_link": "https://open.kakao.com/o/cap206",
+        "organizer": {
+          "organizer_id": 47,
+          "organizer_name": "서민규"
+        }
+      }
+    },
+    {
+      "id": "207",
+      "data": {
+        "study_id": 207,
+        "study_title": "스타트업 비즈니스 모델 워크숍",
+        "study_topic": "창업",
+        "description": "창업 아이디어를 비즈니스 모델로 구체화하는 실전 창업 스터디입니다.",
+        "max_participants": 6,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "사회관 107호",
+        "start_date": "2025-09-20",
+        "end_date": "2025-12-10",
+        "chat_link": "https://open.kakao.com/o/start207",
+        "organizer": {
+          "organizer_id": 59,
+          "organizer_name": "유진"
+        }
+      }
+    },
+    {
+      "id": "208",
+      "data": {
+        "study_id": 208,
+        "study_title": "토익 850+ 집중반",
+        "study_topic": "외국어",
+        "description": "LC·RC 집중 문제풀이로 단기간 점수 상승을 목표로 합니다.",
+        "max_participants": 6,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "인문관 202호",
+        "start_date": "2025-09-01",
+        "end_date": "2025-10-15",
+        "chat_link": "https://open.kakao.com/o/toeic208",
+        "organizer": {
+          "organizer_id": 46,
+          "organizer_name": "김소희"
+        }
+      }
+    },
+    {
+      "id": "209",
+      "data": {
+        "study_id": 209,
+        "study_title": "네트워크 기초 초급반",
+        "study_topic": "전공",
+        "description": "OSI 7계층, TCP/IP 등 네트워크 기본 이론을 쉽게 정리합니다.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "공학관 302호",
+        "start_date": "2025-10-05",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/net209",
+        "organizer": {
+          "organizer_id": 50,
+          "organizer_name": "정준호"
+        }
+      }
+    },
+    {
+      "id": "210",
+      "data": {
+        "study_id": 210,
+        "study_title": "반응형 웹 과제 수행 스터디",
+        "study_topic": "과제",
+        "description": "HTML/CSS/JS로 반응형 웹페이지를 완성하는 과제 스터디입니다.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "미디어관 B202",
+        "start_date": "2025-09-03",
+        "end_date": "2025-11-03",
+        "chat_link": "https://open.kakao.com/o/web210",
+        "organizer": {
+          "organizer_id": 32,
+          "organizer_name": "배도윤"
+        }
+      }
+    },
+    {
+      "id": "211",
+      "data": {
+        "study_id": 211,
+        "study_title": "논문 분석 및 리뷰 스터디",
+        "study_topic": "논문",
+        "description": "전공 논문을 읽고 분석하며 리뷰를 작성하는 스터디입니다.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "도서관 그룹룸 3",
+        "start_date": "2025-09-05",
+        "end_date": "2025-12-15",
+        "chat_link": "https://open.kakao.com/o/review211",
+        "organizer": {
+          "organizer_id": 63,
+          "organizer_name": "이하늘"
+        }
+      }
+    },
+    {
+      "id": "212",
+      "data": {
+        "study_id": 212,
+        "study_title": "AI 기업 면접 대비 실전반",
+        "study_topic": "면접",
+        "description": "코딩면접·기술면접·CS 질문까지 전반적인 AI 직무 면접 대비반.",
+        "max_participants": 5,
+        "current_participants": 4,
+        "status": "모집완료",
+        "place": "IT관 108호",
+        "start_date": "2025-09-15",
+        "end_date": "2025-10-15",
+        "chat_link": "https://open.kakao.com/o/ai212",
+        "organizer": {
+          "organizer_id": 43,
+          "organizer_name": "정하린"
+        }
+      }
+    },
+    {
+      "id": "213",
+      "data": {
+        "study_id": 213,
+        "study_title": "ADsP 기출 분석 스터디",
+        "study_topic": "자격증",
+        "description": "ADsP 필기 핵심 개념·기출문제 풀이 집중반입니다.",
+        "max_participants": 10,
+        "current_participants": 8,
+        "status": "모집중",
+        "place": "경제관 202호",
+        "start_date": "2025-08-10",
+        "end_date": "2025-11-01",
+        "chat_link": "https://open.kakao.com/o/adsp213",
+        "organizer": {
+          "organizer_id": 60,
+          "organizer_name": "김도현"
+        }
+      }
+    },
+    {
+      "id": "214",
+      "data": {
+        "study_id": 214,
+        "study_title": "UX/UI 공모전 대비 팀",
+        "study_topic": "공모전",
+        "description": "서비스 기획, 디자인, 발표까지 공모전 준비 전 과정을 수행합니다.",
+        "max_participants": 6,
+        "current_participants": 6,
+        "status": "모집완료",
+        "place": "미디어관 305호",
+        "start_date": "2025-08-01",
+        "end_date": "2025-09-10",
+        "chat_link": "https://open.kakao.com/o/ux214",
+        "organizer": {
+          "organizer_id": 40,
+          "organizer_name": "최민아"
+        }
+      }
+    },
+    {
+      "id": "215",
+      "data": {
+        "study_id": 215,
+        "study_title": "스타트업 MVP 프로토타입 제작반",
+        "study_topic": "창업",
+        "description": "아이디어를 실제 MVP 단위의 프로토타입으로 제작합니다.",
+        "max_participants": 6,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "창업보육센터 102호",
+        "start_date": "2025-09-01",
+        "end_date": "2025-12-30",
+        "chat_link": "https://open.kakao.com/o/mvp215",
+        "organizer": {
+          "organizer_id": 64,
+          "organizer_name": "유정"
+        }
+      }
+    },
+    {
+      "id": "216",
+      "data": {
+        "study_id": 216,
+        "study_title": "HSK 5급 대비반",
+        "study_topic": "외국어",
+        "description": "어휘, 문법, 듣기 등 HSK 5급 전영역을 대비합니다.",
+        "max_participants": 6,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "인문관 305호",
+        "start_date": "2025-10-01",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/hsk216",
+        "organizer": {
+          "organizer_id": 57,
+          "organizer_name": "정예린"
+        }
+      }
+    },
+    {
+      "id": "217",
+      "data": {
+        "study_id": 217,
+        "study_title": "React 실무 전공 스터디",
+        "study_topic": "전공",
+        "description": "React Hook, Router, Axios, TanStack Query 등 실무 중심 구성.",
+        "max_participants": 10,
+        "current_participants": 7,
+        "status": "모집중",
+        "place": "공학관 207호",
+        "start_date": "2025-10-01",
+        "end_date": "2025-12-25",
+        "chat_link": "https://open.kakao.com/o/react217",
+        "organizer": {
+          "organizer_id": 45,
+          "organizer_name": "윤서진"
+        }
+      }
+    },
+    {
+      "id": "218",
+      "data": {
+        "study_id": 218,
+        "study_title": "DB 설계 과제 수행팀",
+        "study_topic": "과제",
+        "description": "ERD 설계부터 스키마 작성, 관계 정의까지 DB 과제를 함께 진행합니다.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "IT관 104호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-11-20",
+        "chat_link": "https://open.kakao.com/o/db218",
+        "organizer": {
+          "organizer_id": 49,
+          "organizer_name": "김현우"
+        }
+      }
+    },
+    {
+      "id": "219",
+      "data": {
+        "study_id": 219,
+        "study_title": "연구 가설·모형 설계 스터디",
+        "study_topic": "논문",
+        "description": "연구 가설, 변수 정의, 분석 모델 설계까지 논문 핵심 구조를 다집니다.",
+        "max_participants": 6,
+        "current_participants": 2,
+        "status": "모집중",
+        "place": "도서관 세미나실 4",
+        "start_date": "2025-10-10",
+        "end_date": "2026-01-10",
+        "chat_link": "https://open.kakao.com/o/model219",
+        "organizer": {
+          "organizer_id": 61,
+          "organizer_name": "서다혜"
+        }
+      }
+    },
+    {
+      "id": "220",
+      "data": {
+        "study_id": 220,
+        "study_title": "IT 직무 인성+기술 면접반",
+        "study_topic": "면접",
+        "description": "IT 직무 인성 면접 + CS 기술 면접을 함께 준비하는 실전반입니다.",
+        "max_participants": 6,
+        "current_participants": 5,
+        "status": "모집완료",
+        "place": "학생회관 201호",
+        "start_date": "2025-09-05",
+        "end_date": "2025-10-05",
+        "chat_link": "https://open.kakao.com/o/it220",
+        "organizer": {
+          "organizer_id": 37,
+          "organizer_name": "문지후"
+        }
+      }
+    },
+    {
+      "id": "110",
       "data": {
         "study_id": 110,
         "study_title": "알고리즘 코딩 테스트 준비반",
-        "study_topic": "코딩 테스트",
+        "study_topic": "전공",
         "description": "하루 1문제씩 백준, 프로그래머스 중심으로 문제 풀이 및 코드 리뷰를 진행합니다.",
         "max_participants": 10,
         "current_participants": 1,
@@ -823,15 +2112,18 @@
         "start_date": "2025-10-01",
         "end_date": "2025-12-20",
         "chat_link": "https://open.kakao.com/o/algostudy",
-        "organizer": { "organizer_id": 25, "organizer_name": "홍길동" }
+        "organizer": {
+          "organizer_id": 25,
+          "organizer_name": "홍길동"
+        }
       }
     },
     {
-      "id": 109,
+      "id": "109",
       "data": {
         "study_id": 109,
         "study_title": "토익 900점 목표 스터디",
-        "study_topic": "어학",
+        "study_topic": "외국어",
         "description": "LC, RC 문제풀이 중심으로 진행합니다. 900점 목표지만 700점대 분들도 환영!",
         "max_participants": 6,
         "current_participants": 5,
@@ -840,831 +2132,1746 @@
         "start_date": "2025-10-01",
         "end_date": "2025-10-05",
         "chat_link": "https://open.kakao.com/o/toeic900",
-        "organizer": { "organizer_id": 31, "organizer_name": "김영희" }
+        "organizer": {
+          "organizer_id": 31,
+          "organizer_name": "김영희"
+        }
       }
     },
     {
-      "id": 108,
+      "id": "107",
       "data": {
-        "study_id": 108,
-        "study_title": "리액트 프론트엔드 실무반",
-        "study_topic": "웹 개발",
-        "description": "React와 Tailwind를 이용해 실제 서비스 UI를 구현하는 프로젝트 스터디입니다.",
+        "study_id": 107,
+        "study_title": "SQL 데이터 분석 기초반",
+        "study_topic": "전공",
+        "description": "SELECT부터 JOIN, GROUP BY까지 실무 데이터 분석 쿼리를 학습합니다. (수정됨)",
+        "max_participants": 10,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "경제관 203호",
+        "start_date": "2025-09-20",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/sqlbeginner",
+        "organizer": {
+          "organizer_id": 37,
+          "organizer_name": "박지현"
+        }
+      }
+    },
+    {
+      "id": "106",
+      "data": {
+        "study_id": 106,
+        "study_title": "디자인 시스템 구축 스터디",
+        "study_topic": "과제",
+        "description": "피그마와 디자인 토큰을 활용해 반응형 디자인 시스템을 만들어봅니다. (수정됨)",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "디자인관 102호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-11-10",
+        "chat_link": "https://open.kakao.com/o/uxdesignstudy",
+        "organizer": {
+          "organizer_id": 44,
+          "organizer_name": "최수연"
+        }
+      }
+    },
+    {
+      "id": "105",
+      "data": {
+        "study_id": 105,
+        "study_title": "논문 작성 워크숍",
+        "study_topic": "논문",
+        "description": "연구 설계, 데이터 수집, 참고문헌 관리까지 논문 작성 전 과정을 함께 학습합니다.",
         "max_participants": 8,
         "current_participants": 4,
         "status": "모집중",
-        "place": "공학관 407호",
-        "start_date": "2025-09-25",
-        "end_date": "2025-12-31",
-        "chat_link": "https://open.kakao.com/o/reactstudy",
-        "organizer": { "organizer_id": 45, "organizer_name": "이도현" }
+        "place": "도서관 세미나실 1",
+        "start_date": "2025-08-20",
+        "end_date": "2025-11-20",
+        "chat_link": "https://open.kakao.com/o/paperstudy",
+        "organizer": {
+          "organizer_id": 29,
+          "organizer_name": "윤하늘"
+        }
       }
     },
     {
-      "id": 107,
-      "data": {
-        "study_id": 107,
-        "study_title": "CS 면접 대비 스터디",
-        "study_topic": "전공심화",
-        "description": "운영체제, 네트워크, 자료구조 문제를 함께 풀고 설명하는 면접 대비 스터디입니다.",
-        "max_participants": 6,
-        "current_participants": 6,
-        "status": "모집마감",
-        "place": "도서관 스터디룸 1",
-        "start_date": "2025-09-10",
-        "end_date": "2025-11-30",
-        "chat_link": "https://open.kakao.com/o/csinterview",
-        "organizer": { "organizer_id": 41, "organizer_name": "정우성" }
-      }
-    },
-    {
-      "id": 106,
-      "data": {
-        "study_id": 106,
-        "study_title": "AI 논문 리딩 스터디",
-        "study_topic": "AI",
-        "description": "매주 최신 논문을 선정하여 핵심 개념을 발표하고 토론하는 리딩 스터디입니다.",
-        "max_participants": 5,
-        "current_participants": 3,
-        "status": "모집중",
-        "place": "AI 연구실",
-        "start_date": "2025-09-15",
-        "end_date": "2025-12-15",
-        "chat_link": "https://open.kakao.com/o/ai_paper",
-        "organizer": { "organizer_id": 42, "organizer_name": "박지민" }
-      }
-    },
-    {
-      "id": 105,
-      "data": {
-        "study_id": 105,
-        "study_title": "금융 데이터 분석 입문",
-        "study_topic": "데이터 분석",
-        "description": "Python과 Pandas로 금융 데이터를 분석하고 시각화하는 실습 중심 스터디입니다.",
-        "max_participants": 6,
-        "current_participants": 2,
-        "status": "모집중",
-        "place": "상경관 302호",
-        "start_date": "2025-09-20",
-        "end_date": "2025-12-10",
-        "chat_link": "https://open.kakao.com/o/fin_data",
-        "organizer": { "organizer_id": 33, "organizer_name": "김수빈" }
-      }
-    },
-    {
-      "id": 104,
+      "id": "104",
       "data": {
         "study_id": 104,
-        "study_title": "C 언어 기초부터 프로젝트까지",
-        "study_topic": "프로그래밍",
-        "description": "C 언어 기본 문법부터 포인터, 구조체, 간단한 미니게임 프로젝트까지 함께 합니다.",
+        "study_title": "취업 자기소개서 첨삭반",
+        "study_topic": "면접",
+        "description": "자기소개서 문항별 첨삭 및 모의 면접을 통해 취업 역량을 향상시킵니다.",
+        "max_participants": 5,
+        "current_participants": 4,
+        "status": "모집완료",
+        "place": "학생회관 105호",
+        "start_date": "2025-09-01",
+        "end_date": "2025-09-30",
+        "chat_link": "https://open.kakao.com/o/jobresume",
+        "organizer": {
+          "organizer_id": 28,
+          "organizer_name": "오세훈"
+        }
+      }
+    },
+    {
+      "id": "103",
+      "data": {
+        "study_id": 103,
+        "study_title": "SQLD 자격증 준비반",
+        "study_topic": "자격증",
+        "description": "SQLD 자격증 취득을 목표로 개념정리, 실전문제 풀이를 병행합니다.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "공학관 210호",
+        "start_date": "2025-08-15",
+        "end_date": "2025-10-30",
+        "chat_link": "https://open.kakao.com/o/sqldstudy",
+        "organizer": {
+          "organizer_id": 33,
+          "organizer_name": "이하연"
+        }
+      }
+    },
+    {
+      "id": "102",
+      "data": {
+        "study_id": 102,
+        "study_title": "캡스톤 공모전 대비반",
+        "study_topic": "공모전",
+        "description": "캡스톤 공모전 제출용 프로젝트 기획, 설계, 발표까지 전 과정을 함께합니다.",
+        "max_participants": 8,
+        "current_participants": 6,
+        "status": "모집완료",
+        "place": "공학관 215호",
+        "start_date": "2025-07-01",
+        "end_date": "2025-09-01",
+        "chat_link": "https://open.kakao.com/o/capstonestudy",
+        "organizer": {
+          "organizer_id": 26,
+          "organizer_name": "조민혁"
+        }
+      }
+    },
+    {
+      "id": "101",
+      "code": "OK",
+      "message": "스터디 상세 수정 성공",
+      "data": {
+        "study_id": "101",
+        "study_title": "창업 아이디어 실현 스터디",
+        "study_topic": "창업",
+        "current_participants": 1,
+        "max_participants": 6,
+        "start_date": "2025-09-10",
+        "end_date": "2025-10-15",
+        "status": "모집마감",
+        "description": "창업 아이템을 구체화하고 비즈니스 모델을 수립하는 실전형 스터디입니다."
+      }
+    },
+    {
+      "id": "201",
+      "data": {
+        "study_id": 201,
+        "study_title": "파이썬 데이터 분석 초급반",
+        "study_topic": "전공",
+        "description": "Pandas, Numpy 등 기본 문법부터 데이터 전처리 실습까지 진행합니다.",
+        "max_participants": 10,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "공학관 301호",
+        "start_date": "2025-09-01",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/python201",
+        "organizer": {
+          "organizer_id": 41,
+          "organizer_name": "이서준"
+        }
+      }
+    },
+    {
+      "id": "202",
+      "data": {
+        "study_id": 202,
+        "study_title": "SQLD 자격증 준비반",
+        "study_topic": "자격증",
+        "description": "데이터 모델링, SQL 실전 문제 풀이 중심.",
+        "max_participants": 8,
+        "current_participants": 7,
+        "status": "모집중",
+        "place": "도서관 스터디룸 A",
+        "start_date": "2025-08-20",
+        "end_date": "2025-10-05",
+        "chat_link": "https://open.kakao.com/o/sqld202",
+        "organizer": {
+          "organizer_id": 12,
+          "organizer_name": "김민재"
+        }
+      }
+    },
+    {
+      "id": "203",
+      "data": {
+        "study_id": 203,
+        "study_title": "컴퓨터구조 완전 정복반",
+        "study_topic": "전공",
+        "description": "CPU, 메모리 구조, 파이프라이닝 중심 전공 심화.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "공학관 203호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-12-10",
+        "chat_link": "https://open.kakao.com/o/com203",
+        "organizer": {
+          "organizer_id": 33,
+          "organizer_name": "박채린"
+        }
+      }
+    },
+    {
+      "id": "204",
+      "data": {
+        "study_id": 204,
+        "study_title": "토익 900 목표 스터디",
+        "study_topic": "어학",
+        "description": "RC/LC 집중 훈련 및 실전 모의고사 위주 진행.",
+        "max_participants": 6,
+        "current_participants": 6,
+        "status": "모집완료",
+        "place": "언어교육원 102호",
+        "start_date": "2025-09-01",
+        "end_date": "2025-10-01",
+        "chat_link": "https://open.kakao.com/o/toeic204",
+        "organizer": {
+          "organizer_id": 21,
+          "organizer_name": "정하늘"
+        }
+      }
+    },
+    {
+      "id": "205",
+      "data": {
+        "study_id": 205,
+        "study_title": "백엔드 알고리즘 심화반",
+        "study_topic": "코딩 테스트",
+        "description": "그래프/DP 중심 알고리즘 고난도 대비.",
         "max_participants": 10,
         "current_participants": 7,
         "status": "모집중",
-        "place": "공학관 206호",
-        "start_date": "2025-09-01",
-        "end_date": "2025-11-30",
-        "chat_link": "https://open.kakao.com/o/cstudy",
-        "organizer": { "organizer_id": 38, "organizer_name": "최윤호" }
+        "place": "공학관 204호",
+        "start_date": "2025-09-15",
+        "end_date": "2025-11-15",
+        "chat_link": "https://open.kakao.com/o/alg205",
+        "organizer": {
+          "organizer_id": 55,
+          "organizer_name": "최도윤"
+        }
       }
     },
     {
-      "id": 103,
+      "id": "206",
       "data": {
-        "study_id": 103,
-        "study_title": "UI/UX 디자인 워크샵",
-        "study_topic": "디자인",
-        "description": "Figma를 활용해 실제 서비스 디자인을 연습하며, 감성 기반 UX를 연구합니다.",
+        "study_id": 206,
+        "study_title": "UX 기획 케이스 스터디",
+        "study_topic": "기획",
+        "description": "UX 리서치·페르소나·CJM 실무 사례 분석.",
+        "max_participants": 6,
+        "current_participants": 2,
+        "status": "모집중",
+        "place": "미래관 503호",
+        "start_date": "2025-09-20",
+        "end_date": "2025-11-20",
+        "chat_link": "https://open.kakao.com/o/ux206",
+        "organizer": {
+          "organizer_id": 12,
+          "organizer_name": "윤서영"
+        }
+      }
+    },
+    {
+      "id": "207",
+      "data": {
+        "study_id": 207,
+        "study_title": "창업 아이디어 브레인스토밍",
+        "study_topic": "창업",
+        "description": "아이템 구상, 시장조사, MVP 기획 중심.",
+        "max_participants": 5,
+        "current_participants": 1,
+        "status": "모집중",
+        "place": "미래관 101호",
+        "start_date": "2025-10-01",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/start207",
+        "organizer": {
+          "organizer_id": 77,
+          "organizer_name": "김도현"
+        }
+      }
+    },
+    {
+      "id": "208",
+      "data": {
+        "study_id": 208,
+        "study_title": "IT 직무 기술 면접 대비반",
+        "study_topic": "면접",
+        "description": "CS, 개발 상식, 프로젝트 기반 면접 대비.",
         "max_participants": 6,
         "current_participants": 4,
         "status": "모집중",
-        "place": "디자인관 203호",
-        "start_date": "2025-10-05",
-        "end_date": "2025-12-05",
-        "chat_link": "https://open.kakao.com/o/uiuxstudy",
-        "organizer": { "organizer_id": 47, "organizer_name": "이서현" }
+        "place": "공학관 310호",
+        "start_date": "2025-09-05",
+        "end_date": "2025-10-05",
+        "chat_link": "https://open.kakao.com/o/interview208",
+        "organizer": {
+          "organizer_id": 29,
+          "organizer_name": "이도현"
+        }
       }
     },
     {
-      "id": 102,
+      "id": "209",
       "data": {
-        "study_id": 102,
-        "study_title": "스프링 부트 백엔드 개발",
-        "study_topic": "웹 개발",
-        "description": "Spring Boot와 JPA 기반 REST API 구현 실습 중심의 백엔드 스터디입니다.",
-        "max_participants": 7,
-        "current_participants": 5,
+        "study_id": 209,
+        "study_title": "영화 기반 영어 회화 스터디",
+        "study_topic": "어학",
+        "description": "영화 대사 분석 + 실전 회화 훈련.",
+        "max_participants": 8,
+        "current_participants": 7,
         "status": "모집중",
-        "place": "공학관 505호",
-        "start_date": "2025-09-10",
-        "end_date": "2025-12-15",
-        "chat_link": "https://open.kakao.com/o/springboot",
-        "organizer": { "organizer_id": 34, "organizer_name": "장민재" }
+        "place": "언어교육원 205호",
+        "start_date": "2025-09-15",
+        "end_date": "2025-11-15",
+        "chat_link": "https://open.kakao.com/o/movie209",
+        "organizer": {
+          "organizer_id": 43,
+          "organizer_name": "장유리"
+        }
       }
     },
     {
-      "id": 101,
+      "id": "210",
       "data": {
-        "study_id": 101,
-        "study_title": "정보처리기사 실기 대비",
-        "study_topic": "자격증",
-        "description": "2025년 정기시험 대비 실기 문제풀이 중심으로 진행하는 스터디입니다.",
+        "study_id": 210,
+        "study_title": "응용통계 프로젝트 스터디",
+        "study_topic": "전공",
+        "description": "R/Python 기반 실제 통계 프로젝트 수행.",
+        "max_participants": 7,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "도서관 스터디룸 C",
+        "start_date": "2025-09-12",
+        "end_date": "2025-11-12",
+        "chat_link": "https://open.kakao.com/o/stat210",
+        "organizer": {
+          "organizer_id": 61,
+          "organizer_name": "백민아"
+        }
+      }
+    },
+    {
+      "id": "211",
+      "data": {
+        "study_id": 211,
+        "study_title": "리액트 실전 프로젝트 마스터",
+        "study_topic": "전공",
+        "description": "리액트 훅, 라우터, 상태관리까지 실전 프로젝트 진행.",
+        "max_participants": 8,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "IT관 204호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/react211",
+        "organizer": {
+          "organizer_id": 51,
+          "organizer_name": "김민수"
+        }
+      }
+    },
+    {
+      "id": "212",
+      "data": {
+        "study_id": 212,
+        "study_title": "자료구조 코테 실전 대비반",
+        "study_topic": "코딩 테스트",
+        "description": "자료구조/트리/DP 위주 실전 문제 풀이.",
         "max_participants": 10,
         "current_participants": 8,
         "status": "모집중",
-        "place": "상경관 101호",
-        "start_date": "2025-09-01",
-        "end_date": "2025-11-15",
-        "chat_link": "https://open.kakao.com/o/infotech",
-        "organizer": { "organizer_id": 48, "organizer_name": "윤태영" }
+        "place": "공학관 201호",
+        "start_date": "2025-09-08",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/cs212",
+        "organizer": {
+          "organizer_id": 25,
+          "organizer_name": "오세훈"
+        }
       }
     },
     {
-      "id": 100,
+      "id": "213",
       "data": {
-        "study_id": 100,
-        "study_title": "토플 100점 달성반",
+        "study_id": 213,
+        "study_title": "일본어 N4 회화 집중반",
         "study_topic": "어학",
-        "description": "토플 각 영역별 고득점 전략을 함께 공부하고 매주 모의시험을 봅니다.",
+        "description": "기본 문장 패턴과 실전 회화 중심 스터디.",
+        "max_participants": 6,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "언어교육원 210호",
+        "start_date": "2025-09-02",
+        "end_date": "2025-10-20",
+        "chat_link": "https://open.kakao.com/o/jp213",
+        "organizer": {
+          "organizer_id": 48,
+          "organizer_name": "김하림"
+        }
+      }
+    },
+    {
+      "id": "214",
+      "data": {
+        "study_id": 214,
+        "study_title": "스프링 백엔드 실무반",
+        "study_topic": "전공",
+        "description": "스프링 부트/ORM/JWT 기반 백엔드 실전 학습.",
+        "max_participants": 6,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "공학관 410호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-11-10",
+        "chat_link": "https://open.kakao.com/o/spring214",
+        "organizer": {
+          "organizer_id": 32,
+          "organizer_name": "정해준"
+        }
+      }
+    },
+    {
+      "id": "215",
+      "data": {
+        "study_id": 215,
+        "study_title": "서비스 기획 포트폴리오 제작반",
+        "study_topic": "기획",
+        "description": "기획 산출물·포트폴리오 실전 구성 중심.",
         "max_participants": 8,
         "current_participants": 6,
         "status": "모집중",
-        "place": "국제관 303호",
-        "start_date": "2025-09-10",
-        "end_date": "2025-12-10",
-        "chat_link": "https://open.kakao.com/o/toefl100",
-        "organizer": { "organizer_id": 52, "organizer_name": "이하연" }
+        "place": "미래관 402호",
+        "start_date": "2025-09-08",
+        "end_date": "2025-10-20",
+        "chat_link": "https://open.kakao.com/o/plan215",
+        "organizer": {
+          "organizer_id": 22,
+          "organizer_name": "유다윤"
+        }
       }
     },
     {
-      "id": 99,
+      "id": "216",
       "data": {
-        "study_id": 99,
-        "study_title": "창업 아이디어 피칭 스터디",
-        "study_topic": "창업",
-        "description": "실제 창업 아이템을 구상하고 IR 피칭 자료를 함께 제작하는 스터디입니다.",
+        "study_id": 216,
+        "study_title": "R 통계 분석 입문반",
+        "study_topic": "전공",
+        "description": "R 기본 문법과 데이터 분석 실습 중심.",
+        "max_participants": 6,
+        "current_participants": 2,
+        "status": "모집중",
+        "place": "도서관 스터디룸 B",
+        "start_date": "2025-09-04",
+        "end_date": "2025-11-04",
+        "chat_link": "https://open.kakao.com/o/r216",
+        "organizer": {
+          "organizer_id": 90,
+          "organizer_name": "김세영"
+        }
+      }
+    },
+    {
+      "id": "217",
+      "data": {
+        "study_id": 217,
+        "study_title": "카카오 코테 대비 모의고사반",
+        "study_topic": "코딩 테스트",
+        "description": "카카오 스타일 모의고사 실전 풀이.",
+        "max_participants": 10,
+        "current_participants": 9,
+        "status": "모집중",
+        "place": "공학관 103호",
+        "start_date": "2025-09-18",
+        "end_date": "2025-10-30",
+        "chat_link": "https://open.kakao.com/o/kakao217",
+        "organizer": {
+          "organizer_id": 54,
+          "organizer_name": "하서준"
+        }
+      }
+    },
+    {
+      "id": "218",
+      "data": {
+        "study_id": 218,
+        "study_title": "머신러닝 기초 개념 정리반",
+        "study_topic": "전공",
+        "description": "머신러닝 지도/비지도 기본 개념 정리 및 실습.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "IT관 101호",
+        "start_date": "2025-09-05",
+        "end_date": "2025-12-05",
+        "chat_link": "https://open.kakao.com/o/ml218",
+        "organizer": {
+          "organizer_id": 72,
+          "organizer_name": "박성우"
+        }
+      }
+    },
+    {
+      "id": "219",
+      "data": {
+        "study_id": 219,
+        "study_title": "기업 분석 & 자소서 피드백반",
+        "study_topic": "면접",
+        "description": "기업 분석 방법론 + 자소서 피드백 중심.",
+        "max_participants": 6,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "미래관 305호",
+        "start_date": "2025-09-07",
+        "end_date": "2025-10-10",
+        "chat_link": "https://open.kakao.com/o/job219",
+        "organizer": {
+          "organizer_id": 38,
+          "organizer_name": "신예진"
+        }
+      }
+    },
+    {
+      "id": "220",
+      "data": {
+        "study_id": 220,
+        "study_title": "IT 직무 인성+기술 면접반",
+        "study_topic": "면접",
+        "description": "개발 CS·협업·경험 기반 기술 면접 대비.",
+        "max_participants": 6,
+        "current_participants": 5,
+        "status": "모집완료",
+        "place": "공학관 302호",
+        "start_date": "2025-09-05",
+        "end_date": "2025-10-05",
+        "chat_link": "https://open.kakao.com/o/interview220",
+        "organizer": {
+          "organizer_id": 27,
+          "organizer_name": "강현우"
+        }
+      }
+    },
+    {
+      "id": "140",
+      "data": {
+        "study_id": 140,
+        "study_title": "파이썬 크롤링 자동화 스터디",
+        "study_topic": "전공",
+        "description": "BeautifulSoup, Selenium을 활용한 웹 크롤링 자동화 실습.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "IT관 206호",
+        "start_date": "2025-09-15",
+        "end_date": "2025-11-20",
+        "chat_link": "https://open.kakao.com/o/crawl140",
+        "organizer": {
+          "organizer_id": 31,
+          "organizer_name": "정우진"
+        }
+      }
+    },
+    {
+      "id": "141",
+      "data": {
+        "study_id": 141,
+        "study_title": "알고리즘 실전 문제풀이반",
+        "study_topic": "코딩 테스트",
+        "description": "백준 골드 난이도 중심 실전 알고리즘 풀이 스터디.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "공학관 302호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/algo141",
+        "organizer": {
+          "organizer_id": 56,
+          "organizer_name": "김태윤"
+        }
+      }
+    },
+    {
+      "id": "142",
+      "data": {
+        "study_id": 142,
+        "study_title": "해커톤 준비 개발 스터디",
+        "study_topic": "전공",
+        "description": "해커톤용 백엔드/프론트엔드/기획 협업 실전 준비.",
         "max_participants": 6,
         "current_participants": 3,
         "status": "모집중",
-        "place": "창업센터 402호",
-        "start_date": "2025-10-10",
-        "end_date": "2025-12-31",
-        "chat_link": "https://open.kakao.com/o/startup",
-        "organizer": { "organizer_id": 56, "organizer_name": "권민지" }
+        "place": "IT관 305호",
+        "start_date": "2025-09-18",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/hack142",
+        "organizer": {
+          "organizer_id": 21,
+          "organizer_name": "이수정"
+        }
       }
     },
     {
-      "id": 98,
+      "id": "143",
       "data": {
-        "study_id": 98,
-        "study_title": "영화로 배우는 영어 회화",
-        "study_topic": "어학",
-        "description": "영화 대사를 활용한 자연스러운 영어 표현 학습 및 회화 실습 스터디입니다.",
+        "study_id": 143,
+        "study_title": "토플 95+ 목표 스터디",
+        "study_topic": "외국어",
+        "description": "토플 RC·LC·스피킹·라이팅을 실전 모의고사 기반으로 연습합니다.",
+        "max_participants": 10,
+        "current_participants": 7,
+        "status": "모집중",
+        "place": "언어교육원 308호",
+        "start_date": "2025-10-01",
+        "end_date": "2025-12-10",
+        "chat_link": "https://open.kakao.com/o/toefl143",
+        "organizer": {
+          "organizer_id": 78,
+          "organizer_name": "박하린"
+        }
+      }
+    },
+    {
+      "id": "144",
+      "data": {
+        "study_id": 144,
+        "study_title": "피그마 UI 컴포넌트 제작반",
+        "study_topic": "과제",
+        "description": "피그마 오토레이아웃과 디자인 토큰을 활용해 UI 컴포넌트 제작.",
+        "max_participants": 8,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "디자인관 201호",
+        "start_date": "2025-09-25",
+        "end_date": "2025-11-25",
+        "chat_link": "https://open.kakao.com/o/ui144",
+        "organizer": {
+          "organizer_id": 44,
+          "organizer_name": "최수연"
+        }
+      }
+    },
+    {
+      "id": "145",
+      "data": {
+        "study_id": 145,
+        "study_title": "React 상태관리 심화반",
+        "study_topic": "전공",
+        "description": "Redux, Recoil, Zustand 등 다양한 상태관리 도구를 실전에서 다룹니다.",
+        "max_participants": 10,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "IT관 207호",
+        "start_date": "2025-10-05",
+        "end_date": "2025-12-15",
+        "chat_link": "https://open.kakao.com/o/react145",
+        "organizer": {
+          "organizer_id": 70,
+          "organizer_name": "이세린"
+        }
+      }
+    },
+    {
+      "id": "146",
+      "data": {
+        "study_id": 146,
+        "study_title": "컴퓨터구조 기초 스터디",
+        "study_topic": "전공",
+        "description": "컴퓨터 구조 핵심 개념 및 시험 대비 문제 중심 학습.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "공학관 105호",
+        "start_date": "2025-09-08",
+        "end_date": "2025-11-05",
+        "chat_link": "https://open.kakao.com/o/cs146",
+        "organizer": {
+          "organizer_id": 26,
+          "organizer_name": "강민재"
+        }
+      }
+    },
+    {
+      "id": "147",
+      "data": {
+        "study_id": 147,
+        "study_title": "경영학 입문 스터디",
+        "study_topic": "전공",
+        "description": "경영학 원리, 조직론, 마케팅 기본 개념을 학습합니다.",
+        "max_participants": 8,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "경영관 103호",
+        "start_date": "2025-09-12",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/biz147",
+        "organizer": {
+          "organizer_id": 43,
+          "organizer_name": "문다연"
+        }
+      }
+    },
+    {
+      "id": "148",
+      "data": {
+        "study_id": 148,
+        "study_title": "영어 스피킹 실전 모임",
+        "study_topic": "외국어",
+        "description": "원어민 스피킹 스타일 기반 실전 표현 학습.",
         "max_participants": 8,
         "current_participants": 4,
         "status": "모집중",
         "place": "언어교육원 204호",
-        "start_date": "2025-09-15",
-        "end_date": "2025-11-30",
-        "chat_link": "https://open.kakao.com/o/movieenglish",
-        "organizer": { "organizer_id": 62, "organizer_name": "정하린" }
-      }
-    },
-    {
-      "id": 108,
-      "code": "OK",
-      "message": "스터디 상세 정보 조회에 성공했습니다.",
-      "data": {
-        "study_id": 108,
-        "study_title": "리액트 프론트엔드 실무반",
-        "study_topic": "웹 개발",
-        "description": "React와 Tailwind를 이용해 실무형 웹사이트를 만드는 스터디입니다. 실제 프로젝트를 목표로 진행됩니다.",
-        "max_participants": 8,
-        "current_participants": 4,
-        "status": "모집중",
-        "place": "공학관 407호",
-        "start_date": "2025-09-25",
-        "end_date": "2025-12-31",
-        "chat_link": "https://open.kakao.com/o/reactstudy",
-        "organizer": { "organizer_id": 45, "organizer_name": "이도현" }
-      }
-    },
-    {
-      "id": 106,
-      "code": "OK",
-      "message": "스터디 상세 정보 조회에 성공했습니다.",
-      "data": {
-        "study_id": 106,
-        "study_title": "AI 논문 리딩 스터디",
-        "study_topic": "AI",
-        "description": "매주 최신 논문을 선정하여 핵심 내용을 발표 및 토론합니다.",
-        "max_participants": 5,
-        "current_participants": 3,
-        "status": "모집중",
-        "place": "도서관 스터디룸 2",
-        "start_date": "2025-09-15",
-        "end_date": "2025-12-15",
-        "chat_link": "https://open.kakao.com/o/ai_paper",
-        "organizer": { "organizer_id": 42, "organizer_name": "박지민" }
-      }
-    },
-    {
-      "id": 105,
-      "code": "OK",
-      "message": "스터디 상세 정보 조회에 성공했습니다.",
-      "data": {
-        "study_id": 105,
-        "study_title": "금융 데이터 분석 입문",
-        "study_topic": "데이터 분석",
-        "description": "Python과 Pandas로 금융 데이터를 분석하고 시각화하는 스터디입니다.",
-        "max_participants": 6,
-        "current_participants": 2,
-        "status": "모집중",
-        "place": "상경관 302호",
-        "start_date": "2025-09-20",
-        "end_date": "2025-12-10",
-        "chat_link": "https://open.kakao.com/o/fin_data",
-        "organizer": { "organizer_id": 33, "organizer_name": "김수빈" }
-      }
-    },
-    {
-      "id": 91,
-      "code": "OK",
-      "message": "스터디 상세 정보 조회에 성공했습니다.",
-      "data": {
-        "study_id": 91,
-        "study_title": "심리학 기반 감정 챗봇 연구반",
-        "study_topic": "AI+인문",
-        "description": "감정 분석, 대화 시나리오 설계 등 인간 감정 기반 AI 대화 시스템을 연구합니다.",
-        "max_participants": 5,
-        "current_participants": 2,
-        "status": "모집중",
-        "place": "AI센터 208호",
-        "start_date": "2025-09-15",
-        "end_date": "2025-12-31",
-        "chat_link": "https://open.kakao.com/o/emotionAI",
-        "organizer": { "organizer_id": 29, "organizer_name": "강유정" }
-      }
-    },
-    {
-      "id": 130,
-      "data": {
-        "study_id": 130,
-        "study_title": "딥러닝 모델 서빙 실전반",
-        "study_topic": "AI",
-        "description": "TensorFlow Serving과 FastAPI를 활용해 모델 배포 과정을 실습합니다.",
-        "max_participants": 7,
-        "current_participants": 3,
-        "status": "모집중",
-        "place": "AI센터 301호",
-        "start_date": "2025-10-05",
-        "end_date": "2025-12-25",
-        "chat_link": "https://open.kakao.com/o/deepserve",
-        "organizer": { "organizer_id": 60, "organizer_name": "이준혁" }
-      }
-    },
-    {
-      "id": 129,
-      "data": {
-        "study_id": 129,
-        "study_title": "블록체인 스마트컨트랙트 개발",
-        "study_topic": "블록체인",
-        "description": "Solidity와 Web3.js를 활용한 스마트컨트랙트 실습 중심 스터디입니다.",
-        "max_participants": 8,
-        "current_participants": 4,
-        "status": "모집중",
-        "place": "공학관 501호",
-        "start_date": "2025-09-15",
-        "end_date": "2025-12-20",
-        "chat_link": "https://open.kakao.com/o/blockchainstudy",
-        "organizer": { "organizer_id": 53, "organizer_name": "남현우" }
-      }
-    },
-    {
-      "id": 128,
-      "data": {
-        "study_id": 128,
-        "study_title": "UX 감정 디자인 프로젝트",
-        "study_topic": "UX 디자인",
-        "description": "사용자 감정 데이터 기반 디자인 사례를 분석하고 UX 감정 모듈을 제작합니다.",
-        "max_participants": 6,
-        "current_participants": 2,
-        "status": "모집중",
-        "place": "디자인관 204호",
-        "start_date": "2025-10-10",
-        "end_date": "2025-12-30",
-        "chat_link": "https://open.kakao.com/o/emotionux",
-        "organizer": { "organizer_id": 64, "organizer_name": "강유정" }
-      }
-    },
-    {
-      "id": 127,
-      "data": {
-        "study_id": 127,
-        "study_title": "IoT 센서 제어 실습반",
-        "study_topic": "IoT",
-        "description": "라즈베리파이와 아두이노를 활용한 IoT 센서 데이터 수집 및 제어 실습 중심 스터디입니다.",
-        "max_participants": 9,
-        "current_participants": 5,
-        "status": "모집중",
-        "place": "IoT 실습실 302호",
-        "start_date": "2025-09-10",
-        "end_date": "2025-12-15",
-        "chat_link": "https://open.kakao.com/o/iotstudy",
-        "organizer": { "organizer_id": 58, "organizer_name": "김도윤" }
-      }
-    },
-    {
-      "id": 126,
-      "data": {
-        "study_id": 126,
-        "study_title": "데이터 시각화 대시보드 제작",
-        "study_topic": "데이터 분석",
-        "description": "Tableau와 Python Plotly를 이용해 실무형 데이터 대시보드를 만듭니다.",
-        "max_participants": 7,
-        "current_participants": 4,
-        "status": "모집중",
-        "place": "상경관 202호",
-        "start_date": "2025-09-25",
-        "end_date": "2025-12-10",
-        "chat_link": "https://open.kakao.com/o/dataviz",
-        "organizer": { "organizer_id": 37, "organizer_name": "박민서" }
-      }
-    },
-    {
-      "id": 125,
-      "data": {
-        "study_id": 125,
-        "study_title": "파이썬 알고리즘 마스터반",
-        "study_topic": "프로그래밍",
-        "description": "파이썬으로 주요 알고리즘을 구현하고 코드 효율성을 분석합니다.",
-        "max_participants": 10,
-        "current_participants": 6,
-        "status": "모집중",
-        "place": "공학관 305호",
-        "start_date": "2025-09-01",
-        "end_date": "2025-11-30",
-        "chat_link": "https://open.kakao.com/o/pyalgo",
-        "organizer": { "organizer_id": 44, "organizer_name": "정다인" }
-      }
-    },
-    {
-      "id": 124,
-      "data": {
-        "study_id": 124,
-        "study_title": "AI 서비스 기획 워크샵",
-        "study_topic": "AI 기획",
-        "description": "AI 서비스 기획 프로세스를 학습하고 실제 사례 기반으로 기획안을 작성합니다.",
-        "max_participants": 6,
-        "current_participants": 3,
-        "status": "모집중",
-        "place": "상경관 402호",
-        "start_date": "2025-10-05",
-        "end_date": "2025-12-20",
-        "chat_link": "https://open.kakao.com/o/aiplan",
-        "organizer": { "organizer_id": 61, "organizer_name": "유지은" }
-      }
-    },
-    {
-      "id": 123,
-      "data": {
-        "study_id": 123,
-        "study_title": "게임 개발 프로젝트 스터디",
-        "study_topic": "게임 개발",
-        "description": "Unity를 활용해 간단한 2D/3D 게임을 제작하는 실습형 스터디입니다.",
-        "max_participants": 8,
-        "current_participants": 5,
-        "status": "모집중",
-        "place": "소프트웨어학관 301호",
-        "start_date": "2025-09-20",
-        "end_date": "2025-12-31",
-        "chat_link": "https://open.kakao.com/o/gamedev",
-        "organizer": { "organizer_id": 66, "organizer_name": "이정훈" }
-      }
-    },
-    {
-      "id": 122,
-      "data": {
-        "study_id": 122,
-        "study_title": "R로 하는 통계 분석",
-        "study_topic": "데이터 분석",
-        "description": "R을 활용해 기초 통계 분석 및 시각화 실습을 진행합니다.",
-        "max_participants": 8,
-        "current_participants": 4,
-        "status": "모집중",
-        "place": "상경관 201호",
-        "start_date": "2025-09-15",
-        "end_date": "2025-12-10",
-        "chat_link": "https://open.kakao.com/o/rstats",
-        "organizer": { "organizer_id": 59, "organizer_name": "정혜린" }
-      }
-    },
-    {
-      "id": 121,
-      "data": {
-        "study_id": 121,
-        "study_title": "정보보안 기초 스터디",
-        "study_topic": "보안",
-        "description": "네트워크 보안, 해킹 기초, 암호학 원리를 함께 학습합니다.",
-        "max_participants": 6,
-        "current_participants": 2,
-        "status": "모집중",
-        "place": "IT관 203호",
-        "start_date": "2025-09-10",
-        "end_date": "2025-11-30",
-        "chat_link": "https://open.kakao.com/o/security",
-        "organizer": { "organizer_id": 49, "organizer_name": "이성우" }
-      }
-    },
-    {
-      "id": 120,
-      "data": {
-        "study_id": 120,
-        "study_title": "데이터베이스 설계 실습반",
-        "study_topic": "데이터베이스",
-        "description": "SQL과 ERD 설계 중심의 데이터베이스 구조를 실습합니다.",
-        "max_participants": 10,
-        "current_participants": 6,
-        "status": "모집중",
-        "place": "공학관 206호",
-        "start_date": "2025-09-01",
+        "start_date": "2025-09-28",
         "end_date": "2025-12-01",
-        "chat_link": "https://open.kakao.com/o/dbdesign",
-        "organizer": { "organizer_id": 51, "organizer_name": "최민재" }
+        "chat_link": "https://open.kakao.com/o/eng148",
+        "organizer": {
+          "organizer_id": 58,
+          "organizer_name": "신지혜"
+        }
       }
     },
     {
-      "id": 170,
+      "id": "149",
       "data": {
-        "study_id": 170,
-        "study_title": "AI 기반 감정 분석 프로젝트",
-        "study_topic": "AI",
-        "description": "자연어 데이터와 표정 이미지 데이터를 결합하여 감정 분류 모델을 구현하는 프로젝트 스터디입니다.",
-        "max_participants": 6,
-        "current_participants": 3,
-        "status": "모집중",
-        "place": "AI센터 401호",
-        "start_date": "2025-10-10",
-        "end_date": "2026-01-10",
-        "chat_link": "https://open.kakao.com/o/emoai170",
-        "organizer": { "organizer_id": 71, "organizer_name": "김지현" }
-      }
-    },
-    {
-      "id": 169,
-      "data": {
-        "study_id": 169,
-        "study_title": "핀테크 알고리즘 트레이딩 입문",
-        "study_topic": "핀테크",
-        "description": "주가 데이터 기반으로 단순 이동평균, RSI 지표를 활용한 알고리즘 트레이딩을 실습합니다.",
-        "max_participants": 8,
-        "current_participants": 4,
-        "status": "모집중",
-        "place": "상경관 405호",
-        "start_date": "2025-09-25",
-        "end_date": "2025-12-25",
-        "chat_link": "https://open.kakao.com/o/fintrade169",
-        "organizer": { "organizer_id": 72, "organizer_name": "이동훈" }
-      }
-    },
-    {
-      "id": 168,
-      "data": {
-        "study_id": 168,
-        "study_title": "클라우드 서비스 구축 실습",
-        "study_topic": "클라우드",
-        "description": "AWS와 Docker를 이용해 배포 가능한 웹 서비스를 직접 구축하는 실습 중심 스터디입니다.",
-        "max_participants": 9,
-        "current_participants": 5,
-        "status": "모집중",
-        "place": "공학관 502호",
-        "start_date": "2025-09-20",
-        "end_date": "2025-12-20",
-        "chat_link": "https://open.kakao.com/o/cloud168",
-        "organizer": { "organizer_id": 73, "organizer_name": "박준영" }
-      }
-    },
-    {
-      "id": 167,
-      "data": {
-        "study_id": 167,
-        "study_title": "UX 감정 리서치 워크샵",
-        "study_topic": "UX 기획",
-        "description": "사용자 인터뷰를 통해 감정 경험 데이터를 수집하고 UX 인사이트를 도출하는 워크샵형 스터디입니다.",
-        "max_participants": 5,
-        "current_participants": 2,
-        "status": "모집중",
-        "place": "디자인관 306호",
-        "start_date": "2025-10-05",
-        "end_date": "2025-12-30",
-        "chat_link": "https://open.kakao.com/o/uxemo167",
-        "organizer": { "organizer_id": 74, "organizer_name": "강유정" }
-      }
-    },
-    {
-      "id": 166,
-      "data": {
-        "study_id": 166,
-        "study_title": "딥러닝 영상 처리 입문",
-        "study_topic": "AI",
-        "description": "OpenCV와 CNN을 이용해 영상 필터링, 객체 탐지 등 기본적인 영상 처리 실습을 진행합니다.",
-        "max_participants": 7,
-        "current_participants": 4,
-        "status": "모집중",
-        "place": "AI센터 204호",
-        "start_date": "2025-09-15",
-        "end_date": "2025-12-15",
-        "chat_link": "https://open.kakao.com/o/vision166",
-        "organizer": { "organizer_id": 75, "organizer_name": "이서윤" }
-      }
-    },
-    {
-      "id": 165,
-      "data": {
-        "study_id": 165,
-        "study_title": "AI 윤리 커뮤니티 세미나",
-        "study_topic": "AI+인문",
-        "description": "AI가 인간의 삶에 미치는 윤리적 문제를 주제로 매주 토론하는 세미나형 스터디입니다.",
-        "max_participants": 6,
-        "current_participants": 2,
-        "status": "모집중",
-        "place": "AI센터 305호",
-        "start_date": "2025-10-01",
-        "end_date": "2025-12-31",
-        "chat_link": "https://open.kakao.com/o/aiethic165",
-        "organizer": { "organizer_id": 76, "organizer_name": "정윤아" }
-      }
-    },
-    {
-      "id": 164,
-      "data": {
-        "study_id": 164,
-        "study_title": "데이터 기반 UX 개선 실험",
-        "study_topic": "데이터 분석",
-        "description": "실제 웹사이트의 사용자 행동 로그를 분석해 UX 개선안을 도출하고 실험합니다.",
-        "max_participants": 8,
-        "current_participants": 3,
-        "status": "모집중",
-        "place": "상경관 205호",
-        "start_date": "2025-09-25",
-        "end_date": "2025-12-25",
-        "chat_link": "https://open.kakao.com/o/uxdata164",
-        "organizer": { "organizer_id": 77, "organizer_name": "이현주" }
-      }
-    },
-    {
-      "id": 163,
-      "data": {
-        "study_id": 163,
-        "study_title": "AI 모델 경량화 실습반",
-        "study_topic": "AI",
-        "description": "TensorFlow Lite와 ONNX를 이용해 경량화 모델을 만들고 모바일 환경에서 테스트합니다.",
-        "max_participants": 8,
-        "current_participants": 4,
-        "status": "모집중",
-        "place": "AI센터 302호",
-        "start_date": "2025-09-10",
-        "end_date": "2025-12-10",
-        "chat_link": "https://open.kakao.com/o/model163",
-        "organizer": { "organizer_id": 78, "organizer_name": "최도영" }
-      }
-    },
-    {
-      "id": 162,
-      "data": {
-        "study_id": 162,
-        "study_title": "데이터 시각화 with D3.js",
-        "study_topic": "웹 개발",
-        "description": "JavaScript 기반 데이터 시각화 라이브러리 D3.js를 활용해 인터랙티브 차트를 구현합니다.",
+        "study_id": 149,
+        "study_title": "자료구조 중급 스터디",
+        "study_topic": "전공",
+        "description": "트리, 힙, 그래프 등 중급 자료구조 중심 문제풀이.",
         "max_participants": 10,
-        "current_participants": 5,
-        "status": "모집중",
-        "place": "공학관 404호",
-        "start_date": "2025-09-15",
-        "end_date": "2025-12-20",
-        "chat_link": "https://open.kakao.com/o/d3js162",
-        "organizer": { "organizer_id": 79, "organizer_name": "이민혁" }
-      }
-    },
-    {
-      "id": 161,
-      "data": {
-        "study_id": 161,
-        "study_title": "AI 챗봇 서비스 기획 스터디",
-        "study_topic": "AI 기획",
-        "description": "실제 챗봇 서비스 사례를 분석하고 대화 흐름 설계 및 기획서를 작성하는 스터디입니다.",
-        "max_participants": 7,
         "current_participants": 3,
         "status": "모집중",
-        "place": "AI센터 206호",
-        "start_date": "2025-09-25",
-        "end_date": "2025-12-31",
-        "chat_link": "https://open.kakao.com/o/aiplan161",
-        "organizer": { "organizer_id": 80, "organizer_name": "강유정" }
+        "place": "공학관 205호",
+        "start_date": "2025-10-02",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/ds149",
+        "organizer": {
+          "organizer_id": 11,
+          "organizer_name": "김혜원"
+        }
       }
     },
     {
-      "id": 160,
+      "id": "150",
       "data": {
-        "study_id": 160,
-        "study_title": "머신러닝 모델 평가와 개선",
-        "study_topic": "AI",
-        "description": "Precision, Recall, F1 Score 등 모델 성능 지표를 분석하고 하이퍼파라미터 튜닝을 실습합니다.",
-        "max_participants": 9,
+        "study_id": 150,
+        "study_title": "AI 서비스 기획 스터디",
+        "study_topic": "창업",
+        "description": "AI 기반 서비스 기획 및 비즈니스 모델링 실전.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "창업보육센터 세미나실",
+        "start_date": "2025-09-20",
+        "end_date": "2025-12-05",
+        "chat_link": "https://open.kakao.com/o/start150",
+        "organizer": {
+          "organizer_id": 19,
+          "organizer_name": "권서현"
+        }
+      }
+    },
+    {
+      "id": "151",
+      "data": {
+        "study_id": 151,
+        "study_title": "프로덕트 매니저 기본반",
+        "study_topic": "창업",
+        "description": "PM 기본 개념, MVP 설계, 사용자 분석 실전 학습.",
+        "max_participants": 6,
         "current_participants": 5,
         "status": "모집중",
-        "place": "AI센터 203호",
-        "start_date": "2025-09-10",
-        "end_date": "2025-12-15",
-        "chat_link": "https://open.kakao.com/o/ml160",
-        "organizer": { "organizer_id": 81, "organizer_name": "김하늘" }
-      }
-    },
-    {
-      "id": 159,
-      "data": {
-        "study_id": 159,
-        "study_title": "UX 감정 인터뷰 연구반",
-        "study_topic": "UX 기획",
-        "description": "사용자 인터뷰를 설계하고 감정적 반응을 분석하여 UX 개선 포인트를 도출합니다.",
-        "max_participants": 5,
-        "current_participants": 2,
-        "status": "모집중",
-        "place": "디자인관 205호",
+        "place": "IT관 208호",
         "start_date": "2025-10-05",
-        "end_date": "2025-12-20",
-        "chat_link": "https://open.kakao.com/o/ux159",
-        "organizer": { "organizer_id": 82, "organizer_name": "이채은" }
+        "end_date": "2025-12-15",
+        "chat_link": "https://open.kakao.com/o/pm151",
+        "organizer": {
+          "organizer_id": 28,
+          "organizer_name": "오은지"
+        }
       }
     },
     {
-      "id": 158,
+      "id": "152",
+      "data": {
+        "study_id": 152,
+        "study_title": "경제지 분석 스터디",
+        "study_topic": "전공",
+        "description": "경제신문 핵심기사 분석 및 토론 중심 스터디.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "경제관 203호",
+        "start_date": "2025-09-01",
+        "end_date": "2025-11-01",
+        "chat_link": "https://open.kakao.com/o/econ152",
+        "organizer": {
+          "organizer_id": 77,
+          "organizer_name": "박은정"
+        }
+      }
+    },
+    {
+      "id": "153",
+      "data": {
+        "study_id": 153,
+        "study_title": "면접 포트폴리오 첨삭반",
+        "study_topic": "면접",
+        "description": "자기소개서·프로젝트 포트폴리오 실전 피드백.",
+        "max_participants": 6,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "취업센터 201호",
+        "start_date": "2025-09-25",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/inter153",
+        "organizer": {
+          "organizer_id": 14,
+          "organizer_name": "윤다솜"
+        }
+      }
+    },
+    {
+      "id": "154",
+      "data": {
+        "study_id": 154,
+        "study_title": "정보보안 기초 스터디",
+        "study_topic": "전공",
+        "description": "보안 개념·네트워크 보안·암호학 기초 학습.",
+        "max_participants": 10,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "IT관 312호",
+        "start_date": "2025-09-18",
+        "end_date": "2025-12-10",
+        "chat_link": "https://open.kakao.com/o/security154",
+        "organizer": {
+          "organizer_id": 57,
+          "organizer_name": "김남훈"
+        }
+      }
+    },
+    {
+      "id": "155",
+      "data": {
+        "study_id": 155,
+        "study_title": "머신러닝 논문 리뷰 모임",
+        "study_topic": "논문",
+        "description": "NeurIPS·ICML 최신 논문 리뷰 및 모델 분석.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "IT관 220호",
+        "start_date": "2025-10-01",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/ml155",
+        "organizer": {
+          "organizer_id": 74,
+          "organizer_name": "박채민"
+        }
+      }
+    },
+    {
+      "id": "156",
+      "data": {
+        "study_id": 156,
+        "study_title": "시각 디자인 기초 스터디",
+        "study_topic": "과제",
+        "description": "색채학·레이아웃·타이포그래피 기초 실습.",
+        "max_participants": 8,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "디자인관 106호",
+        "start_date": "2025-09-30",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/design156",
+        "organizer": {
+          "organizer_id": 33,
+          "organizer_name": "이소민"
+        }
+      }
+    },
+    {
+      "id": "157",
+      "data": {
+        "study_id": 157,
+        "study_title": "프랑스어 기초 스터디",
+        "study_topic": "외국어",
+        "description": "알파벳·기초문법·회화 표현 중심 프랑스어 기초.",
+        "max_participants": 6,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "언어교육관 102호",
+        "start_date": "2025-09-22",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/fr157",
+        "organizer": {
+          "organizer_id": 52,
+          "organizer_name": "장유빈"
+        }
+      }
+    },
+    {
+      "id": "158",
       "data": {
         "study_id": 158,
-        "study_title": "AI 시스템 디자인 & 프로토타이핑",
-        "study_topic": "AI+디자인",
-        "description": "AI 기능을 시각적으로 설계하고 Figma 기반으로 프로토타입을 제작하는 융합형 스터디입니다.",
+        "study_title": "리눅스 운영 실습 스터디",
+        "study_topic": "전공",
+        "description": "리눅스 명령어·파일 시스템·네트워크까지 실습.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "IT관 108호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/linux158",
+        "organizer": {
+          "organizer_id": 67,
+          "organizer_name": "이정우"
+        }
+      }
+    },
+    {
+      "id": "159",
+      "data": {
+        "study_id": 159,
+        "study_title": "파이썬 알고리즘 최적화반",
+        "study_topic": "전공",
+        "description": "알고리즘 효율화 및 파이썬 최적화 기법 집중 학습.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "공학관 210호",
+        "start_date": "2025-10-03",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/py159",
+        "organizer": {
+          "organizer_id": 82,
+          "organizer_name": "정재윤"
+        }
+      }
+    },
+    {
+      "id": "160",
+      "data": {
+        "study_id": 160,
+        "study_title": "AI 윤리와 모델 편향 분석",
+        "study_topic": "전공",
+        "description": "AI 윤리, 데이터 편향, 모델 공정성 등을 학습하는 스터디입니다.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "IT관 209호",
+        "start_date": "2025-09-20",
+        "end_date": "2025-11-25",
+        "chat_link": "https://open.kakao.com/o/ai160",
+        "organizer": {
+          "organizer_id": 71,
+          "organizer_name": "이은재"
+        }
+      }
+    },
+    {
+      "id": "161",
+      "data": {
+        "study_id": 161,
+        "study_title": "딥러닝 모델 구현 스터디",
+        "study_topic": "전공",
+        "description": "PyTorch 기반으로 CNN, RNN 등 딥러닝 모델을 구현합니다.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "IT관 220호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/dl161",
+        "organizer": {
+          "organizer_id": 39,
+          "organizer_name": "박정후"
+        }
+      }
+    },
+    {
+      "id": "162",
+      "data": {
+        "study_id": 162,
+        "study_title": "영어 뉴스 리딩 스터디",
+        "study_topic": "외국어",
+        "description": "BBC·CNN 뉴스 기사 읽기 기반 영어 독해 실력 향상.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "언어교육원 104호",
+        "start_date": "2025-09-05",
+        "end_date": "2025-10-30",
+        "chat_link": "https://open.kakao.com/o/eng162",
+        "organizer": {
+          "organizer_id": 55,
+          "organizer_name": "신하늘"
+        }
+      }
+    },
+    {
+      "id": "163",
+      "data": {
+        "study_id": 163,
+        "study_title": "리액트 네이티브 앱 제작반",
+        "study_topic": "전공",
+        "description": "React Native와 Expo를 활용해 앱을 제작하는 실전 스터디.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "IT관 105호",
+        "start_date": "2025-09-25",
+        "end_date": "2025-12-10",
+        "chat_link": "https://open.kakao.com/o/rn163",
+        "organizer": {
+          "organizer_id": 63,
+          "organizer_name": "정유정"
+        }
+      }
+    },
+    {
+      "id": "164",
+      "data": {
+        "study_id": 164,
+        "study_title": "토익 스피킹 레벨6 목표반",
+        "study_topic": "외국어",
+        "description": "토익 스피킹 기출 문제 기반 실전 대비 스터디.",
+        "max_participants": 8,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "언어교육원 203호",
+        "start_date": "2025-10-01",
+        "end_date": "2025-11-25",
+        "chat_link": "https://open.kakao.com/o/toeic164",
+        "organizer": {
+          "organizer_id": 80,
+          "organizer_name": "김지윤"
+        }
+      }
+    },
+    {
+      "id": "165",
+      "data": {
+        "study_id": 165,
+        "study_title": "UX 글쓰기 & 마이크로카피",
+        "study_topic": "과제",
+        "description": "UX Writing 기본 원칙과 마이크로카피 실전 작성.",
         "max_participants": 6,
         "current_participants": 3,
         "status": "모집중",
-        "place": "디자인관 304호",
+        "place": "디자인관 102호",
         "start_date": "2025-09-15",
-        "end_date": "2025-12-25",
-        "chat_link": "https://open.kakao.com/o/aidesign158",
-        "organizer": { "organizer_id": 83, "organizer_name": "정서윤" }
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/ux165",
+        "organizer": {
+          "organizer_id": 92,
+          "organizer_name": "송현주"
+        }
       }
     },
     {
-      "id": 119,
+      "id": "166",
       "data": {
-        "study_id": 119,
-        "study_title": "영화 속 인물 심리 분석 스터디",
-        "study_topic": "심리학",
-        "description": "영화 속 캐릭터의 감정, 동기, 트라우마를 심리학적으로 분석하고 토론합니다.",
-        "max_participants": 5,
-        "current_participants": 3,
+        "study_id": 166,
+        "study_title": "React + Firebase 실전반",
+        "study_topic": "전공",
+        "description": "Firebase Auth, Firestore 등 연동을 통해 서비스 개발.",
+        "max_participants": 10,
+        "current_participants": 6,
         "status": "모집중",
-        "place": "인문관 303호",
-        "start_date": "2025-10-01",
-        "end_date": "2025-12-10",
-        "chat_link": "https://open.kakao.com/o/filmpsy",
-        "organizer": { "organizer_id": 54, "organizer_name": "김하늘" }
+        "place": "IT관 210호",
+        "start_date": "2025-09-18",
+        "end_date": "2025-12-15",
+        "chat_link": "https://open.kakao.com/o/react166",
+        "organizer": {
+          "organizer_id": 48,
+          "organizer_name": "이재훈"
+        }
       }
     },
     {
-      "id": 118,
+      "id": "167",
       "data": {
-        "study_id": 118,
-        "study_title": "디지털 금융 서비스 UX 분석",
-        "study_topic": "핀테크",
-        "description": "디지털 금융 플랫폼의 UX 패턴과 사용성 테스트를 함께 연구합니다.",
-        "max_participants": 7,
+        "study_id": 167,
+        "study_title": "디지털 마케팅 실전 스터디",
+        "study_topic": "전공",
+        "description": "SNS 기반 마케팅 전략·콘텐츠 제작 실습.",
+        "max_participants": 8,
         "current_participants": 4,
         "status": "모집중",
-        "place": "상경관 402호",
+        "place": "경영관 103호",
+        "start_date": "2025-10-02",
+        "end_date": "2025-12-10",
+        "chat_link": "https://open.kakao.com/o/mark167",
+        "organizer": {
+          "organizer_id": 29,
+          "organizer_name": "문채린"
+        }
+      }
+    },
+    {
+      "id": "168",
+      "data": {
+        "study_id": 168,
+        "study_title": "JLPT N3 기초 문법반",
+        "study_topic": "외국어",
+        "description": "N3 필수 문법 및 독해·청해 기초 학습.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "언어교육원 305호",
+        "start_date": "2025-09-22",
+        "end_date": "2025-11-25",
+        "chat_link": "https://open.kakao.com/o/jlpt168",
+        "organizer": {
+          "organizer_id": 60,
+          "organizer_name": "박도연"
+        }
+      }
+    },
+    {
+      "id": "169",
+      "data": {
+        "study_id": 169,
+        "study_title": "데이터베이스 설계 스터디",
+        "study_topic": "전공",
+        "description": "ERD 설계·정규화·스키마 설계 실습.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "IT관 207호",
+        "start_date": "2025-09-08",
+        "end_date": "2025-11-20",
+        "chat_link": "https://open.kakao.com/o/db169",
+        "organizer": {
+          "organizer_id": 15,
+          "organizer_name": "오지호"
+        }
+      }
+    },
+    {
+      "id": "170",
+      "data": {
+        "study_id": 170,
+        "study_title": "포트폴리오 발표 스터디",
+        "study_topic": "면접",
+        "description": "면접 발표 대비용 포트폴리오 발표 훈련.",
+        "max_participants": 6,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "취업센터 발표실",
+        "start_date": "2025-09-29",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/iv170",
+        "organizer": {
+          "organizer_id": 33,
+          "organizer_name": "정은우"
+        }
+      }
+    },
+    {
+      "id": "171",
+      "data": {
+        "study_id": 171,
+        "study_title": "캡스톤 디자인 연구 기획반",
+        "study_topic": "과제",
+        "description": "졸업작품 기획·요구사항 정의·프로토타입 제작 스터디.",
+        "max_participants": 8,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "IT관 301호",
+        "start_date": "2025-10-05",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/cap171",
+        "organizer": {
+          "organizer_id": 37,
+          "organizer_name": "김성아"
+        }
+      }
+    },
+    {
+      "id": "172",
+      "data": {
+        "study_id": 172,
+        "study_title": "바이오AI 개론 스터디",
+        "study_topic": "전공",
+        "description": "바이오 데이터 분석 및 BioAI 기본 개념 학습.",
+        "max_participants": 6,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "IT관 202호",
+        "start_date": "2025-09-12",
+        "end_date": "2025-11-12",
+        "chat_link": "https://open.kakao.com/o/bio172",
+        "organizer": {
+          "organizer_id": 49,
+          "organizer_name": "남지유"
+        }
+      }
+    },
+    {
+      "id": "173",
+      "data": {
+        "study_id": 173,
+        "study_title": "창업 브랜딩 기초반",
+        "study_topic": "창업",
+        "description": "브랜드 전략·로고·톤앤매너 기초를 배우는 스터디.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "창업센터 B1실",
+        "start_date": "2025-09-18",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/start173",
+        "organizer": {
+          "organizer_id": 28,
+          "organizer_name": "김채연"
+        }
+      }
+    },
+    {
+      "id": "174",
+      "data": {
+        "study_id": 174,
+        "study_title": "금융 데이터 분석 실전반",
+        "study_topic": "전공",
+        "description": "금융 데이터 시각화 및 분석 실전 스터디.",
+        "max_participants": 10,
+        "current_participants": 7,
+        "status": "모집중",
+        "place": "경제관 201호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-12-05",
+        "chat_link": "https://open.kakao.com/o/fin174",
+        "organizer": {
+          "organizer_id": 30,
+          "organizer_name": "이성우"
+        }
+      }
+    },
+    {
+      "id": "175",
+      "data": {
+        "study_id": 175,
+        "study_title": "논문 요약 & 리뷰 스터디",
+        "study_topic": "논문",
+        "description": "최신 연구 트렌드를 기반으로 논문 요약 및 리뷰.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "도서관 세미나실 B2",
+        "start_date": "2025-09-28",
+        "end_date": "2025-11-20",
+        "chat_link": "https://open.kakao.com/o/th175",
+        "organizer": {
+          "organizer_id": 91,
+          "organizer_name": "김보영"
+        }
+      }
+    },
+    {
+      "id": "176",
+      "data": {
+        "study_id": 176,
+        "study_title": "리눅스 네트워크 프로그래밍",
+        "study_topic": "전공",
+        "description": "리눅스 소켓 프로그래밍 및 패킷 분석 기초.",
+        "max_participants": 6,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "IT관 203호",
+        "start_date": "2025-09-05",
+        "end_date": "2025-12-10",
+        "chat_link": "https://open.kakao.com/o/linux176",
+        "organizer": {
+          "organizer_id": 66,
+          "organizer_name": "정우영"
+        }
+      }
+    },
+    {
+      "id": "177",
+      "data": {
+        "study_id": 177,
+        "study_title": "영어 말하기 즉흥 토론반",
+        "study_topic": "외국어",
+        "description": "즉흥 스피킹과 토론 중심 영어 회화 스터디.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "언어교육원 104호",
+        "start_date": "2025-09-22",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/eng177",
+        "organizer": {
+          "organizer_id": 72,
+          "organizer_name": "오서준"
+        }
+      }
+    },
+    {
+      "id": "178",
+      "data": {
+        "study_id": 178,
+        "study_title": "데이터 엔지니어링 입문반",
+        "study_topic": "전공",
+        "description": "ETL, 데이터 파이프라인, Cloud Storage 기초 학습.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "IT관 108호",
+        "start_date": "2025-09-17",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/de178",
+        "organizer": {
+          "organizer_id": 35,
+          "organizer_name": "한소율"
+        }
+      }
+    },
+    {
+      "id": "179",
+      "data": {
+        "study_id": 179,
+        "study_title": "React 포트폴리오 완성반",
+        "study_topic": "전공",
+        "description": "React + API 연동 프로젝트 완성을 목표로 합니다.",
+        "max_participants": 10,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "IT관 207호",
+        "start_date": "2025-10-01",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/react179",
+        "organizer": {
+          "organizer_id": 59,
+          "organizer_name": "김도은"
+        }
+      }
+    },
+    {
+      "id": "180",
+      "data": {
+        "study_id": 180,
+        "study_title": "백엔드 REST API 기초반",
+        "study_topic": "전공",
+        "description": "REST API의 기본 개념과 Node.js 기반 CRUD 구현 실습.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "IT관 205호",
+        "start_date": "2025-09-12",
+        "end_date": "2025-11-28",
+        "chat_link": "https://open.kakao.com/o/api180",
+        "organizer": {
+          "organizer_id": 33,
+          "organizer_name": "윤가현"
+        }
+      }
+    },
+    {
+      "id": "181",
+      "data": {
+        "study_id": 181,
+        "study_title": "HTML/CSS 웹 퍼블리싱 스터디",
+        "study_topic": "전공",
+        "description": "실전 웹페이지 클론코딩 기반 퍼블리싱 스터디.",
+        "max_participants": 10,
+        "current_participants": 7,
+        "status": "모집중",
+        "place": "디자인관 101호",
+        "start_date": "2025-09-07",
+        "end_date": "2025-11-15",
+        "chat_link": "https://open.kakao.com/o/pub181",
+        "organizer": {
+          "organizer_id": 45,
+          "organizer_name": "박지훈"
+        }
+      }
+    },
+    {
+      "id": "182",
+      "data": {
+        "study_id": 182,
+        "study_title": "영어 일상회화 실전반",
+        "study_topic": "외국어",
+        "description": "일상 생활 중심 영어 표현 및 즉흥 말하기 훈련.",
+        "max_participants": 8,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "언어교육원 204호",
+        "start_date": "2025-09-22",
+        "end_date": "2025-11-20",
+        "chat_link": "https://open.kakao.com/o/eng182",
+        "organizer": {
+          "organizer_id": 82,
+          "organizer_name": "전하늘"
+        }
+      }
+    },
+    {
+      "id": "183",
+      "data": {
+        "study_id": 183,
+        "study_title": "리눅스 명령어 마스터 스터디",
+        "study_topic": "전공",
+        "description": "필수 리눅스 명령어와 파일 구조를 완전히 익히는 스터디.",
+        "max_participants": 6,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "IT관 107호",
+        "start_date": "2025-09-02",
+        "end_date": "2025-11-10",
+        "chat_link": "https://open.kakao.com/o/linux183",
+        "organizer": {
+          "organizer_id": 59,
+          "organizer_name": "김태성"
+        }
+      }
+    },
+    {
+      "id": "184",
+      "data": {
+        "study_id": 184,
+        "study_title": "면접 인성 질문 대비반",
+        "study_topic": "면접",
+        "description": "기업별 인성 질문 분석 및 답변 연습 중심 스터디.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "취업센터 207호",
+        "start_date": "2025-10-01",
+        "end_date": "2025-11-25",
+        "chat_link": "https://open.kakao.com/o/inter184",
+        "organizer": {
+          "organizer_id": 38,
+          "organizer_name": "이윤호"
+        }
+      }
+    },
+    {
+      "id": "185",
+      "data": {
+        "study_id": 185,
+        "study_title": "UI/UX 사용자 흐름 설계반",
+        "study_topic": "과제",
+        "description": "User Flow, Wireframe 설계 실전 스터디.",
+        "max_participants": 8,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "디자인관 103호",
+        "start_date": "2025-09-18",
+        "end_date": "2025-11-30",
+        "chat_link": "https://open.kakao.com/o/ux185",
+        "organizer": {
+          "organizer_id": 26,
+          "organizer_name": "유지아"
+        }
+      }
+    },
+    {
+      "id": "186",
+      "data": {
+        "study_id": 186,
+        "study_title": "Algorithm Graph 실전풀이반",
+        "study_topic": "코딩 테스트",
+        "description": "그래프 탐색(BFS/DFS) 문제 집중 풀이 스터디.",
+        "max_participants": 10,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "공학관 206호",
+        "start_date": "2025-09-15",
+        "end_date": "2025-12-15",
+        "chat_link": "https://open.kakao.com/o/algo186",
+        "organizer": {
+          "organizer_id": 91,
+          "organizer_name": "김예은"
+        }
+      }
+    },
+    {
+      "id": "187",
+      "data": {
+        "study_id": 187,
+        "study_title": "스페인어 기초 스터디",
+        "study_topic": "외국어",
+        "description": "알파벳·필수 표현 중심 스페인어 기초 스터디.",
+        "max_participants": 6,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "언어교육원 305호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-11-12",
+        "chat_link": "https://open.kakao.com/o/sp187",
+        "organizer": {
+          "organizer_id": 88,
+          "organizer_name": "문지후"
+        }
+      }
+    },
+    {
+      "id": "188",
+      "data": {
+        "study_id": 188,
+        "study_title": "컴퓨터 네트워크 입문반",
+        "study_topic": "전공",
+        "description": "OSI 7계층부터 TCP/IP까지 네트워크 기초 학습.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "IT관 301호",
+        "start_date": "2025-09-09",
+        "end_date": "2025-11-25",
+        "chat_link": "https://open.kakao.com/o/net188",
+        "organizer": {
+          "organizer_id": 62,
+          "organizer_name": "서민재"
+        }
+      }
+    },
+    {
+      "id": "189",
+      "data": {
+        "study_id": 189,
+        "study_title": "창업 아이디어 발굴 워크숍",
+        "study_topic": "창업",
+        "description": "문제 정의 → 해결 방안 → MVP 아이디어까지 발굴.",
+        "max_participants": 8,
+        "current_participants": 5,
+        "status": "모집중",
+        "place": "창업보육센터 A실",
+        "start_date": "2025-09-27",
+        "end_date": "2025-12-02",
+        "chat_link": "https://open.kakao.com/o/start189",
+        "organizer": {
+          "organizer_id": 71,
+          "organizer_name": "김은서"
+        }
+      }
+    },
+    {
+      "id": "190",
+      "data": {
+        "study_id": 190,
+        "study_title": "딥러닝으로 만드는 이미지 분류기",
+        "study_topic": "전공",
+        "description": "CNN 모델을 활용해 이미지 분류기를 만드는 스터디.",
+        "max_participants": 6,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "IT관 208호",
+        "start_date": "2025-10-03",
+        "end_date": "2025-12-20",
+        "chat_link": "https://open.kakao.com/o/dl190",
+        "organizer": {
+          "organizer_id": 48,
+          "organizer_name": "조윤재"
+        }
+      }
+    },
+    {
+      "id": "191",
+      "data": {
+        "study_id": 191,
+        "study_title": "전공 기말 대비 스터디",
+        "study_topic": "전공",
+        "description": "기말시험 범위 요약 및 실전 문제풀이 중심 스터디.",
+        "max_participants": 10,
+        "current_participants": 7,
+        "status": "모집중",
+        "place": "도서관 3층 그룹룸",
+        "start_date": "2025-10-01",
+        "end_date": "2025-12-18",
+        "chat_link": "https://open.kakao.com/o/exam191",
+        "organizer": {
+          "organizer_id": 76,
+          "organizer_name": "정시윤"
+        }
+      }
+    },
+    {
+      "id": "192",
+      "data": {
+        "study_id": 192,
+        "study_title": "면접 코딩테스트 준비반",
+        "study_topic": "코딩 테스트",
+        "description": "대기업·스타트업 기술면접 대비 코딩 문제풀이.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "공학관 207호",
+        "start_date": "2025-09-23",
+        "end_date": "2025-12-10",
+        "chat_link": "https://open.kakao.com/o/ct192",
+        "organizer": {
+          "organizer_id": 35,
+          "organizer_name": "오세훈"
+        }
+      }
+    },
+    {
+      "id": "193",
+      "data": {
+        "study_id": 193,
+        "study_title": "포토샵 이미지 편집 기초",
+        "study_topic": "과제",
+        "description": "포토샵 기본 도구와 편집 스킬 습득.",
+        "max_participants": 8,
+        "current_participants": 4,
+        "status": "모집중",
+        "place": "디자인관 B102호",
+        "start_date": "2025-09-17",
+        "end_date": "2025-11-25",
+        "chat_link": "https://open.kakao.com/o/ps193",
+        "organizer": {
+          "organizer_id": 42,
+          "organizer_name": "박세정"
+        }
+      }
+    },
+    {
+      "id": "194",
+      "data": {
+        "study_id": 194,
+        "study_title": "프론트엔드 프로젝트 완주반",
+        "study_topic": "전공",
+        "description": "React + API + 배포까지 프로젝트 완성 목표.",
+        "max_participants": 12,
+        "current_participants": 8,
+        "status": "모집중",
+        "place": "IT관 101호",
         "start_date": "2025-09-20",
         "end_date": "2025-12-20",
-        "chat_link": "https://open.kakao.com/o/finux",
-        "organizer": { "organizer_id": 67, "organizer_name": "박채린" }
+        "chat_link": "https://open.kakao.com/o/fe194",
+        "organizer": {
+          "organizer_id": 60,
+          "organizer_name": "이하린"
+        }
       }
     },
     {
-      "id": 117,
+      "id": "195",
       "data": {
-        "study_id": 117,
-        "study_title": "포트폴리오 웹사이트 제작반",
-        "study_topic": "웹 개발",
-        "description": "React와 Tailwind를 사용해 개인 포트폴리오 웹사이트를 완성하는 실습 중심 스터디입니다.",
-        "max_participants": 9,
-        "current_participants": 5,
-        "status": "모집중",
-        "place": "공학관 407호",
-        "start_date": "2025-09-10",
-        "end_date": "2025-12-31",
-        "chat_link": "https://open.kakao.com/o/portstudy",
-        "organizer": { "organizer_id": 45, "organizer_name": "이도현" }
-      }
-    },
-    {
-      "id": 116,
-      "data": {
-        "study_id": 116,
-        "study_title": "AI 윤리와 사회적 책임",
-        "study_topic": "AI+인문",
-        "description": "AI 기술 발전에 따른 윤리 문제와 사회적 영향을 토론하고 에세이를 작성합니다.",
-        "max_participants": 5,
-        "current_participants": 2,
-        "status": "모집중",
-        "place": "AI센터 205호",
-        "start_date": "2025-10-05",
-        "end_date": "2025-12-25",
-        "chat_link": "https://open.kakao.com/o/aiethics",
-        "organizer": { "organizer_id": 43, "organizer_name": "서유진" }
-      }
-    },
-    {
-      "id": 115,
-      "data": {
-        "study_id": 115,
-        "study_title": "자연어처리 논문 구현반",
-        "study_topic": "AI",
-        "description": "BERT, GPT 계열 논문을 분석하고 HuggingFace로 구현 실습을 진행합니다.",
+        "study_id": 195,
+        "study_title": "디자인 포트폴리오 제작반",
+        "study_topic": "과제",
+        "description": "실제 작품 기반 포트폴리오 페이지 완성.",
         "max_participants": 6,
         "current_participants": 3,
         "status": "모집중",
-        "place": "AI 연구실",
-        "start_date": "2025-09-15",
-        "end_date": "2025-12-15",
-        "chat_link": "https://open.kakao.com/o/nlpstudy",
-        "organizer": { "organizer_id": 42, "organizer_name": "박지민" }
+        "place": "디자인관 208호",
+        "start_date": "2025-10-04",
+        "end_date": "2025-12-05",
+        "chat_link": "https://open.kakao.com/o/design195",
+        "organizer": {
+          "organizer_id": 87,
+          "organizer_name": "한도윤"
+        }
       }
     },
     {
-      "id": 114,
+      "id": "196",
       "data": {
-        "study_id": 114,
-        "study_title": "프론트엔드 성능 최적화 실전반",
-        "study_topic": "웹 개발",
-        "description": "Lighthouse 분석을 기반으로 웹 성능 최적화, 코드 스플리팅, 캐싱 전략을 다룹니다.",
+        "study_id": 196,
+        "study_title": "리눅스 서버 구축 실습반",
+        "study_topic": "전공",
+        "description": "리눅스 서버 환경 구축과 Nginx 설정 실습.",
         "max_participants": 8,
         "current_participants": 4,
         "status": "모집중",
-        "place": "공학관 509호",
-        "start_date": "2025-09-25",
-        "end_date": "2025-12-31",
-        "chat_link": "https://open.kakao.com/o/feoptimize",
-        "organizer": { "organizer_id": 35, "organizer_name": "이민수" }
+        "place": "IT관 105호",
+        "start_date": "2025-09-13",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/server196",
+        "organizer": {
+          "organizer_id": 50,
+          "organizer_name": "윤찬혁"
+        }
       }
     },
     {
-      "id": 113,
+      "id": "197",
       "data": {
-        "study_id": 113,
-        "study_title": "UX 글쓰기와 감정 표현 연구",
-        "study_topic": "UX 기획",
-        "description": "UX 콘텐츠의 감정적 언어 표현을 연구하고 마이크로카피를 작성해봅니다.",
-        "max_participants": 6,
-        "current_participants": 2,
+        "study_id": 197,
+        "study_title": "일본어 회화 중급반",
+        "study_topic": "외국어",
+        "description": "일상 회화 + JLPT 중급 문법 중심 일본어 회화.",
+        "max_participants": 10,
+        "current_participants": 6,
         "status": "모집중",
-        "place": "디자인관 305호",
-        "start_date": "2025-10-01",
-        "end_date": "2025-12-20",
-        "chat_link": "https://open.kakao.com/o/uxwriting",
-        "organizer": { "organizer_id": 64, "organizer_name": "강유정" }
+        "place": "언어교육원 106호",
+        "start_date": "2025-09-28",
+        "end_date": "2025-12-05",
+        "chat_link": "https://open.kakao.com/o/jp197",
+        "organizer": {
+          "organizer_id": 63,
+          "organizer_name": "김사라"
+        }
       }
     },
     {
-      "id": 112,
+      "id": "198",
       "data": {
-        "study_id": 112,
-        "study_title": "딥러닝 모델 튜닝 실습",
-        "study_topic": "AI",
-        "description": "하이퍼파라미터 튜닝, 데이터 증강, 학습률 스케줄링 등 모델 성능 개선 실습을 진행합니다.",
+        "study_id": 198,
+        "study_title": "데이터 분석 프로젝트반",
+        "study_topic": "전공",
+        "description": "실제 데이터셋 기반 분석 프로젝트 수행.",
         "max_participants": 8,
-        "current_participants": 4,
-        "status": "모집중",
-        "place": "AI센터 302호",
-        "start_date": "2025-09-15",
-        "end_date": "2025-12-15",
-        "chat_link": "https://open.kakao.com/o/aituning",
-        "organizer": { "organizer_id": 68, "organizer_name": "정수민" }
-      }
-    },
-    {
-      "id": 111,
-      "data": {
-        "study_id": 111,
-        "study_title": "네트워크 해킹 & 보안 스터디",
-        "study_topic": "보안",
-        "description": "패킷 분석, 공격 시나리오 실습 등 네트워크 보안의 핵심 개념을 학습합니다.",
-        "max_participants": 7,
         "current_participants": 5,
         "status": "모집중",
-        "place": "IT보안실 102호",
-        "start_date": "2025-09-10",
-        "end_date": "2025-11-30",
-        "chat_link": "https://open.kakao.com/o/netsec",
-        "organizer": { "organizer_id": 50, "organizer_name": "한지호" }
+        "place": "경제관 302호",
+        "start_date": "2025-10-01",
+        "end_date": "2025-12-15",
+        "chat_link": "https://open.kakao.com/o/data198",
+        "organizer": {
+          "organizer_id": 85,
+          "organizer_name": "이정해"
+        }
+      }
+    },
+    {
+      "id": "199",
+      "data": {
+        "study_id": 199,
+        "study_title": "JS 비동기 로직 마스터 스터디",
+        "study_topic": "전공",
+        "description": "Promise, async/await, 이벤트루프까지 JS 비동기 완전 정복.",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "IT관 109호",
+        "start_date": "2025-09-21",
+        "end_date": "2025-12-08",
+        "chat_link": "https://open.kakao.com/o/js199",
+        "organizer": {
+          "organizer_id": 40,
+          "organizer_name": "송민기"
+        }
       }
     }
   ]
