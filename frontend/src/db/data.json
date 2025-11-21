@@ -2139,40 +2139,44 @@
       }
     },
     {
-      "study_id": 107,
-      "study_title": "SQL 데이터 분석 기초반",
-      "study_topic": "전공",
-      "description": "SELECT부터 JOIN, GROUP BY까지 실무 데이터 분석 쿼리를 학습합니다. (수정됨)",
-      "max_participants": 10,
-      "current_participants": 3,
-      "status": "모집중",
-      "place": "경제관 203호",
-      "start_date": "2025-09-20",
-      "end_date": "2025-12-01",
-      "chat_link": "https://open.kakao.com/o/sqlbeginner",
-      "organizer": {
-        "organizer_id": 37,
-        "organizer_name": "박지현"
-      },
-      "id": "107"
+      "id": "107",
+      "data": {
+        "study_id": 107,
+        "study_title": "SQL 데이터 분석 기초반",
+        "study_topic": "전공",
+        "description": "SELECT부터 JOIN, GROUP BY까지 실무 데이터 분석 쿼리를 학습합니다. (수정됨)",
+        "max_participants": 10,
+        "current_participants": 3,
+        "status": "모집중",
+        "place": "경제관 203호",
+        "start_date": "2025-09-20",
+        "end_date": "2025-12-01",
+        "chat_link": "https://open.kakao.com/o/sqlbeginner",
+        "organizer": {
+          "organizer_id": 37,
+          "organizer_name": "박지현"
+        }
+      }
     },
     {
-      "study_id": 106,
-      "study_title": "디자인 시스템 구축 스터디",
-      "study_topic": "과제",
-      "description": "피그마와 디자인 토큰을 활용해 반응형 디자인 시스템을 만들어봅니다. (수정됨)",
-      "max_participants": 10,
-      "current_participants": 6,
-      "status": "모집중",
-      "place": "디자인관 102호",
-      "start_date": "2025-09-10",
-      "end_date": "2025-11-10",
-      "chat_link": "https://open.kakao.com/o/uxdesignstudy",
-      "organizer": {
-        "organizer_id": 44,
-        "organizer_name": "최수연"
-      },
-      "id": "106"
+      "id": "106",
+      "data": {
+        "study_id": 106,
+        "study_title": "디자인 시스템 구축 스터디",
+        "study_topic": "과제",
+        "description": "피그마와 디자인 토큰을 활용해 반응형 디자인 시스템을 만들어봅니다. (수정됨)",
+        "max_participants": 10,
+        "current_participants": 6,
+        "status": "모집중",
+        "place": "디자인관 102호",
+        "start_date": "2025-09-10",
+        "end_date": "2025-11-10",
+        "chat_link": "https://open.kakao.com/o/uxdesignstudy",
+        "organizer": {
+          "organizer_id": 44,
+          "organizer_name": "최수연"
+        }
+      }
     },
     {
       "id": "105",
@@ -2256,22 +2260,18 @@
     },
     {
       "id": "101",
+      "code": "OK",
+      "message": "스터디 상세 수정 성공",
       "data": {
-        "study_id": 101,
+        "study_id": "101",
         "study_title": "창업 아이디어 실현 스터디",
         "study_topic": "창업",
-        "description": "창업 아이템을 구체화하고 비즈니스 모델을 수립하는 실전형 스터디입니다.",
+        "current_participants": 1,
         "max_participants": 6,
-        "current_participants": 3,
-        "status": "모집중",
-        "place": "사회관 107호",
         "start_date": "2025-09-10",
         "end_date": "2025-10-15",
-        "chat_link": "https://open.kakao.com/o/startupstudy",
-        "organizer": {
-          "organizer_id": 38,
-          "organizer_name": "유정"
-        }
+        "status": "모집마감",
+        "description": "창업 아이템을 구체화하고 비즈니스 모델을 수립하는 실전형 스터디입니다."
       }
     },
     {
@@ -3872,23 +3872,6 @@
           "organizer_id": 40,
           "organizer_name": "송민기"
         }
-      }
-    },
-    {
-      "id": 1763106097778,
-      "code": "OK",
-      "message": "스터디 상세 등록 성공",
-      "data": {
-        "study_id": 1763106097778,
-        "study_title": "",
-        "study_topic": "",
-        "current_participants": 1,
-        "max_participants": "",
-        "start_date": "",
-        "end_date": "",
-        "status": "모집마감",
-        "description": "",
-        "open_chat_link": ""
       }
     }
   ]

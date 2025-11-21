@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { FaUser, FaHashtag, FaCalendarAlt, FaUsers } from "react-icons/fa";
-import { MdOutlineChatBubble } from "react-icons/md";
+import { MdOutlineChatBubble, MdStayCurrentLandscape } from "react-icons/md";
 import StatusBadge from "../components/StatusBadge.jsx";
 
 export default function Studydetail() {
@@ -48,7 +48,7 @@ export default function Studydetail() {
   } = study;
 
   async function deleteClick() {
-    if (window.confirm("삭제 하시겠습니까?")) {
+    if (window.confirm("모임을삭제 하시겠습니까?")) {
       await fetch(`http://localhost:3001/study_details/${id}`, {
         method: "DELETE",
       });
@@ -58,6 +58,16 @@ export default function Studydetail() {
       navigate("/status", { replace: true });
     }
   }
+
+  const handleEdit = () => {
+    navigate(`/edit/${id}`, {
+      state: {
+        mode: "edit", // 어떤 모드인가
+        studyId: id,
+      },
+    });
+  };
+  // navigate() 할 때 state라는 옵션을 쓰면, URL에는 안 보이지만 다음 페이지에 몰래 전달되는 데이터를 넣을 수 있어.
 
   return (
     <Container>
@@ -109,7 +119,7 @@ export default function Studydetail() {
           <MdOutlineChatBubble className="icon_chat" />
           <OpenChat>오픈채팅방 링크 {chat_link || "미등록"}</OpenChat>
         </ChatRow>
-
+        <EditButton onClick={handleEdit}>수정</EditButton>
         <DeleteButton onClick={deleteClick}>삭제</DeleteButton>
       </Board>
     </Container>
@@ -222,5 +232,18 @@ const DeleteButton = styled.button`
   cursor: pointer;
   &:hover {
     background-color: #12365c;
+  }
+`;
+
+const EditButton = styled.button`
+  padding: 8px 12px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #2980b9;
   }
 `;
