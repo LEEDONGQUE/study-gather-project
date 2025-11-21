@@ -3,100 +3,84 @@ import styled from "styled-components";
 
 export default function Createpage() {
   const [form, setForm] = useState({
-    title: "",
+    stopudy_title: "",
     host: "",
-    topic: "",
-    member: "",
+    study_topic: "",
+    max_participants: "",
     place: "",
-    startDate: "",
-    endDate: "",
-    studyIntro: "",
-    openChat: "",
+    start_date: "",
+    end_date: "",
+    description: "",
+    chat_link: "",
   });
 
-  // 입력값 변경 핸들러
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  // 제출 핸들러
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newId = Date.now();
+    // const newId = Date.now();
 
-    // 모집 상태 자동 계산
-    const now = new Date();
-    const start = new Date(form.startDate);
-    const end = new Date(form.endDate);
-    let status = "모집중";
+    // // 모집 상태 자동 계산
+    // const now = new Date();
+    // const start = new Date(form.start_date);
+    // const end = new Date(form.end_date);
+    // let status = "모집중";
 
-    if (now > end) status = "모집마감";
-    else if (now >= start) status = "진행중";
+    // if (now > end) status = "모집마감";
+    // else if (now >= start) status = "진행중";
 
-    const current_participants = 1;
-    if (current_participants >= Number(form.member)) {
-      status = "모집마감";
-    }
+    // const current_participants = 1;
+    // if (current_participants >= Number(form.member)) {
+    //   status = "모집마감";
+    // }
 
     try {
-      await Promise.all([
-        // study_list 등록
-        fetch("http://localhost:3001/study_list", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            study_id: newId,
-            study_title: form.title,
-            study_topic: form.topic,
-            current_participants,
-            max_participants: form.member,
-            start_date: form.startDate,
-            end_date: form.endDate,
-            status,
-          }),
-        }),
+      const res = await fetch("http://localhost:3001/study_list", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer your-jwt-token",
+        },
 
-        // study_details 등록
-        fetch("http://localhost:3001/study_details", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            id: newId,
-            code: "OK",
-            message: "스터디 상세 등록 성공",
-            data: {
-              study_id: newId,
-              study_title: form.title,
-              study_topic: form.topic,
-              current_participants,
-              max_participants: form.member,
-              start_date: form.startDate,
-              end_date: form.endDate,
-              status,
-              description: form.studyIntro,
-              open_chat_link: form.openChat,
-            },
-          }),
+        body: JSON.stringify({
+          study_title: form.study_title,
+          study_topic: form.study_topic,
+          description: form.description,
+          max_participants: Number(form.max_participants),
+          place: form.place,
+          start_date: form.start_date,
+          end_date: form.end_date,
+          chat_link: form.chat_link || null,
         }),
-      ]);
+      });
 
-      alert("스터디가 등록되었습니다 ✅");
+      const json = await res.json();
+      console.log(json);
+
+      if (json.code === "CREATED") {
+        alert("스터디가 생성되었습니다! 🎉");
+      } else {
+        alert("생성 중 오류 발생 ❌");
+      }
+
       setForm({
-        title: "",
+        study_title: "",
         host: "",
-        topic: "",
-        member: "",
+        study_topic: "",
+        max_participants: "",
         place: "",
-        startDate: "",
-        endDate: "",
-        studyIntro: "",
-        openChat: "",
+        start_date: "",
+        end_date: "",
+        description: "",
+        chat_link: "",
       });
     } catch (err) {
       console.error("등록 실패:", err);
-      alert("등록 중 오류 발생 ❌");
+      alert("서버 오류 ❌");
     }
   };
 
@@ -119,8 +103,8 @@ export default function Createpage() {
             <Field fullWidth>
               <Label>제목</Label>
               <Input
-                name="title"
-                value={form.title}
+                name="study_title"
+                value={form.study_title}
                 onChange={handleChange}
                 placeholder="스터디 모임 제목을 입력해주세요"
               />
@@ -141,7 +125,7 @@ export default function Createpage() {
 
             <Field>
               <Label>주제</Label>
-              <Select name="topic" value={form.topic} onChange={handleChange}>
+              <Select name="study_topic" value={form.study_topic} onChange={handleChange}>
                 <option value="">스터디 주제를 선택해주세요</option>
                 <option value="major">전공</option>
                 <option value="task">과제</option>
@@ -156,8 +140,8 @@ export default function Createpage() {
               <Label>모집 인원</Label>
               <Input
                 type="number"
-                name="member"
-                value={form.member}
+                name="max_participants"
+                value={form.max_participants}
                 onChange={handleChange}
                 placeholder="인원"
               />
@@ -180,8 +164,8 @@ export default function Createpage() {
               <Label>시작 날짜</Label>
               <Input
                 type="date"
-                name="startDate"
-                value={form.startDate}
+                name="start_date"
+                value={form.start_date}
                 onChange={handleChange}
               />
             </Field>
@@ -190,8 +174,8 @@ export default function Createpage() {
               <Label>종료 날짜</Label>
               <Input
                 type="date"
-                name="endDate"
-                value={form.endDate}
+                name="end_date"
+                value={form.end_date}
                 onChange={handleChange}
               />
             </Field>
@@ -202,8 +186,8 @@ export default function Createpage() {
             <Field fullWidth>
               <Label>스터디 소개</Label>
               <TextArea
-                name="studyIntro"
-                value={form.studyIntro}
+                name="description"
+                value={form.description}
                 onChange={handleChange}
                 placeholder="스터디 모임에 대한 소개를 입력해주세요 (예: 목표, 진행방식, 커리큘럼 등)"
               />
@@ -216,8 +200,8 @@ export default function Createpage() {
               <Label>오픈채팅방 링크</Label>
               <Input
                 type="url"
-                name="openChat"
-                value={form.openChat}
+                name="chat_link"
+                value={form.chat_link}
                 onChange={handleChange}
                 placeholder="카카오톡 오픈채팅방 링크를 입력해주세요"
               />
