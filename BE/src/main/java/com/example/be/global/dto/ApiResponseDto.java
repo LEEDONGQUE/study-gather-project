@@ -12,7 +12,7 @@ public class ApiResponseDto<T> {
 
 
 
-    private ApiResponseDto(String code, String message, T data) {
+    public ApiResponseDto(String code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;

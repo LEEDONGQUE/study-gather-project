@@ -2,7 +2,7 @@ package com.example.be.user.controller;
 
 
 
-import com.example.be.config.SecurityConfig;
+import com.example.be.global.jwt.JwtTokenProvider;
 import com.example.be.user.dto.SignUpRequestDto;
 import com.example.be.user.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -22,7 +21,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(UserController.class) // 1. UserController만 테스트 대상으로 지정
-@Import(SecurityConfig.class)     // 2. SecurityConfig 임포트 (permitAll() 설정 때문)
+//@Import(SecurityConfig.class)     // 2. SecurityConfig 임포트 (permitAll() 설정 때문)
 class UserControllerTest {
 
     @Autowired
@@ -33,6 +32,9 @@ class UserControllerTest {
 
     @MockBean
     private UserService userService; // 5. UserController가 의존하는 UserService를 가짜(Mock)로 만듦
+
+    @MockBean
+    private JwtTokenProvider jwtTokenProvider;
 
     @Test
     @DisplayName("회원가입 성공")
