@@ -2100,21 +2100,22 @@
     },
     {
       "id": "110",
+      "code": "OK",
+      "message": "스터디 수정 성공",
       "data": {
         "study_id": 110,
-        "study_title": "알고리즘 코딩 테스트 준비반",
-        "study_topic": "전공",
-        "description": "하루 1문제씩 백준, 프로그래머스 중심으로 문제 풀이 및 코드 리뷰를 진행합니다.",
-        "max_participants": 10,
+        "study_title": "연애하기",
+        "study_topic": "논문",
         "current_participants": 1,
+        "max_participants": "8",
+        "start_date": "2025-11-10",
+        "end_date": "2025-11-05",
         "status": "모집중",
-        "place": "공학관 305 스터디룸 2",
-        "start_date": "2025-10-01",
-        "end_date": "2025-12-20",
-        "chat_link": "https://open.kakao.com/o/algostudy",
+        "description": "aerqqe",
+        "place": "커피숍",
         "organizer": {
-          "organizer_id": 25,
-          "organizer_name": "홍길동"
+          "organizer_id": 110,
+          "organizer_name": "강유정"
         }
       }
     },
@@ -2160,21 +2161,23 @@
     },
     {
       "id": "106",
+      "code": "OK",
+      "message": "스터디 수정 성공",
       "data": {
         "study_id": 106,
         "study_title": "디자인 시스템 구축 스터디",
         "study_topic": "과제",
-        "description": "피그마와 디자인 토큰을 활용해 반응형 디자인 시스템을 만들어봅니다. (수정됨)",
+        "current_participants": 1,
         "max_participants": 10,
-        "current_participants": 6,
-        "status": "모집중",
-        "place": "디자인관 102호",
         "start_date": "2025-09-10",
         "end_date": "2025-11-10",
-        "chat_link": "https://open.kakao.com/o/uxdesignstudy",
+        "status": "모집중",
+        "description": "피그마와 디자인 토큰을 활용해 반응형 디자인 시스템을 만들어봅니다. (수정됨)",
+        "open_chat_link": "https://open.kakao.com/o/uxdesignstudy",
+        "place": "디자인관 102호",
         "organizer": {
-          "organizer_id": 44,
-          "organizer_name": "최수연"
+          "organizer_id": 106,
+          "organizer_name": "글쎼요"
         }
       }
     },

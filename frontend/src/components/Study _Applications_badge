@@ -1,0 +1,13 @@
+// export function wait(){
+//     return(
+//         <WaitButton>
+//     );
+// }
+
+// export function accept(){
+//     return();
+// }
+
+// export function refuse(){
+//     return();
+// }

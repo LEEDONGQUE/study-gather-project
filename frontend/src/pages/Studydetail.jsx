@@ -2,14 +2,19 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { FaUser, FaHashtag, FaCalendarAlt, FaUsers } from "react-icons/fa";
-import { MdOutlineChatBubble, MdStayCurrentLandscape } from "react-icons/md";
 import StatusBadge from "../components/StatusBadge.jsx";
+import { FaTrash, FaEdit } from "react-icons/fa";
+import { FaUserCheck, FaCheckCircle } from "react-icons/fa";
+import { FiMessageCircle } from "react-icons/fi";
+import ApplicantModal from "./ApplicantModal.jsx";
+import ApplicantStatus from "./ApplicantStatus.jsx";
 
 export default function Studydetail() {
   const { id } = useParams();
   const [study, setStudy] = useState(null);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:3001/study_details?id=${id}`)
@@ -114,14 +119,48 @@ export default function Studydetail() {
         <WrapperContent>
           <Content>{description}</Content>
         </WrapperContent>
-
         <ChatRow>
-          <MdOutlineChatBubble className="icon_chat" />
-          <OpenChat>오픈채팅방 링크 {chat_link || "미등록"}</OpenChat>
+          <OpenChat style={{ marginBottom: "10px" }}>
+            <FiMessageCircle
+              style={{
+                fontSize: "20px",
+                marginRight: "6px",
+                color: "#5978acff",
+              }}
+            />
+            {chat_link || "미등록"}
+          </OpenChat>
         </ChatRow>
-        <EditButton onClick={handleEdit}>수정</EditButton>
-        <DeleteButton onClick={deleteClick}>삭제</DeleteButton>
       </Board>
+
+      <ButtonSection>
+        <EditButton onClick={handleEdit}>
+          <FaEdit style={{ marginRight: "6px" }} />
+          수정
+        </EditButton>
+
+        <DeleteButton onClick={deleteClick}>
+          <FaTrash style={{ marginRight: "6px" }} />
+          삭제
+        </DeleteButton>
+
+        {/* 2) 신청자 현황 보기 버튼 */}
+        <ApplicantButton onClick={() => setIsModalOpen(true)}>
+          신청자 현황 보기
+        </ApplicantButton>
+
+        {/* 3) 모달 조건부 렌더링 */}
+        {isModalOpen && (
+          <ApplicantModal onClose={() => setIsModalOpen(false)}>
+            <ApplicantStatus studyId={id} />
+          </ApplicantModal>
+        )}
+
+        <CloseRecruitButton>
+          <FaCheckCircle style={{ marginRight: "6px" }} />
+          모집 완료하기
+        </CloseRecruitButton>
+      </ButtonSection>
     </Container>
   );
 }
@@ -209,7 +248,7 @@ const ChatRow = styled.div`
   margin-top: 10px;
 
   .icon_chat {
-    color: #174579;
+    color: #793d17ff;
     margin-right: 10px;
   }
 `;
@@ -220,30 +259,97 @@ const OpenChat = styled.div`
   border: 1px solid #bec5cd;
   border-radius: 12px;
   padding: 10px;
+  display: flex;
+  align-items: center;
 `;
 
-const DeleteButton = styled.button`
-  background-color: #174579;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
-  margin: 20px 40px;
+const ButtonSection = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  grid-template-rows: 1fr 1fr; /* 2행 */
+  gap: 12px; /* 버튼 간 간격 */
+  margin-top: 24px;
+  width: 50%;
+  margin: 24px auto 0; /* ⬅ 가운데 정렬 핵심 */
+`;
+const EditButton = styled.button`
+  justify-content: center;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 80px;
+  background-color: #ffffff;
+  color: #444;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 14px;
+
   &:hover {
-    background-color: #12365c;
+    background-color: #f4f4f4;
   }
 `;
 
-const EditButton = styled.button`
-  padding: 8px 12px;
-  background-color: #3498db;
-  color: white;
-  border-radius: 6px;
-  border: none;
+const DeleteButton = styled.button`
+  justify-content: center;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 80px;
+  background-color: #ffffff;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 14px;
 
   &:hover {
-    background-color: #2980b9;
+    background-color: #fff5f5;
+  }
+`;
+
+/* 2행: 신청자 현황 / 모집 완료 */
+
+const ApplicantButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 80px;
+  background-color: #ffffff;
+
+  color: #3c8f3c; /* 진한 초록 글자 */
+  border: 1px solid #a3d7a2; /* 연초록 테두리 */
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #f5fff5; /* 아주 연한 초록 배경 */
+  }
+`;
+
+const CloseRecruitButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 80px;
+  background-color: #ffffff;
+
+  color: #5a8ee1; /* 파스텔 블루 텍스트 */
+  border: 1px solid #cfe2ff; /* 파스텔 하늘색 테두리 */
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #f3f8ff; /* 부드러운 파스텔 블루 배경 */
   }
 `;

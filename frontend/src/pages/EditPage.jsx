@@ -66,7 +66,7 @@ export default function Editpage() {
           code: "OK",
           message: "스터디 수정 성공",
           data: {
-            study_id: id,
+            study_id: Number(id),
             study_title: form.title,
             study_topic: form.topic,
             current_participants: 1,
@@ -76,6 +76,13 @@ export default function Editpage() {
             status: "모집중",
             description: form.studyIntro,
             open_chat_link: form.openChat,
+            place: form.place,
+
+            // ⬇ host(주최자)는 이렇게 저장해야 함
+            organizer: {
+              organizer_id: Number(id),
+              organizer_name: form.host,
+            },
           },
         }),
       });
