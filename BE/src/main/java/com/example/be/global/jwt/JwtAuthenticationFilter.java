@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.Collections;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
@@ -28,15 +29,15 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     FilterChain filterChain)
             throws ServletException, IOException {
 
-        String authHeader = request.getHeader("Authorization");
-
         String path = request.getRequestURI();
-        if (path.contains("/users/signup") || path.contains("/users/login")) {
+
+        // 회원가입, 로그인은 필터 제외
+        if (path.startsWith("/users/signup") || path.startsWith("/users/login")) {
             filterChain.doFilter(request, response);
             return;
         }
 
-
+        String authHeader = request.getHeader("Authorization");
 
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
@@ -52,7 +53,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     new UsernamePasswordAuthenticationToken(
                             studentNumber,
                             null,
-                            null
+                            Collections.emptyList()   // 권한을 빈 리스트로 명확하게 넣기
                     );
 
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
