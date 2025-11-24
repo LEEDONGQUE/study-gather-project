@@ -19,7 +19,7 @@ public class StudyController {
 
     private final StudyService studyService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<ApiResponseDto<StudyCreateResponseDto>> createStudy(
             @Valid @RequestBody StudyCreateRequestDto requestDto
     ) {
