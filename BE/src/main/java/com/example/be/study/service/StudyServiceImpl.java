@@ -1,10 +1,15 @@
 package com.example.be.study.service;
 
 import com.example.be.study.dto.StudyCreateRequestDto;
+import com.example.be.study.dto.StudyListResponseDto;
 import com.example.be.study.entity.Study;
 import com.example.be.study.repository.StudyRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +22,17 @@ public class StudyServiceImpl implements StudyService {
 
     private final StudyRepository studyRepository;
 
+    @Override
+    public Page<StudyListResponseDto> getStudyList(Integer page, Integer size) {
+        Pageable pageable = PageRequest.of(
+                page,
+                size,
+                Sort.by(Sort.Direction.DESC, "startDate"));
+
+        Page<Study> studyList = studyRepository.findAll(pageable);
+
+        return studyList.map(StudyListResponseDto::from);
+    }
     @Override
     public Long createStudy(@Valid StudyCreateRequestDto requestDto) {
 
