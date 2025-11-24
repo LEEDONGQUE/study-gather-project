@@ -4,10 +4,7 @@ import com.example.be.global.dto.ApiResponseDto;
 import com.example.be.study.dto.StudyCreateRequestDto;
 import com.example.be.study.dto.StudyCreateResponseDto;
 import com.example.be.study.service.StudyService;
-
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,19 +16,30 @@ public class StudyController {
 
     private final StudyService studyService;
 
+    /**
+     * 스터디 생성 API
+     * POST /studies
+     */
     @PostMapping
     public ResponseEntity<ApiResponseDto<StudyCreateResponseDto>> createStudy(
-            @Valid @RequestBody StudyCreateRequestDto requestDto
+            @RequestBody StudyCreateRequestDto requestDto
     ) {
-
         Long studyId = studyService.createStudy(requestDto);
 
-        StudyCreateResponseDto data = new StudyCreateResponseDto(studyId);
+        StudyCreateResponseDto responseDto =
+                new StudyCreateResponseDto(studyId);
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .body(new ApiResponseDto<>("CREATED",
-                        "스터디가 생성되었습니다.",
-                        data));
+                .body(ApiResponseDto.success("스터디 생성 완료", responseDto));
+    }
+
+    @GetMapping("/{studyId}")
+    public ResponseEntity<ApiResponseDto<String>> getStudy(
+            @PathVariable Long studyId
+    ) {
+        return ResponseEntity.ok(
+                ApiResponseDto.success("스터디 조회 기능은 아직 구현되지 않았습니다.", null)
+        );
     }
 }

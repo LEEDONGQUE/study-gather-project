@@ -44,16 +44,17 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/users/signup").permitAll()
                         .requestMatchers(HttpMethod.POST, "/users/login").permitAll()
 
-                        // 🔥 참여 신청 API 허용
-                        .requestMatchers(HttpMethod.POST, "/participants/**").permitAll()
-
-                        // 스터디 생성/조회 등 필요 시 허용
+                        // 스터디 조회는 누구나 가능
                         .requestMatchers("/studies/**").permitAll()
 
-                        // 그 외 요청은 인증 필요
+                        // 참여 신청은 인증한 사용자만
+                        .requestMatchers(HttpMethod.POST, "/participants/**").authenticated()
+
+                        // 나머지 요청은 인증 필요
                         .anyRequest().authenticated()
                 )
 
+                // JWT 필터 추가
                 .addFilterAfter(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
