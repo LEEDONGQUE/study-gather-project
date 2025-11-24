@@ -1,6 +1,7 @@
 package com.example.be.study.service;
 
 import com.example.be.study.dto.StudyCreateRequestDto;
+import com.example.be.study.dto.StudyDetailResponseDto;
 import com.example.be.study.dto.StudyListResponseDto;
 import com.example.be.study.entity.Study;
 import com.example.be.study.repository.StudyRepository;
@@ -33,6 +34,15 @@ public class StudyServiceImpl implements StudyService {
 
         return studyList.map(StudyListResponseDto::from);
     }
+
+    @Override
+    public StudyDetailResponseDto getStudyDetail(Long studyId) {
+        Study study = studyRepository.findById(studyId)
+                .orElseThrow(() -> new IllegalArgumentException("스터디를 찾을 수 없습니다. id=" + studyId));
+
+        return StudyDetailResponseDto.from(study);
+    }
+
     @Override
     public Long createStudy(@Valid StudyCreateRequestDto requestDto) {
 

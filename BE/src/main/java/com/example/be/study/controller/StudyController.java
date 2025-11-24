@@ -3,6 +3,7 @@ package com.example.be.study.controller;
 import com.example.be.global.dto.ApiResponseDto;
 import com.example.be.study.dto.StudyCreateRequestDto;
 import com.example.be.study.dto.StudyCreateResponseDto;
+import com.example.be.study.dto.StudyDetailResponseDto;
 import com.example.be.study.dto.StudyListResponseDto;
 import com.example.be.study.service.StudyService;
 
@@ -39,6 +40,23 @@ public class StudyController {
                 .status(HttpStatus.OK)
                 .body(new ApiResponseDto<>("OK", "스터디 목록 조회 성공", result));
     }
+
+
+    /**
+     * 스터디 상세 내용을 조회한다.
+     * @param studyId 스터디 고유번호
+     */
+    @GetMapping("/{studyId}")
+    public ResponseEntity<ApiResponseDto<StudyDetailResponseDto>> getStudyDetail(@PathVariable Long studyId) {
+
+        StudyDetailResponseDto result = studyService.getStudyDetail(studyId);
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(new ApiResponseDto<>("OK", "스터디 상세 조회 성공", result));
+    }
+
+
     @PostMapping("/create")
     public ResponseEntity<ApiResponseDto<StudyCreateResponseDto>> createStudy(
             @Valid @RequestBody StudyCreateRequestDto requestDto
