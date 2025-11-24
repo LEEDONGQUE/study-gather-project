@@ -1,5 +1,6 @@
-package com.example.be.study.entity; // 1. 패키지 이름이 entity인지 확인!
+package com.example.be.study.entity;
 
+import com.example.be.user.entity.UserEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -8,21 +9,21 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-@Entity // 엔티티임을 명시
+@Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "study")
-public class Study { // 2. 클래스 이름이 Study인지 확인!
+public class Study {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String studyTitle;
+    private String studyTitle; // 모임 이름
 
     @Column(nullable = false)
-    private String studyTopic;
+    private String studyTopic; // 주제
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String description;
@@ -34,17 +35,23 @@ public class Study { // 2. 클래스 이름이 Study인지 확인!
     private String place;
 
     @Column(nullable = false)
-    private LocalDate startDate;
+    private LocalDate startDate; // 모집 기간 (시작)
 
     @Column(nullable = false)
-    private LocalDate endDate;
+    private LocalDate endDate;   // 모집 기간 (끝)
 
     private String chatLink;
+
+    //  주최자 정보 (UserEntity와 연결)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "organizer_id")
+    private UserEntity organizer;
+    //해당 organizer_id는  study 테이블을 참조하는 역할 (FK)
 
     @Builder
     public Study(String studyTitle, String studyTopic, String description,
                  Integer maxParticipants, String place, LocalDate startDate,
-                 LocalDate endDate, String chatLink) {
+                 LocalDate endDate, String chatLink, UserEntity organizer) {
         this.studyTitle = studyTitle;
         this.studyTopic = studyTopic;
         this.description = description;
@@ -53,5 +60,6 @@ public class Study { // 2. 클래스 이름이 Study인지 확인!
         this.startDate = startDate;
         this.endDate = endDate;
         this.chatLink = chatLink;
+        this.organizer = organizer;
     }
 }
