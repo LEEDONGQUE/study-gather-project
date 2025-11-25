@@ -17,7 +17,8 @@ public class Study {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "study_id")
+    private Long studyId;
 
     @Column(nullable = false)
     private String studyTitle; // 모임 이름
