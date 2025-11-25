@@ -202,3 +202,13 @@ export const RejectBtn = styled.button`
     background: #ffcdcd;
   }
 `;
+
+// 문제상황(새로고침시 저장안됨)
+// ① 백엔드가 API명새서가 분리된 구조라서 → 신청자 조회 + 상태 조회 두 개를 합쳐야 함
+// ② 수락 POST 후 → 프론트 상태 업데이트는 잘 되지만, 새로고침하면 Reset됨 → 상태 API에서 다시 불러와야 함
+
+// fetchApplicants()만 있음 → ❌
+
+// fetchStatus()도 해야 함 → ✔
+
+// 둘을 merge 해서 setApplicants 해야 함 → ✔

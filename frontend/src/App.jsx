@@ -14,6 +14,7 @@ import styled from "styled-components";
 import MyPage from "./pages/MyPage";
 import Createpage from "./pages/Createpage";
 import EditPage from "./pages/EditPage";
+import Footer from "./components/Footer.jsx";
 
 function ModalHost() {
   const { modal } = useModal();
@@ -37,7 +38,7 @@ function Layout() {
       <main>
         <Outlet />
       </main>
-      {/* <footer>footer</footer> */}
+      <Footer></Footer>
       <ModalHost />
     </AppContainer>
   );

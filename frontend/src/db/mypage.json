@@ -1,0 +1,220 @@
+{
+  "mypage": {
+    "code": "OK",
+    "message": "사용자 정보 조회에 성공했습니다.",
+    "data": {
+      "user_info": {
+        "user_id": 12,
+        "user_name": "홍길동",
+        "student_number": "202512345",
+        "email": "example@hufs.ac.kr"
+      },
+
+      "created_studies": [
+        {
+          "study_id": 101,
+          "study_title": "알고리즘 스터디",
+          "study_topic": "코딩 테스트",
+          "current_participants": 4,
+          "max_participants": 10,
+          "start_date": "2025-10-01",
+          "end_date": "2025-10-05",
+          "status": "모집중"
+        },
+        {
+          "study_id": 102,
+          "study_title": "인공지능 기초 정리 스터디",
+          "study_topic": "전공",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-09-10",
+          "end_date": "2025-10-15",
+          "status": "모집중"
+        },
+        {
+          "study_id": 103,
+          "study_title": "졸업 프로젝트 아이디어 기획",
+          "study_topic": "과제",
+          "current_participants": 3,
+          "max_participants": 5,
+          "start_date": "2025-08-05",
+          "end_date": "2025-09-30",
+          "status": "진행중"
+        },
+        {
+          "study_id": 104,
+          "study_title": "면접 대비 1:1 스터디",
+          "study_topic": "면접",
+          "current_participants": 2,
+          "max_participants": 4,
+          "start_date": "2025-07-20",
+          "end_date": "2025-08-30",
+          "status": "마감"
+        },
+        {
+          "study_id": 105,
+          "study_title": "머신러닝 논문 읽기",
+          "study_topic": "논문",
+          "current_participants": 5,
+          "max_participants": 8,
+          "start_date": "2025-06-10",
+          "end_date": "2025-07-30",
+          "status": "진행중"
+        },
+        {
+          "study_id": 106,
+          "study_title": "DEVIEW 발표 분석 스터디",
+          "study_topic": "전공",
+          "current_participants": 4,
+          "max_participants": 10,
+          "start_date": "2025-03-02",
+          "end_date": "2025-04-20",
+          "status": "종료"
+        },
+        {
+          "study_id": 107,
+          "study_title": "자격증 실기 대비반",
+          "study_topic": "자격증",
+          "current_participants": 8,
+          "max_participants": 10,
+          "start_date": "2025-09-01",
+          "end_date": "2025-09-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 108,
+          "study_title": "UX/UI 디자인 스터디",
+          "study_topic": "전공",
+          "current_participants": 6,
+          "max_participants": 8,
+          "start_date": "2025-08-01",
+          "end_date": "2025-08-28",
+          "status": "진행중"
+        },
+        {
+          "study_id": 109,
+          "study_title": "데이터 분석 실전 프로젝트",
+          "study_topic": "전공",
+          "current_participants": 9,
+          "max_participants": 10,
+          "start_date": "2025-07-01",
+          "end_date": "2025-08-12",
+          "status": "마감"
+        },
+        {
+          "study_id": 110,
+          "study_title": "AI Product Manager 스터디",
+          "study_topic": "창업",
+          "current_participants": 7,
+          "max_participants": 10,
+          "start_date": "2025-06-01",
+          "end_date": "2025-07-15",
+          "status": "진행중"
+        }
+      ],
+
+      "applied_studies": [
+        {
+          "study_id": 201,
+          "study_title": "정보처리기사 필기 스터디",
+          "study_topic": "자격증",
+          "current_participants": 8,
+          "max_participants": 8,
+          "start_date": "2025-09-20",
+          "end_date": "2025-10-01",
+          "status": "진행중"
+        },
+        {
+          "study_id": 202,
+          "study_title": "공모전 팀빌딩 스터디",
+          "study_topic": "공모전",
+          "current_participants": 5,
+          "max_participants": 6,
+          "start_date": "2025-09-01",
+          "end_date": "2025-11-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 203,
+          "study_title": "스타트업 운영 전략 스터디",
+          "study_topic": "창업",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-08-10",
+          "end_date": "2025-09-20",
+          "status": "진행중"
+        },
+        {
+          "study_id": 204,
+          "study_title": "토익 LC/RC 집중 스터디",
+          "study_topic": "외국어",
+          "current_participants": 7,
+          "max_participants": 10,
+          "start_date": "2025-09-05",
+          "end_date": "2025-11-01",
+          "status": "모집중"
+        },
+        {
+          "study_id": 205,
+          "study_title": "자료구조 심화 스터디",
+          "study_topic": "전공",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-10-01",
+          "end_date": "2025-10-30",
+          "status": "모집중"
+        },
+        {
+          "study_id": 206,
+          "study_title": "면접 스터디: 모의 실전",
+          "study_topic": "면접",
+          "current_participants": 4,
+          "max_participants": 6,
+          "start_date": "2025-09-15",
+          "end_date": "2025-10-15",
+          "status": "진행중"
+        },
+        {
+          "study_id": 207,
+          "study_title": "논문 읽기 · 요약 스터디",
+          "study_topic": "논문",
+          "current_participants": 3,
+          "max_participants": 5,
+          "start_date": "2025-07-01",
+          "end_date": "2025-08-30",
+          "status": "마감"
+        },
+        {
+          "study_id": 208,
+          "study_title": "AI Coding Interview 스터디",
+          "study_topic": "코딩 테스트",
+          "current_participants": 5,
+          "max_participants": 10,
+          "start_date": "2025-09-10",
+          "end_date": "2025-10-10",
+          "status": "모집중"
+        },
+        {
+          "study_id": 209,
+          "study_title": "앱 서비스 기획 스터디",
+          "study_topic": "창업",
+          "current_participants": 9,
+          "max_participants": 10,
+          "start_date": "2025-06-20",
+          "end_date": "2025-07-30",
+          "status": "마감"
+        },
+        {
+          "study_id": 210,
+          "study_title": "비즈니스 영어 회화",
+          "study_topic": "외국어",
+          "current_participants": 6,
+          "max_participants": 10,
+          "start_date": "2025-08-10",
+          "end_date": "2025-09-20",
+          "status": "진행중"
+        }
+      ]
+    }
+  }
+}
