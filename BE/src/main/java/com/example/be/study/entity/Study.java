@@ -1,4 +1,4 @@
-package com.example.be.study.entity; // 1. 패키지 이름이 entity인지 확인!
+package com.example.be.study.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -8,15 +8,16 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-@Entity // 엔티티임을 명시
+@Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "study")
-public class Study { // 2. 클래스 이름이 Study인지 확인!
+public class Study {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "study_id")
+    private Long studyId;
 
     @Column(nullable = false)
     private String studyTitle;
