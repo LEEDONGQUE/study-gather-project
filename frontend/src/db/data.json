@@ -2168,12 +2168,11 @@
         "study_title": "디자인 시스템 구축 스터디",
         "study_topic": "과제",
         "current_participants": 1,
-        "max_participants": 10,
+        "max_participants": "7",
         "start_date": "2025-09-10",
         "end_date": "2025-11-10",
         "status": "모집중",
         "description": "피그마와 디자인 토큰을 활용해 반응형 디자인 시스템을 만들어봅니다. (수정됨)",
-        "open_chat_link": "https://open.kakao.com/o/uxdesignstudy",
         "place": "디자인관 102호",
         "organizer": {
           "organizer_id": 106,
