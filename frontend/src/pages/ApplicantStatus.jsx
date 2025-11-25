@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
+import styled from "styled-components";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 export default function ApplicantStatus({ studyId }) {
   const [applicants, setApplicants] = useState([]);
@@ -15,16 +17,39 @@ export default function ApplicantStatus({ studyId }) {
       );
 
       const result = await res.json();
-      setApplicants(result.data);
+
+      // 🔥 변경점1: status 기본값 추가
+      const withStatus = result.data.map((item) => ({
+        ...item,
+        status: item.status || null, // 🔥 처음엔 status 없음 → null
+      }));
+
+      setApplicants(withStatus); // ⭐ 기존: setApplicants(result.data)
     };
 
     fetchApplicants();
   }, [studyId]);
 
-  // ⭐ 페이지에서 보여줄 3명의 index 계산
-  const startIndex = currentPage * itemsPerPage;
+  // 🔥 변경점2: 수락 처리 함수
+  const handleAccept = async (userId) => {
+    await fetch(`/studies/${studyId}/applicants/status`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        user_id: userId,
+        status: "Y",
+      }),
+    });
 
-  // ⭐ 현재 페이지에 해당하는 사람 3명만 slice
+    // 🔥 변경점3: 프론트에서 해당 user_id의 status를 Y로 바꾸기
+    setApplicants((prev) =>
+      prev.map((item) =>
+        item.user_id === userId ? { ...item, status: "Y" } : item
+      )
+    );
+  };
+
+  const startIndex = currentPage * itemsPerPage;
   const currentItems = applicants.slice(startIndex, startIndex + itemsPerPage);
 
   return (
@@ -38,42 +63,53 @@ export default function ApplicantStatus({ studyId }) {
         <p>신청자가 없습니다.</p>
       ) : (
         <>
-          <div>
+          <BigWrapper>
             {currentItems.map((item) => (
-              <div className="applicant-card">
-                <div className="left">
+              <Card key={item.user_id}>
+                <In_card_Left>
                   <FaUserCircle size={40} color="#C8C8C8" />
-                </div>
+                </In_card_Left>
 
-                <div className="right">
+                <In_Card_Right>
                   <p>{item.student_number}</p>
                   <p>{item.name}</p>
                   <p>{item.email}</p>
+                </In_Card_Right>
 
-                  <div className="buttons">
-                    <button className="accept">수락</button>
-                    <button className="reject">거절</button>
-                  </div>
-                </div>
-              </div>
+                {/* 🔥 변경점4: status에 따라 버튼/수락됨 분기 */}
+                <Buttons>
+                  {item.status === "Y" ? (
+                    <AcceptedTag>수락됨</AcceptedTag>
+                  ) : (
+                    <>
+                      <AcceptBtn onClick={() => handleAccept(item.user_id)}>
+                        수락
+                      </AcceptBtn>
+                      <RejectBtn>거절</RejectBtn>
+                    </>
+                  )}
+                </Buttons>
+              </Card>
             ))}
-          </div>
+          </BigWrapper>
 
-          {/* ⭐ 페이지네이션 */}
+          {/*  페이지네이션 */}
           <div className="pagination">
-            <button
-              disabled={currentPage === 0}
-              onClick={() => setCurrentPage((prev) => prev - 1)}
-            >
-              이전
-            </button>
+            <ButtonsWrapper>
+              <button
+                disabled={currentPage === 0}
+                onClick={() => setCurrentPage((prev) => prev - 1)}
+              >
+                <FiChevronLeft size={20} />
+              </button>
 
-            <button
-              disabled={startIndex + itemsPerPage >= applicants.length}
-              onClick={() => setCurrentPage((prev) => prev + 1)}
-            >
-              다음
-            </button>
+              <button
+                disabled={startIndex + itemsPerPage >= applicants.length}
+                onClick={() => setCurrentPage((prev) => prev + 1)}
+              >
+                <FiChevronRight size={20} />
+              </button>
+            </ButtonsWrapper>
           </div>
         </>
       )}
@@ -81,57 +117,88 @@ export default function ApplicantStatus({ studyId }) {
   );
 }
 
-const Card = styled.div`
+export const AcceptedTag = styled.span`
+  background: #d8f7e7;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #1a7f4b;
+  font-weight: 600;
+  white-space: nowrap;
+`;
+
+/* ================================
+   기존 스타일 그대로
+================================ */
+export const BigWrapper = styled.div`
+  border: 3px solid #e0e0e0ff;
+  border-radius: 12px;
+  padding: 10px 0;
+`;
+
+export const Card = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid #eaeaea;
+  padding: 16px 20px;
+  border-bottom: 2px solid #e5e5e5;
+
+  &:last-child {
+    border-bottom: none;
+  }
 `;
 
-const ProfileIcon = styled.div`
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+`;
+
+export const In_card_Left = styled.div`
   flex-shrink: 0;
 `;
 
-const InfoBox = styled.div`
+export const In_Card_Right = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
 
-  .student {
-    font-weight: 600;
-  }
-
-  .name {
-    font-size: 15px;
-  }
-
-  .email {
-    font-size: 13px;
-    color: #666;
+  p {
+    margin: 0;
   }
 `;
 
-const ButtonRow = styled.div`
+export const Buttons = styled.div`
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 8px;
 `;
 
-const AcceptBtn = styled.button`
+export const AcceptBtn = styled.button`
   background: #d8f7e7;
   border: none;
   padding: 6px 12px;
   border-radius: 8px;
-  cursor: pointer;
   font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    background: #c2f1d8;
+  }
 `;
 
-const RejectBtn = styled.button`
+export const RejectBtn = styled.button`
   background: #ffe0e0;
   border: none;
   padding: 6px 12px;
   border-radius: 8px;
-  cursor: pointer;
   font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    background: #ffcdcd;
+  }
 `;

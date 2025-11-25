@@ -37,7 +37,7 @@ function Layout() {
       <main>
         <Outlet />
       </main>
-      <footer>footer</footer>
+      {/* <footer>footer</footer> */}
       <ModalHost />
     </AppContainer>
   );

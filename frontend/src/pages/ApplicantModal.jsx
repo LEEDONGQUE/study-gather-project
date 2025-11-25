@@ -1,11 +1,16 @@
 import styled from "styled-components";
+import { BigWrapper } from "./ApplicantStatus";
+import { AiOutlineClose } from "react-icons/ai";
 
 export default function ApplicantModal({ onClose, children }) {
   return (
     <Backdrop onClick={onClose}>
       <Content onClick={(e) => e.stopPropagation()}>
+        <CloseBtn onClick={onClose}>
+          <AiOutlineClose size={20} />
+        </CloseBtn>
+
         {children}
-        <CloseBtn onClick={onClose}>닫기</CloseBtn>
       </Content>
     </Backdrop>
   );
@@ -24,14 +29,31 @@ const Backdrop = styled.div`
   z-index: 999;
 `;
 
-const Content = styled.div`
-  background: white;
-  width: 420px;
-  padding: 24px;
+export const Content = styled.div`
+  position: relative; /* 🔥 꼭 있어야 함 */
+  background: #fff;
+  padding: 20px;
   border-radius: 12px;
 `;
 
-const CloseBtn = styled.button`
-  margin-top: 20px;
-  width: 100%;
+export const CloseBtn = styled.button`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px;
+  border-radius: 50%;
+
+  &:hover {
+    background: #eee;
+  }
 `;
