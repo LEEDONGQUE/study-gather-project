@@ -1,69 +1,137 @@
-// ApplicantStatus.jsx(모달안에 내용에 관한 페이지)
 import { useEffect, useState } from "react";
+import { FaUser } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 
 export default function ApplicantStatus({ studyId }) {
-  //study detail에서  <ApplicantStatus studyId={id} />로 넘겨줌
+  const [applicants, setApplicants] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
 
-  const [applicants, setApplicants] = useState([]); //초기값은 아무신청자 없음 :[](빈배열)
+  const itemsPerPage = 3; // ⭐ 한 페이지에 세 명
 
   useEffect(() => {
-    // studyId에 맞는 신청자 리스트 불러오기 (예시)
     const fetchApplicants = async () => {
       const res = await fetch(
         `http://localhost:3002/applicant_modal?id=${studyId}`
       );
+
       const result = await res.json();
-      // console.log("서버 응답:", result); // ✔ 이제 사용 가능
-      console.log("data만:", result.data);
       setApplicants(result.data);
     };
 
     fetchApplicants();
-  }, [studyId]); //studyid 가 바뀔때마다 다시 실행
+  }, [studyId]);
+
+  // ⭐ 페이지에서 보여줄 3명의 index 계산
+  const startIndex = currentPage * itemsPerPage;
+
+  // ⭐ 현재 페이지에 해당하는 사람 3명만 slice
+  const currentItems = applicants.slice(startIndex, startIndex + itemsPerPage);
 
   return (
     <div>
-      <h2>신청자 현황</h2>
+      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        <FaUser />
+        <h2>신청자 현황</h2>
+      </div>
 
-      {applicants.length === 0 ? (
+      {currentItems.length === 0 ? (
         <p>신청자가 없습니다.</p>
       ) : (
-        <ul>
-          {applicants.map((item) => (
-            <li key={item.user_id} className="applicant-card">
-              <p>{item.student_number}</p>
-              <p>{item.name}</p>
-              <p>{item.email}</p>
-              <p>신청일: {item.appliedDate}</p>
+        <>
+          <div>
+            {currentItems.map((item) => (
+              <div className="applicant-card">
+                <div className="left">
+                  <FaUserCircle size={40} color="#C8C8C8" />
+                </div>
 
-              <div className="buttons">
-                <button className="accept">수락</button>
-                <button className="reject">거절</button>
+                <div className="right">
+                  <p>{item.student_number}</p>
+                  <p>{item.name}</p>
+                  <p>{item.email}</p>
+
+                  <div className="buttons">
+                    <button className="accept">수락</button>
+                    <button className="reject">거절</button>
+                  </div>
+                </div>
               </div>
-            </li>
-          ))}
-        </ul>
+            ))}
+          </div>
 
-        //applicants배열을 map으로 반복 각신청자를 li로 렌더링
+          {/* ⭐ 페이지네이션 */}
+          <div className="pagination">
+            <button
+              disabled={currentPage === 0}
+              onClick={() => setCurrentPage((prev) => prev - 1)}
+            >
+              이전
+            </button>
+
+            <button
+              disabled={startIndex + itemsPerPage >= applicants.length}
+              onClick={() => setCurrentPage((prev) => prev + 1)}
+            >
+              다음
+            </button>
+          </div>
+        </>
       )}
     </div>
   );
 }
-// useEffect(() => {
-//     const fetchApplicants = async () => {
-//       const res = await fetch(
-//         `${import.meta.env.VITE_SERVER_API_URL}/studies/${studyId}/applicants`,
-//         {
-//           method: "GET",
-//           headers: {
-//             Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-//           },
-//         }
-//       );
 
-//       const result = await res.json();
-//       setApplicants(result.data); // ✔ 여기서 data만 뽑기
-//     };
+const Card = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #eaeaea;
+`;
 
-//     fetchApplicants();
-//   }, [studyId]);
+const ProfileIcon = styled.div`
+  flex-shrink: 0;
+`;
+
+const InfoBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .student {
+    font-weight: 600;
+  }
+
+  .name {
+    font-size: 15px;
+  }
+
+  .email {
+    font-size: 13px;
+    color: #666;
+  }
+`;
+
+const ButtonRow = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+`;
+
+const AcceptBtn = styled.button`
+  background: #d8f7e7;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+`;
+
+const RejectBtn = styled.button`
+  background: #ffe0e0;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+`;
