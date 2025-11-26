@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useParams, useNavigate } from "react-router-dom";
 
-export default function Createpage() {
+export default function Editpage() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     title: "",
     host: "",
@@ -14,102 +18,93 @@ export default function Createpage() {
     openChat: "",
   });
 
+  // 기존 데이터 불러오기
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(`http://localhost:3001/study_details?id=${id}`);
+      const json = await res.json();
+
+      if (json.length === 0) {
+        alert("존재하지 않는 스터디입니다.");
+        return;
+      }
+
+      const data = json[0].data;
+
+      setForm({
+        title: data.study_title,
+        host: data.organizer.organizer_name,
+        topic: data.study_topic,
+        member: data.max_participants,
+        place: data.place,
+        startDate: data.start_date,
+        endDate: data.end_date,
+        studyIntro: data.description,
+        openChat: data.chat_link,
+      });
+    };
+
+    fetchData();
+  }, [id]);
+
   // 입력값 변경 핸들러
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  // 제출 핸들러
+  // 제출 핸들러 (수정)
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newId = Date.now();
-
-    // 모집 상태 자동 계산
-    const now = new Date();
-    const start = new Date(form.startDate);
-    const end = new Date(form.endDate);
-    let status = "모집중";
-
-    if (now > end) status = "모집마감";
-    else if (now >= start) status = "진행중";
-
-    const current_participants = 1;
-    if (current_participants >= Number(form.member)) {
-      status = "모집마감";
-    }
-
     try {
-      await Promise.all([
-        // study_list 등록
-        fetch("http://localhost:3001/study_list", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            study_id: newId,
+      await fetch(`http://localhost:3001/study_details/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id,
+          code: "OK",
+          message: "스터디 수정 성공",
+          data: {
+            study_id: Number(id),
             study_title: form.title,
             study_topic: form.topic,
-            current_participants,
+            current_participants: 1,
             max_participants: form.member,
             start_date: form.startDate,
             end_date: form.endDate,
-            status,
-          }),
-        }),
+            status: "모집중",
+            description: form.studyIntro,
+            open_chat_link: form.openChat,
+            place: form.place,
 
-        // study_details 등록
-        fetch("http://localhost:3001/study_details", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            id: newId,
-            code: "OK",
-            message: "스터디 상세 등록 성공",
-            data: {
-              study_id: newId,
-              study_title: form.title,
-              study_topic: form.topic,
-              current_participants,
-              max_participants: form.member,
-              start_date: form.startDate,
-              end_date: form.endDate,
-              status,
-              description: form.studyIntro,
-              open_chat_link: form.openChat,
+            // ⬇ host(주최자)는 이렇게 저장해야 함
+            organizer: {
+              organizer_id: Number(id),
+              organizer_name: form.host,
             },
-          }),
+          },
         }),
-      ]);
-
-      alert("스터디가 등록되었습니다 ✅");
-      setForm({
-        title: "",
-        host: "",
-        topic: "",
-        member: "",
-        place: "",
-        startDate: "",
-        endDate: "",
-        studyIntro: "",
-        openChat: "",
       });
+
+      alert("수정 완료되었습니다! ✨");
+      navigate(`/studies/${id}`);
     } catch (err) {
-      console.error("등록 실패:", err);
-      alert("등록 중 오류 발생 ❌");
+      console.error("수정 실패:", err);
+      alert("수정 중 오류가 발생했습니다.");
     }
   };
 
   return (
     <PageWrapper>
-      <PageTitle>모임 생성하기</PageTitle>
-      <PageSubtitle>✨ 새로운 스터디 모임을 만들어보세요!</PageSubtitle>
+      <PageTitle>모임 정보 수정하기</PageTitle>
+      <PageSubtitle>✨ 기존 정보를 변경해보세요!</PageSubtitle>
 
       <Container>
         <HeaderBox>
           <HeaderTextWrapper>
-            <HeaderTitle>스터디 모임 정보</HeaderTitle>
-            <HeaderSub>정확한 정보를 입력해주세요!</HeaderSub>
+            <HeaderTitle>스터디 모임 정보 수정</HeaderTitle>
+            <HeaderSub>수정할 내용을 입력해주세요</HeaderSub>
           </HeaderTextWrapper>
         </HeaderBox>
 
@@ -122,7 +117,7 @@ export default function Createpage() {
                 name="title"
                 value={form.title}
                 onChange={handleChange}
-                placeholder="스터디 모임 제목을 입력해주세요"
+                placeholder="스터디 제목"
               />
             </Field>
           </FieldRow>
@@ -135,11 +130,10 @@ export default function Createpage() {
                 name="host"
                 value={form.host}
                 onChange={handleChange}
-                placeholder="주최자 이름을 입력해주세요"
+                placeholder="주최자 이름"
               />
             </Field>
 
-            {/* value는 실제로 서버로 넘어가는 값 */}
             <Field>
               <Label>주제</Label>
               <Select name="topic" value={form.topic} onChange={handleChange}>
@@ -175,7 +169,7 @@ export default function Createpage() {
                 name="place"
                 value={form.place}
                 onChange={handleChange}
-                placeholder="모임 장소를 입력해주세요"
+                placeholder="모임 장소"
               />
             </Field>
           </FieldRow>
@@ -211,7 +205,6 @@ export default function Createpage() {
                 name="studyIntro"
                 value={form.studyIntro}
                 onChange={handleChange}
-                placeholder="스터디 모임에 대한 소개를 입력해주세요 (예: 목표, 진행방식, 커리큘럼 등)"
               />
             </Field>
           </FieldRow>
@@ -221,18 +214,19 @@ export default function Createpage() {
             <Field fullWidth>
               <Label>오픈채팅방 링크</Label>
               <Input
-                type="url"
                 name="openChat"
                 value={form.openChat}
                 onChange={handleChange}
-                placeholder="카카오톡 오픈채팅방 링크를 입력해주세요"
               />
             </Field>
           </FieldRow>
 
+          {/* 버튼 */}
           <ButtonRow>
-            <SubmitButton type="submit">등록</SubmitButton>
-            <CancelButton type="button">취소</CancelButton>
+            <SubmitButton type="submit">수정하기</SubmitButton>
+            <CancelButton type="button" onClick={() => navigate(-1)}>
+              취소
+            </CancelButton>
           </ButtonRow>
         </StyledForm>
       </Container>
@@ -240,7 +234,7 @@ export default function Createpage() {
   );
 }
 
-/* ---------------------- Styled Components ---------------------- */
+/* ---- Styled Components (Createpage에서 그대로 복붙) ---- */
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -288,24 +282,19 @@ const HeaderBox = styled.div`
   height: 130px;
   border-radius: 30px 30px 0 0;
   background: #eef3fa;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  align-items: center;
-  padding: 0 40px;
 `;
-
 const HeaderTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding-left: 40px;
+  padding-top: 40px;
 `;
-
 const HeaderTitle = styled.div`
   font-size: 25px;
   font-weight: 700;
   color: #333;
 `;
-
 const HeaderSub = styled.div`
   font-size: 13px;
   color: #174579;
@@ -346,13 +335,6 @@ const Input = styled.input`
   border: 1px solid #bec5cd;
   background: #f5f5f5;
   font-size: 16px;
-  color: #333;
-
-  &:focus {
-    outline: none;
-    border-color: #174579;
-    background: #fff;
-  }
 `;
 
 const Select = styled.select`
@@ -362,13 +344,6 @@ const Select = styled.select`
   border: 1px solid #bec5cd;
   background: #f5f5f5;
   font-size: 16px;
-  color: #333;
-
-  &:focus {
-    outline: none;
-    border-color: #174579;
-    background: #fff;
-  }
 `;
 
 const TextArea = styled.textarea`
@@ -379,14 +354,7 @@ const TextArea = styled.textarea`
   border: 1px solid #bec5cd;
   background: #f5f5f5;
   font-size: 16px;
-  color: #333;
   resize: none;
-
-  &:focus {
-    outline: none;
-    border-color: #174579;
-    background: #fff;
-  }
 `;
 
 const ButtonRow = styled.div`
@@ -416,8 +384,4 @@ const CancelButton = styled(BaseButton)`
   background: #fff;
   color: #174579;
   border: 1px solid #174579;
-
-  &:hover {
-    background: #dde3ea;
-  }
 `;

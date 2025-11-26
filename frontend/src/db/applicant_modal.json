@@ -1,0 +1,32 @@
+{
+  "applicant_modal": {
+    "code": "OK",
+    "message": "신청자 정보 호출에 성공했습니다.",
+    "data": [
+      {
+        "user_id": 12,
+        "name": "홍길동",
+        "student_number": "202512345",
+        "email": "example@hufs.ac.kr"
+      },
+      {
+        "user_id": 13,
+        "name": "김길동",
+        "student_number": "202512346",
+        "email": "hufsman@hufs.ac.kr"
+      },
+      {
+        "user_id": 10,
+        "name": "강유정",
+        "student_number": "202302202",
+        "email": "example@hufs.ac.kr"
+      },
+      {
+        "user_id": 9,
+        "name": "김지영",
+        "student_number": "202512321",
+        "email": "hufsman@hufs.ac.kr"
+      }
+    ]
+  }
+}

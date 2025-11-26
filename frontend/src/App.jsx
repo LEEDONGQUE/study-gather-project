@@ -13,6 +13,8 @@ import { useModal } from "./pages/login-page/useModal";
 import styled from "styled-components";
 import MyPage from "./pages/MyPage";
 import Createpage from "./pages/Createpage";
+import EditPage from "./pages/EditPage";
+import Footer from "./components/Footer.jsx";
 
 function ModalHost() {
   const { modal } = useModal();
@@ -36,7 +38,7 @@ function Layout() {
       <main>
         <Outlet />
       </main>
-      <footer>footer</footer>
+      <Footer></Footer>
       <ModalHost />
     </AppContainer>
   );
@@ -54,6 +56,7 @@ export default function App() {
           <Route path="mypage" element={<MyPage />} />
           <Route path="status" element={<HomePage />} />
           <Route path="create" element={<Createpage />} />
+          <Route path="/edit/:id" element={<EditPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

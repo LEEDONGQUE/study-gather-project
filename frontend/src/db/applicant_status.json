@@ -1,0 +1,16 @@
+{
+  "applicant_status": {
+    "code": "OK",
+    "message": "신청자 정보 호출에 성공했습니다.",
+    "data": [
+      {
+        "user_id": 10,
+        "status": "Y"
+      },
+      {
+        "user_id": 9,
+        "status": "N"
+      }
+    ]
+  }
+}
