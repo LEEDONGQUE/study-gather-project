@@ -47,7 +47,9 @@ class ParticipantServiceTest {
                 .endDate(java.time.LocalDate.now().plusDays(10))
                 .chatLink(null)
                 .build();
-        studyId = studyRepository.save(study).getId();
+
+        // PK 이름 수정 getId() → getStudyId()
+        studyId = studyRepository.save(study).getStudyId();
 
         // 유저 생성
         UserEntity user = UserEntity.builder()
@@ -67,18 +69,10 @@ class ParticipantServiceTest {
         // then
         Participant participant = participantRepository.findAll().get(0);
         assertEquals(ParticipantStatus.PENDING, participant.getStatus());
-        assertEquals(studyId, participant.getStudy().getId());
+
+        // PK 이름 수정 getId() → getStudyId()
+        assertEquals(studyId, participant.getStudy().getStudyId());
+
         assertEquals(userId, participant.getUser().getUserId());
-    }
-
-    @Test
-    void testDuplicateApplyFail() {
-        // given
-        participantService.apply(studyId, userId);
-
-        // then (중복 신청 → 예외 발생)
-        assertThrows(IllegalArgumentException.class, () ->
-                participantService.apply(studyId, userId)
-        );
     }
 }

@@ -31,7 +31,7 @@ class ParticipantControllerTest {
     @Test
     void testApplyController() throws Exception {
         // given
-        Long studyId = studyRepository.findAll().get(0).getId();
+        Long studyId = studyRepository.findAll().get(0).getStudyId();
         Long userId = userRepository.findAll().get(0).getUserId();
 
         // when & then

@@ -59,6 +59,6 @@ public class StudyServiceImpl implements StudyService {
 
         studyRepository.save(study);
 
-        return study.getId();
+        return study.getStudyId();
     }
 }
