@@ -12,16 +12,12 @@ export default function SignupPage() {
   const { closeModal } = useModal();
   const navigate = useNavigate();
   const location = useLocation();
-
-  const [formData, setFormData] = useState({
-    name: "",
-    student_number: "",
-    email: "",
-    password: "",
-  });
-
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const [name, set_name] = useState("");
+  const [student_number, set_student_number] = useState("");
+  const [email, set_email] = useState("");
+  const [password, set_password] = useState("");
 
 
   const handleClose = useCallback(() => {
@@ -37,34 +33,28 @@ export default function SignupPage() {
     return () => window.removeEventListener("keydown", onKey);
   }, [handleClose]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    if (name === "student_number") {
-      const numericValue = value.replace(/[^0-9]/g, '');
-      setFormData(prev => ({ ...prev, [name]: numericValue }));
-    } else {
-      // 'name', 'email', 'password' 필드를 업데이트
-      setFormData(prev => ({ ...prev, [name]: value }));
-    }
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMsg("");
 
-    const { name, student_number, email, password } = formData;
     if (!name || !student_number || !email || !password) {
       setErrorMsg("모든 필드를 입력해주세요.");
       return;
     }
+
     if (password !== confirmPassword) {
       setErrorMsg("비밀번호가 일치하지 않습니다.");
       return;
     }
 
     try {
-      const response = await axios.post('/api/signup', formData);
+      const response = await axios.post('/users/signup', {
+        name,
+        student_number,
+        email,
+        password,
+      });
 
       if (response.data.code === "OK") {
         alert("회원가입이 완료되었습니다. 로그인해주세요.");
@@ -113,32 +103,27 @@ export default function SignupPage() {
           <Input
             type="text"
             placeholder="이름을 입력해주세요"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => set_name(e.target.value)}
           />
           <Input
             type="text"
             placeholder="학번을 입력해주세요"
             inputMode="numeric"
-            name="student_number"
-            value={formData.student_number}
-            onChange={handleChange}
-          // onInput은 handleChange로 통합되어 제거
+            value={student_number}
+            onChange={(e) => set_student_number(e.target.value.replace(/[^0-9]/g, ""))}
           />
           <Input
             type="email"
             placeholder="이메일을 입력해주세요"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => set_email(e.target.value)}
           />
           <Input
             type="password"
             placeholder="비밀번호를 입력해주세요"
-            name="password" // 'name' 속성 추가
-            value={formData.password}
-            onChange={handleChange} // 'handleChange' 사용
+            value={password}
+            onChange={(e) => set_password(e.target.value)}
           />
           <Input
             type="password"

@@ -4,9 +4,37 @@ import searchIcon from "../../assets/search.svg";
 import loginIcon from "../../assets/login.svg";
 import styled from "styled-components";
 import { useModal } from "../../pages/login-page/useModal";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Header() {
   const { openLogin } = useModal();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const hasToken = !!localStorage.getItem("accessToken");
+    setIsLoggedIn(hasToken);
+
+    const handleLogin = () => setIsLoggedIn(true);
+    const handleLogout = () => setIsLoggedIn(false);
+
+    window.addEventListener("login", handleLogin);
+    window.addEventListener("logout", handleLogout);
+
+    return () => {
+      window.removeEventListener("login", handleLogin);
+      window.removeEventListener("logout", handleLogout);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    delete axios.defaults.headers.common["Authorization"];
+
+    setIsLoggedIn(false);
+
+    window.dispatchEvent(new Event("logout"));
+  };
 
   return (
     <HeaderContainer>
@@ -25,14 +53,20 @@ function Header() {
       </MainNav>
 
       <SearchBarContainer>
-        <SearchIcon src={searchIcon} alt="검색 아이콘"/>
-        <SearchInput type="text" placeholder="스터디 모임 검색"/>
+        <SearchIcon src={searchIcon} alt="검색 아이콘" />
+        <SearchInput type="text" placeholder="스터디 모임 검색" />
       </SearchBarContainer>
 
-      <LoginButton as="button" onClick={openLogin}>
-        <img src={loginIcon} alt="로그인 아이콘" />
-        <LoginText>로그인</LoginText>
-      </LoginButton>
+      {isLoggedIn ? (
+        <LoginButton type="button" onClick={handleLogout}>
+          <LoginText>로그아웃</LoginText>
+        </LoginButton>
+      ) : (
+        <LoginButton type="button" onClick={openLogin}>
+          <img src={loginIcon} alt="로그인 아이콘" />
+          <LoginText>로그인</LoginText>
+        </LoginButton>
+      )}
     </HeaderContainer>
   );
 }

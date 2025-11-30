@@ -11,23 +11,9 @@ export default function LoginPage() {
   const { closeModal, openSignup } = useModal();
   const navigate = useNavigate();
   const location = useLocation();
-
-  const [loginInfo, setLoginInfo] = useState({
-    student_number: "",
-    password: "",
-  });
-
+  const [student_number, set_student_number] = useState("");
+  const [password, set_password] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    if (name === "student_number") {
-      const numericValue = value.replace(/[^0-9]/g, '');
-      setLoginInfo(prev => ({ ...prev, [name]: numericValue }));
-    } else {
-      setLoginInfo(prev => ({ ...prev, [name]: value }));
-    }
-  };
 
   const handleClose = useCallback(() => {
     closeModal();
@@ -40,19 +26,32 @@ export default function LoginPage() {
     e.preventDefault();
     setErrorMessage("");
 
-    if (!loginInfo.student_number || !loginInfo.password) {
+    if (!student_number || !password) {
       setErrorMessage("학번과 비밀번호를 모두 입력해주세요.");
       return;
     }
 
     try {
-      const response = await axios.post('/api/login', loginInfo);
+      const response = await axios.post('/users/login', {
+        student_number,
+        password,
+      }, {
+        withCredentials: true,
+      });
 
-      if (response.data.code === "OK") {
-        const { accessToken } = response.data.data;
+      const { code, data } = response.data;
 
-        localStorage.setItem('accessToken', accessToken);
+      if (code === "OK" && data) {
+        const { accessToken, tokenType } = data;
+
+        localStorage.setItem("accessToken", accessToken);
+
+        axios.defaults.headers.common["Authorization"] = `${tokenType} ${accessToken}`;
+
+        window.dispatchEvent(new Event("login"));
         handleClose();
+      } else {
+        setErrorMessage("로그인에 실패했습니다. 다시 시도해주세요.");
       }
 
     } catch (error) {
@@ -106,16 +105,16 @@ export default function LoginPage() {
             type="text"
             placeholder="학번"
             inputMode="numeric"
-            name="student_number" // state 키와 일치
-            value={loginInfo.student_number}
-            onChange={handleChange}
+
+            value={student_number}
+            onChange={(e) => set_student_number(e.target.value.replace(/[^0-9]/g, ""))
+            }
           />
           <Input
             type="password"
             placeholder="비밀번호"
-            name="password" // state 키와 일치
-            value={loginInfo.password}
-            onChange={handleChange}
+            value={password}
+            onChange={(e) => set_password(e.target.value)}
           />
           <LoginButton type="submit">로그인</LoginButton>
         </Form>
@@ -241,6 +240,6 @@ const ErrorMessage = styled.p`
   font-size: 14px;
   margin-top: -10px;
   margin-bottom: 10px;
-  height: 20px; // 에러 메시지가 없어도 공간 유지 (레이아웃 밀림 방지)
+  height: 20px;
   text-align: center;
 `;
