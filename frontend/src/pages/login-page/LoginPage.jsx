@@ -2,7 +2,7 @@ import { createPortal } from "react-dom";
 import { useEffect, useRef, useState, useCallback } from "react";
 import styled from "styled-components";
 import loginPageImg from "../../assets/login_logo.png";
-import { useModal } from "./useModal"; // 경로는 프로젝트 구조에 맞게 확인 필요
+import { useModal } from "./useModal"; 
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -12,9 +12,9 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // 1. 상태 관리: 백엔드 DTO(LoginRequestDto)에 맞춰 key를 'email'로 변경
+  // 1. 상태 관리 (UI 입력값)
   const [loginInfo, setLoginInfo] = useState({
-    email: "",
+    student_number: "",
     password: "",
   });
 
@@ -22,84 +22,68 @@ export default function LoginPage() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setLoginInfo((prev) => ({ ...prev, [name]: value }));
+    // 학번 숫자만 입력받기 처리
+    if (name === "student_number") {
+      const numericValue = value.replace(/[^0-9]/g, '');
+      setLoginInfo(prev => ({ ...prev, [name]: numericValue }));
+    } else {
+      setLoginInfo(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleClose = useCallback(() => {
     closeModal();
+    // 로그인 페이지에서 직접 접속했을 경우 메인으로 이동
     if (location.pathname === "/login") {
       navigate("/", { replace: true });
     }
   }, [closeModal, location, navigate]);
 
+  // 2. 로그인 요청 함수
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
 
     // 유효성 검사
-    if (!loginInfo.email || !loginInfo.password) {
-      setErrorMessage("이메일과 비밀번호를 모두 입력해주세요.");
+    if (!loginInfo.student_number || !loginInfo.password) {
+      setErrorMessage("학번과 비밀번호를 모두 입력해주세요.");
       return;
     }
 
     try {
-      // 2. 백엔드 API 호출 (실제 주소 사용)
-      const response = await axios.post("http://localhost:8080/users/login", {
-        email: loginInfo.email,
-        password: loginInfo.password,
+      // 3. 백엔드 API 호출
+      // 중요: 백엔드 LoginRequestDto의 필드명(studentNumber)에 맞춰서 데이터 전송
+      const response = await axios.post('http://localhost:8080/users/login', {
+        studentNumber: loginInfo.student_number, // ★ 변수명 매핑 주의
+        password: loginInfo.password
       });
 
-      // 3. 토큰 처리 (백엔드 응답 헤더 또는 바디 확인)
-      // 보통 JWT는 헤더의 'Authorization' 혹은 바디의 'accessToken'에 담겨 옵니다.
-      // 여기서는 헤더를 우선적으로 확인하고, 없으면 바디를 확인하도록 작성했습니다.
-      const token =
-        response.headers["authorization"] || response.data.accessToken;
+      // 4. 응답 처리 (ApiResponseDto 구조: { status, message, data: "토큰문자열" })
+      // 백엔드 Service 코드를 보면 data 필드에 토큰 문자열을 바로 담아서 줍니다.
+      const token = response.data.data;
 
       if (token) {
-        // Bearer 접두사가 없으면 붙여서 저장 (편의상)
-        const finalToken = token.startsWith("Bearer ")
-          ? token
-          : `Bearer ${token}`;
-
-        // 로컬 스토리지에 토큰 저장
-        localStorage.setItem("accessToken", finalToken);
-
-        // 이후 요청을 위해 axios 기본 헤더 설정 (선택 사항)
-        axios.defaults.headers.common["Authorization"] = finalToken;
+        // 토큰 저장 (Bearer 접두사 확인 후 저장)
+        const finalToken = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
+        localStorage.setItem('accessToken', finalToken);
+        
+        // axios 기본 헤더 설정 (선택 사항: 이후 요청 편의성 위해)
+        axios.defaults.headers.common['Authorization'] = finalToken;
 
         alert("로그인에 성공했습니다!");
         handleClose(); // 모달 닫기
-        navigate("/"); // 메인으로 이동
+        navigate("/"); // 메인 페이지 이동 (새로고침 효과)
+        window.location.reload(); // 상태 업데이트를 위해 새로고침 (선택)
       } else {
-        // 성공은 했으나 토큰이 없는 경우
-        console.error("토큰이 응답에 없습니다.", response);
-        setErrorMessage("로그인 처리 중 오류가 발생했습니다.");
+        setErrorMessage("토큰을 받아오지 못했습니다.");
       }
+
     } catch (error) {
       console.error("로그인 에러:", error);
       if (error.response) {
-        const status = error.response.status;
-        switch (status) {
-          case 401: // Unauthorized
-            setErrorMessage("이메일 또는 비밀번호가 일치하지 않습니다.");
-            break;
-          case 404: // Not Found
-            setErrorMessage("존재하지 않는 사용자입니다.");
-            break;
-          case 400: // Bad Request
-          case 422:
-            setErrorMessage("입력 값이 올바르지 않습니다.");
-            break;
-          case 500:
-            setErrorMessage(
-              "서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요."
-            );
-            break;
-          default:
-            setErrorMessage(
-              error.response.data.message || "로그인에 실패했습니다."
-            );
-        }
+        // 백엔드에서 보낸 에러 메시지가 있다면 표시
+        const msg = error.response.data.message || "로그인에 실패했습니다.";
+        setErrorMessage(msg);
       } else {
         setErrorMessage("서버와 연결할 수 없습니다. 네트워크를 확인해주세요.");
       }
@@ -121,17 +105,8 @@ export default function LoginPage() {
     >
       <ModalBox>
         <CloseButton onClick={handleClose} aria-label="닫기">
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            style={{ display: "block" }}
-          >
-            <path
-              fill="#174579"
-              d="M6.4 5l12.6 12.6-1.4 1.4L5 6.4 6.4 5zM5 17.6 17.6 5l1.4 1.4L6.4 19 5 17.6z"
-            />
+          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style={{ display: "block" }}>
+            <path fill="#174579" d="M6.4 5l12.6 12.6-1.4 1.4L5 6.4 6.4 5zM5 17.6 17.6 5l1.4 1.4L6.4 19 5 17.6z" />
           </svg>
         </CloseButton>
 
@@ -140,10 +115,11 @@ export default function LoginPage() {
 
         <Form onSubmit={handleLoginSubmit}>
           <Input
-            type="email" // 이메일 형식으로 변경
-            placeholder="이메일" // 학번 -> 이메일로 변경
-            name="email" // state 키와 일치 ('student_number' -> 'email')
-            value={loginInfo.email}
+            type="text"
+            placeholder="학번"
+            inputMode="numeric"
+            name="student_number"
+            value={loginInfo.student_number}
             onChange={handleChange}
           />
           <Input
@@ -156,9 +132,7 @@ export default function LoginPage() {
           <LoginButton type="submit">로그인</LoginButton>
         </Form>
         <SwitchRow>
-          <SwitchLink type="button" onClick={openSignup}>
-            회원가입
-          </SwitchLink>
+          <SwitchLink type="button" onClick={openSignup}>회원가입</SwitchLink>
         </SwitchRow>
       </ModalBox>
     </Overlay>,
@@ -166,6 +140,7 @@ export default function LoginPage() {
   );
 }
 
+// --- 스타일 컴포넌트 (기존 스타일 유지) ---
 const Overlay = styled.div`
   position: fixed;
   inset: 0;
@@ -184,10 +159,8 @@ const ModalBox = styled.div`
   background: #fff;
   border-radius: 30px;
   box-shadow: 0 4px 4px 5px rgba(0, 0, 0, 0.25);
-
   position: relative;
   padding: 32px 40px 24px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -231,8 +204,8 @@ const Input = styled.input`
   align-items: center;
   gap: 10px;
   border-radius: 20px;
-  border: 0.3px solid #bec5cd;
-  background: #f5f5f5;
+  border: 0.3px solid #BEC5CD;
+  background: #F5F5F5;
   outline: none;
 
   &:focus {
@@ -252,10 +225,9 @@ const LoginButton = styled.button`
   background: #fff;
   color: #174579;
   font-size: 15px;
-  cursor: pointer; /* 마우스 오버 시 손가락 모양 추가 */
-
+  cursor: pointer;
   &:hover {
-    background: #f0f0f0; /* 호버 효과 추가 */
+    background-color: #f0f0f0;
   }
 `;
 
@@ -273,7 +245,6 @@ const SwitchLink = styled.button`
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
-  color: #555;
 `;
 
 const ErrorMessage = styled.p`
@@ -284,3 +255,9 @@ const ErrorMessage = styled.p`
   height: 20px;
   text-align: center;
 `;
+ 
+
+        
+ 
+      
+       
