@@ -1,41 +1,34 @@
-//페이지네이션 있는 파트
-//17분
-// import { useEffect } from "react";
-// import axios from "axios";
 import ictIcon from "../assets/ICT.png";
 import "./HomePage.css";
 import Pagecontrol from "../components/Pagecontrol/Pagecontrol";
 import { IoShareOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import axios from "axios";
 
 export default function HomePage() {
   const location = useLocation();
   const [studies, setStudies] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchStudys = async () => {
-  //     const response = await axios("url", {
-  //       headers: {
-  //         Authorization: `Bearer ${import.meta.env.VITE_STUDYPAGE_KEY}`,
-  //       },
-  //     });
-  //     console.log(response); // ✅ 콘솔 확인용
-  //   };
-
-  //   fetchStudys();
-  // }, []);
   useEffect(() => {
-    fetch("http://localhost:3001/study_list")
-      .then((res) => res.json())
-      .then((data) => setStudies(data.data.studies))
-      .catch((err) => console.error(err));
+    const fetchStudies = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/studies?page=1&size=10");
+        
+        if (response.data.data && response.data.data.content) {
+           setStudies(response.data.data.content);
+        }
+      } catch (err) {
+        console.error("스터디 목록 로드 실패:", err);
+      }
+    };
+    fetchStudies();
   }, [location]);
+
   return (
     <main>
-      {/* 배너 영역 */}
       <div className="banner">
-        <img src={ictIcon} alt="ICT이미지" className="image" /> {/* 수정 */}
+        <img src={ictIcon} alt="ICT이미지" className="image" />
         <div className="text-all">
           <div className="bar"></div>
           <div className="text-line1">
@@ -67,10 +60,26 @@ export default function HomePage() {
         </button>
       </div>
 
-      {/* 카테고리 버튼 영역  여기 컴포넌트로 연결해주기*/}
       <section className="categories"></section>
 
-      {/* 페이지네이션 영역 여기 컴포넌트로 연결해주기 */}
+      <section className="study-list" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', marginTop: '30px' }}>
+        {studies.length === 0 ? (
+            <p style={{ color: '#666', marginTop: '20px' }}>등록된 스터디가 없습니다.</p>
+        ) : (
+            studies.map((study) => (
+                <Link to={`/studies/${study.studyId}`} key={study.studyId} style={{ textDecoration: 'none', color: 'inherit', width: '60%', border: '1px solid #ddd', padding: '20px', borderRadius: '10px', backgroundColor: '#fff', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                    <h3 style={{ margin: '0 0 10px 0', color: '#174579' }}>{study.studyTitle}</h3>
+                    <div style={{ display: 'flex', gap: '15px', fontSize: '14px', color: '#555' }}>
+                        <span style={{ fontWeight: 'bold' }}>#{study.studyTopic}</span>
+                        <span>📅 {study.startDate} ~ {study.endDate}</span>
+                        <span>👥 {study.currentParticipants}/{study.maxParticipants}명</span>
+                        <span>{study.status === "RECRUITING" ? "🔵 모집중" : "🔴 마감"}</span>
+                    </div>
+                </Link>
+            ))
+        )}
+      </section>
+
       <section className="page-controls">
         <Pagecontrol />
       </section>
