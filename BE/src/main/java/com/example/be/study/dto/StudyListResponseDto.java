@@ -21,16 +21,13 @@ public class StudyListResponseDto {
 
     public static StudyListResponseDto from(Study study) {
         return StudyListResponseDto.builder()
-                .studyId(study.getId())
+                .studyId(study.getStudyId()) // 수정됨: getId() -> getStudyId()
                 .studyTitle(study.getStudyTitle())
                 .studyTopic(study.getStudyTopic())
                 .startDate(study.getStartDate())
                 .endDate(study.getEndDate())
                 .maxParticipants(study.getMaxParticipants())
-                // TODO currentParticipants 로직 작성
+                // TODO currentParticipants 로직 작성 (현재는 값을 넣지 않아 null 또는 0이 될 수 있음)
                 .build();
     }
-
-
-
 }
