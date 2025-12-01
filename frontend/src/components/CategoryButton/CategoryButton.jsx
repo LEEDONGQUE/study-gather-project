@@ -82,24 +82,34 @@ export function LanguageButton() {
     </CategoryBtnBase>
   );
 }
-// ✅ 공통 스타일 (이게 예전의 className="category-btn" 역할)
+
+//  DefaultTag 컴포넌트 (흰색 화면 오류 원인 해결)
+export function DefaultTag() {
+  return (
+    <CategoryBtnBase>
+      <span style={{ padding: "0 4px", color: "#888" }}>기타</span>
+    </CategoryBtnBase>
+  );
+}
+
+
 const CategoryBtnBase = styled.div`
-  display: inline-flex; /* 배지 크기가 부모에 의해 늘어나지 않음 */
+  display: inline-flex;
   align-items: center;
   gap: 6px;
 
-  padding: 4px 10px; /* 작고 깔끔한 배지 크기 */
+  padding: 4px 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
   background-color: #fff;
   color: #333;
   font-size: 13px;
 
-  width: fit-content; /* 내용만큼만 크기 유지 */
-  white-space: nowrap; /* 줄바꿈 금지 */
+  width: fit-content;
+  white-space: nowrap;
   user-select: none;
 
   .btn-icon {
     font-size: 16px;
   }
-`
+`;
