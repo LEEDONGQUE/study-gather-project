@@ -28,7 +28,7 @@ public class StudyDetailResponseDto {
 
     public static StudyDetailResponseDto from(Study study) {
         return StudyDetailResponseDto.builder()
-                .studyId(study.getId())
+                .studyId(study.getStudyId())
                 .studyTitle(study.getStudyTitle())
                 .studyTopic(study.getStudyTopic())
                 .startDate(study.getStartDate())
