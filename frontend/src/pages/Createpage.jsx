@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Createpage() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     title: "",
-    host: "",
+    host: "", // 화면 표시용 (실제 전송 X)
     topic: "",
     member: "",
     place: "",
@@ -20,83 +23,55 @@ export default function Createpage() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  // 제출 핸들러
+  // ✅ [수정된 부분] 제출 핸들러
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newId = Date.now();
+    // 1. 토큰 확인 (로그인 필수)
+    const token = localStorage.getItem("accessToken");
+    if (!token) {
+        alert("로그인 후 이용 가능합니다.");
+        return;
+    }
 
-    // 모집 상태 자동 계산
-    const now = new Date();
-    const start = new Date(form.startDate);
-    const end = new Date(form.endDate);
-    let status = "모집중";
-
-    if (now > end) status = "모집마감";
-    else if (now >= start) status = "진행중";
-
-    const current_participants = 1;
-    if (current_participants >= Number(form.member)) {
-      status = "모집마감";
+    // 2. 필수 입력값 검사
+    if(!form.title || !form.topic || !form.member || !form.startDate || !form.endDate) {
+        alert("필수 정보를 모두 입력해주세요.");
+        return;
     }
 
     try {
-      await Promise.all([
-        // study_list 등록
-        fetch("http://localhost:3001/study_list", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            study_id: newId,
-            study_title: form.title,
-            study_topic: form.topic,
-            current_participants,
-            max_participants: form.member,
-            start_date: form.startDate,
-            end_date: form.endDate,
-            status,
-          }),
-        }),
+      // 3. 데이터 전송 준비 (형변환 중요!)
+      // 백엔드 DTO: maxParticipants는 Integer 타입이어야 함
+      const requestBody = {
+            studyTitle: form.title,
+            studyTopic: form.topic,
+            maxParticipants: parseInt(form.member, 10), // ★ 문자열 -> 숫자 변환 필수
+            place: form.place,
+            startDate: form.startDate,
+            endDate: form.endDate,
+            description: form.studyIntro,
+            chatLink: form.openChat
+      };
 
-        // study_details 등록
-        fetch("http://localhost:3001/study_details", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            id: newId,
-            code: "OK",
-            message: "스터디 상세 등록 성공",
-            data: {
-              study_id: newId,
-              study_title: form.title,
-              study_topic: form.topic,
-              current_participants,
-              max_participants: form.member,
-              start_date: form.startDate,
-              end_date: form.endDate,
-              status,
-              description: form.studyIntro,
-              open_chat_link: form.openChat,
-            },
-          }),
-        }),
-      ]);
+      console.log("전송 데이터:", requestBody); // 디버깅용 로그
 
-      alert("스터디가 등록되었습니다 ✅");
-      setForm({
-        title: "",
-        host: "",
-        topic: "",
-        member: "",
-        place: "",
-        startDate: "",
-        endDate: "",
-        studyIntro: "",
-        openChat: "",
+      // 4. 백엔드 API 호출
+      await axios.post("http://localhost:8080/studies/create", requestBody, {
+          headers: { Authorization: token } // 인증 헤더 포함
       });
+
+      alert("스터디가 성공적으로 등록되었습니다! ✅");
+      navigate("/"); // 메인 페이지로 이동
+      
     } catch (err) {
       console.error("등록 실패:", err);
-      alert("등록 중 오류 발생 ❌");
+      // 에러 메시지가 있다면 띄워줌
+      if (err.response && err.response.data) {
+          alert(`등록 실패: ${err.response.data.message || "오류가 발생했습니다."}`);
+      } else {
+          alert("스터디 등록 중 알 수 없는 오류가 발생했습니다 ❌");
+      }
     }
   };
 
@@ -131,15 +106,16 @@ export default function Createpage() {
           <FieldRow>
             <Field>
               <Label>주최자</Label>
+              {/* 주최자는 토큰으로 자동 처리되므로 입력 비활성화 */}
               <Input
                 name="host"
                 value={form.host}
                 onChange={handleChange}
-                placeholder="주최자 이름을 입력해주세요"
+                placeholder="자동 입력됨 (입력 불필요)"
+                disabled
               />
             </Field>
 
-            {/* value는 실제로 서버로 넘어가는 값 */}
             <Field>
               <Label>주제</Label>
               <Select name="topic" value={form.topic} onChange={handleChange}>
@@ -165,7 +141,7 @@ export default function Createpage() {
                 name="member"
                 value={form.member}
                 onChange={handleChange}
-                placeholder="인원"
+                placeholder="인원 (숫자만 입력)"
               />
             </Field>
 
@@ -232,7 +208,7 @@ export default function Createpage() {
 
           <ButtonRow>
             <SubmitButton type="submit">등록</SubmitButton>
-            <CancelButton type="button">취소</CancelButton>
+            <CancelButton type="button" onClick={() => navigate(-1)}>취소</CancelButton>
           </ButtonRow>
         </StyledForm>
       </Container>
