@@ -1,308 +1,232 @@
-import { createPortal } from "react-dom";
-import { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
-import loginPageImg from "../../assets/login_logo.png";
-import { useModal } from "../login-page/useModal";
-import { useLocation, useNavigate } from "react-router-dom";
-import { useCallback } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import logoImg from '../../assets/logo.png'; // 이미지 경로 확인 필요
 
-export default function SignupPage() {
-  const overlayRef = useRef(null);
-  const { closeModal } = useModal();
+const SignupPage = () => {
   const navigate = useNavigate();
-  const location = useLocation();
 
+  // 1. 상태 관리: 학번(studentNumber) 추가
   const [formData, setFormData] = useState({
-    name: "",
-    student_number: "",
-    email: "",
-    password: "",
+    email: '',
+    password: '',
+    confirmPassword: '',
+    name: '', 
+    studentNumber: '', // ★ 추가됨
+    phone: '' 
   });
-
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
-
-
-  const handleClose = useCallback(() => {
-    closeModal();
-    if (location.pathname === "/signup") {
-      navigate("/", { replace: true });
-    }
-  }, [closeModal, location.pathname, navigate]);
-
-  useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && handleClose();
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [handleClose]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    if (name === "student_number") {
-      const numericValue = value.replace(/[^0-9]/g, '');
-      setFormData(prev => ({ ...prev, [name]: numericValue }));
-    } else {
-      // 'name', 'email', 'password' 필드를 업데이트
-      setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // 학번은 숫자만 입력되도록 처리 (선택 사항)
+    if (name === 'studentNumber') {
+       const numericValue = value.replace(/[^0-9]/g, '');
+       setFormData(prev => ({ ...prev, [name]: numericValue }));
+       return;
     }
+
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
-    setErrorMsg("");
 
-    const { name, student_number, email, password } = formData;
-    if (!name || !student_number || !email || !password) {
-      setErrorMsg("모든 필드를 입력해주세요.");
+    // 2. 유효성 검사
+    if (!formData.email || !formData.password || !formData.name || !formData.phone || !formData.studentNumber) {
+      alert("모든 필드를 입력해주세요.");
       return;
     }
-    if (password !== confirmPassword) {
-      setErrorMsg("비밀번호가 일치하지 않습니다.");
+    if (formData.password !== formData.confirmPassword) {
+      alert("비밀번호가 일치하지 않습니다.");
       return;
     }
 
     try {
-      const response = await axios.post('/api/signup', formData);
+      // 3. 백엔드 API 요청 (백엔드 DTO 필드명에 맞춰서 전송)
+      const requestBody = {
+        studentNumber: formData.studentNumber, // ★ 백엔드 핵심 Key
+        userName: formData.name,               // Backend: userName
+        email: formData.email,
+        password: formData.password,
+        passwordCheck: formData.confirmPassword, // Backend: passwordCheck (필수)
+        phoneNum: formData.phone               // Backend: phoneNum
+      };
 
-      if (response.data.code === "OK") {
-        alert("회원가입이 완료되었습니다. 로그인해주세요.");
-        handleClose();
-      } else {
-        setErrorMsg(response.data.message || "회원가입에 실패했습니다.");
+      // 백엔드 포트 8080 확인
+      const response = await axios.post('http://localhost:8080/users/signup', requestBody);
+
+      if (response.status === 200 || response.status === 201) {
+        alert("회원가입이 완료되었습니다! 로그인 해주세요.");
+        navigate('/login'); 
       }
 
     } catch (error) {
+      console.error("회원가입 에러:", error);
       if (error.response) {
-        const status = error.response.status;
-        const message = error.response.data?.message;
-
-        switch (status) {
-          case 422:
-            setErrorMsg(message || "입력 값이 올바르지 않습니다. (예: 이미 가입된 학번)");
-            break;
-          case 500:
-          default:
-            setErrorMsg("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
-        }
+        // 백엔드(UserServiceImpl)에서 던지는 예외 메시지 표시 (예: "이미 사용 중인 학번입니다.")
+        const msg = error.response.data.message || error.response.data.error || "오류가 발생했습니다.";
+        alert(`가입 실패: ${msg}`);
       } else {
-        setErrorMsg("네트워크 오류가 발생했습니다. 연결을 확인해주세요.");
+        alert("서버와 연결할 수 없습니다.");
       }
     }
   };
 
-  return createPortal(
-    <Overlay
-      ref={overlayRef}
-      onClick={(e) => e.target === overlayRef.current && handleClose()}
-      aria-modal="true"
-      role="dialog"
-    >
-      <ModalBox>
-        <CloseButton onClick={handleClose} aria-label="닫기">
-          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style={{ display: "block" }}>
-            <path fill="#174579" d="M6.4 5l12.6 12.6-1.4 1.4L5 6.4 6.4 5zM5 17.6 17.6 5l1.4 1.4L6.4 19 5 17.6z" />
-          </svg>
-        </CloseButton>
-
-        <Logo src={loginPageImg} alt="STUDYHUB 로고" />
-
-        <Form onSubmit={handleSubmit}>
-          {/* ✨ 6. Input들에 name, value, onChange 연결 */}
-          <Input
-            type="text"
-            placeholder="이름을 입력해주세요"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
+  return (
+    <Container>
+      <Logo src={logoImg} alt="Study Gather Logo" />
+      <Title>회원가입</Title>
+      <Form onSubmit={handleSignup}>
+        
+        {/* --- 학번 입력란 추가 --- */}
+        <InputWrapper>
+          <Label>학번</Label>
+          <Input 
+            type="text" 
+            name="studentNumber" 
+            value={formData.studentNumber} 
+            onChange={handleChange} 
+            placeholder="학번을 입력하세요 (예: 20230001)" 
+            maxLength="10"
           />
-          <Input
-            type="text"
-            placeholder="학번을 입력해주세요"
-            inputMode="numeric"
-            name="student_number"
-            value={formData.student_number}
-            onChange={handleChange}
-          // onInput은 handleChange로 통합되어 제거
-          />
-          <Input
-            type="email"
-            placeholder="이메일을 입력해주세요"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          <Input
-            type="password"
-            placeholder="비밀번호를 입력해주세요"
-            name="password" // 'name' 속성 추가
-            value={formData.password}
-            onChange={handleChange} // 'handleChange' 사용
-          />
-          <Input
-            type="password"
-            placeholder="비밀번호를 확인해주세요"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
+        </InputWrapper>
 
-          {errorMsg && <ErrorMsg>{errorMsg}</ErrorMsg>}
+        <InputWrapper>
+          <Label>이메일</Label>
+          <Input 
+            type="email" 
+            name="email" 
+            value={formData.email} 
+            onChange={handleChange} 
+            placeholder="example@email.com" 
+          />
+        </InputWrapper>
 
-          <AgreeRow>
-            <input id="agree" type="checkbox" required />
-            <AgreeLabel htmlFor="agree">
-              이용 약관 보기 및 개인정보 처리방침에 동의합니다.
-            </AgreeLabel>
-          </AgreeRow>
-          <PrimaryButton type="submit">회원가입</PrimaryButton>
+        <InputWrapper>
+          <Label>비밀번호</Label>
+          <Input 
+            type="password" 
+            name="password" 
+            value={formData.password} 
+            onChange={handleChange} 
+            placeholder="비밀번호 입력" 
+          />
+        </InputWrapper>
 
-        </Form>
-      </ModalBox>
-    </Overlay>,
-    document.body
+        <InputWrapper>
+          <Label>비밀번호 확인</Label>
+          <Input 
+            type="password" 
+            name="confirmPassword" 
+            value={formData.confirmPassword} 
+            onChange={handleChange} 
+            placeholder="비밀번호 재입력" 
+          />
+        </InputWrapper>
+
+        <InputWrapper>
+          <Label>이름 (닉네임)</Label>
+          <Input 
+            type="text" 
+            name="name" 
+            value={formData.name} 
+            onChange={handleChange} 
+            placeholder="이름을 입력하세요" 
+          />
+        </InputWrapper>
+
+        <InputWrapper>
+          <Label>전화번호</Label>
+          <Input 
+            type="text" 
+            name="phone" 
+            value={formData.phone} 
+            onChange={handleChange} 
+            placeholder="010-0000-0000" 
+          />
+        </InputWrapper>
+
+        <SubmitButton type="submit">가입하기</SubmitButton>
+      </Form>
+    </Container>
   );
-}
+};
 
-const Overlay = styled.div`
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  z-index: 1000;
-`;
+export default SignupPage;
 
-const ModalBox = styled.div`
-  width: 400px;
-  min-height: 500px;
-  background: #fff;
-  border-radius: 30px;
-  box-shadow: 0 4px 4px 5px rgba(0, 0, 0, 0.25);
-  position: relative;
-  padding: 32px 40px 28px;
-
+// --- 스타일 컴포넌트 ---
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const CloseButton = styled.button`
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  padding: 0;
-
-  &:hover { transform: scale(1.05); }
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
 `;
 
 const Logo = styled.img`
-  height: 120px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  object-fit: contain;
+  width: 150px;
+  margin-bottom: 20px;
+`;
+
+const Title = styled.h2`
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 30px;
 `;
 
 const Form = styled.form`
   width: 100%;
-  max-width: 440px;
+  max-width: 400px;
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  gap: 20px;
+`;
+
+const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+const Label = styled.label`
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
 `;
 
 const Input = styled.input`
-  display: flex;
-  height: 40px;
-  padding: 20px 25px;
-  align-items: center;
-  gap: 10px;
-  align-self: stretch;
-
-  border-radius: 10px;
-  border: 0.3px solid #BEC5CD;
-  background: #F5F5F5;
-
-  outline: none;
-  font-size: 14px;
-  color: #333;
-
-  &::placeholder { color: #BEC5CD; }
-  &:focus { border-color: #174579; }
-`;
-
-const AgreeRow = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  margin-top: 6px;
-
-  input {
-    width: 16px;
-    height: 16px;
-    accent-color: #174579;
-    cursor: pointer;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  &:focus {
+    outline: none;
+    border-color: #174579;
   }
 `;
 
-const AgreeLabel = styled.span`
-  font-size: 12.5px;
-  color: #333;
-`;
-
-const PrimaryButton = styled.button`
-  margin-top: 10px;
-  display: flex;
-  height: 50px;
-  width: 220px;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 30px;
-  border: 1px solid #174579;
-  background: #fff;
-  color: #174579;
+const SubmitButton = styled.button`
+  padding: 15px;
+  background-color: #174579;
+  color: white;
+  border: none;
+  border-radius: 6px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
-
-  &:hover { background: #f5f9ff; }
-`;
-
-const SwitchRow = styled.div`
-  margin-top: 8px;
-  display: flex;
-  justify-content: center;
-`;
-
-const SwitchLink = styled.button`
-  background: none;
-  border: 0;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  color: #174579;
-
-  &:hover { text-decoration: underline; }
-`;
-
-const ErrorMsg = styled.div`
-  color: #d32f2f;
-  font-size: 13px;
-  font-weight: 500;
-  margin-top: -4px;
-  margin-bottom: 6px;
+  margin-top: 10px;
+  &:hover {
+    background-color: #123660;
+  }
 `;
