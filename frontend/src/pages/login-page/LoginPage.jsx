@@ -11,68 +11,81 @@ export default function LoginPage() {
   const { closeModal, openSignup } = useModal();
   const navigate = useNavigate();
   const location = useLocation();
-  const [student_number, set_student_number] = useState("");
-  const [password, set_password] = useState("");
+
+  // 1. 상태 관리 (UI 입력값)
+  const [loginInfo, setLoginInfo] = useState({
+    student_number: "",
+    password: "",
+  });
+
   const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    // 학번 숫자만 입력받기 처리
+    if (name === "student_number") {
+      const numericValue = value.replace(/[^0-9]/g, '');
+      setLoginInfo(prev => ({ ...prev, [name]: numericValue }));
+    } else {
+      setLoginInfo(prev => ({ ...prev, [name]: value }));
+    }
+  };
 
   const handleClose = useCallback(() => {
     closeModal();
+    // 로그인 페이지에서 직접 접속했을 경우 메인으로 이동
     if (location.pathname === "/login") {
       navigate("/", { replace: true });
     }
   }, [closeModal, location, navigate]);
 
+  // 2. 로그인 요청 함수
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
 
-    if (!student_number || !password) {
+    // 유효성 검사
+    if (!loginInfo.student_number || !loginInfo.password) {
       setErrorMessage("학번과 비밀번호를 모두 입력해주세요.");
       return;
     }
 
     try {
-      const response = await axios.post('/users/login', {
-        student_number,
-        password,
-      }, {
-        withCredentials: true,
+      // 3. 백엔드 API 호출
+      // 중요: 백엔드 LoginRequestDto의 필드명(studentNumber)에 맞춰서 데이터 전송
+      const response = await axios.post('http://localhost:8080/users/login', {
+        studentNumber: loginInfo.student_number, // ★ 변수명 매핑 주의
+        password: loginInfo.password
       });
 
-      const { code, data } = response.data;
+      // 4. 응답 처리 (ApiResponseDto 구조: { status, message, data: "토큰문자열" })
+      // 백엔드 Service 코드를 보면 data 필드에 토큰 문자열을 바로 담아서 줍니다.
+      const token = response.data.data;
 
-      if (code === "OK" && data) {
-        const { accessToken, tokenType } = data;
+      if (token) {
+        // 토큰 저장 (Bearer 접두사 확인 후 저장)
+        const finalToken = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
+        localStorage.setItem('accessToken', finalToken);
 
-        localStorage.setItem("accessToken", accessToken);
+        // axios 기본 헤더 설정 (선택 사항: 이후 요청 편의성 위해)
+        axios.defaults.headers.common['Authorization'] = finalToken;
 
-        axios.defaults.headers.common["Authorization"] = `${tokenType} ${accessToken}`;
-
-        window.dispatchEvent(new Event("login"));
-        handleClose();
+        alert("로그인에 성공했습니다!");
+        handleClose(); // 모달 닫기
+        navigate("/"); // 메인 페이지 이동 (새로고침 효과)
+        window.location.reload(); // 상태 업데이트를 위해 새로고침 (선택)
       } else {
-        setErrorMessage("로그인에 실패했습니다. 다시 시도해주세요.");
+        setErrorMessage("토큰을 받아오지 못했습니다.");
       }
 
     } catch (error) {
+      console.error("로그인 에러:", error);
       if (error.response) {
-        const status = error.response.status;
-        switch (status) {
-          case 401:
-            setErrorMessage("학번 또는 비밀번호가 일치하지 않습니다.");
-            break;
-          case 404:
-            setErrorMessage("존재하지 않는 사용자입니다.");
-            break;
-          case 422:
-            setErrorMessage("입력 값이 올바르지 않습니다.");
-            break;
-          case 500:
-          default:
-            setErrorMessage("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
-        }
+        // 백엔드에서 보낸 에러 메시지가 있다면 표시
+        const msg = error.response.data.message || "로그인에 실패했습니다.";
+        setErrorMessage(msg);
       } else {
-        setErrorMessage("로그인 요청에 실패했습니다. 네트워크를 확인해주세요.");
+        setErrorMessage("서버와 연결할 수 없습니다. 네트워크를 확인해주세요.");
       }
     }
   };
@@ -105,16 +118,16 @@ export default function LoginPage() {
             type="text"
             placeholder="학번"
             inputMode="numeric"
-
-            value={student_number}
-            onChange={(e) => set_student_number(e.target.value.replace(/[^0-9]/g, ""))
-            }
+            name="student_number"
+            value={loginInfo.student_number}
+            onChange={handleChange}
           />
           <Input
             type="password"
             placeholder="비밀번호"
-            value={password}
-            onChange={(e) => set_password(e.target.value)}
+            name="password"
+            value={loginInfo.password}
+            onChange={handleChange}
           />
           <LoginButton type="submit">로그인</LoginButton>
         </Form>
@@ -127,6 +140,7 @@ export default function LoginPage() {
   );
 }
 
+// --- 스타일 컴포넌트 (기존 스타일 유지) ---
 const Overlay = styled.div`
   position: fixed;
   inset: 0;
@@ -138,7 +152,6 @@ const Overlay = styled.div`
   z-index: 1000;
 `;
 
-/* .modal-box */
 const ModalBox = styled.div`
   width: 400px;
   height: 450px;
@@ -146,17 +159,14 @@ const ModalBox = styled.div`
   background: #fff;
   border-radius: 30px;
   box-shadow: 0 4px 4px 5px rgba(0, 0, 0, 0.25);
-
   position: relative;
   padding: 32px 40px 24px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
-/* .modal-close */
 const CloseButton = styled.button`
   position: absolute;
   top: 20px;
@@ -178,7 +188,6 @@ const Logo = styled.img`
   margin-top: -20px;
 `;
 
-/* form */
 const Form = styled.form`
   width: 100%;
   max-width: 380px;
@@ -188,7 +197,6 @@ const Form = styled.form`
   gap: 17px;
 `;
 
-/* .modal-input */
 const Input = styled.input`
   display: flex;
   width: 280px;
@@ -205,7 +213,6 @@ const Input = styled.input`
   }
 `;
 
-/* .modal-login-btn */
 const LoginButton = styled.button`
   display: flex;
   height: 45px;
@@ -218,6 +225,10 @@ const LoginButton = styled.button`
   background: #fff;
   color: #174579;
   font-size: 15px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f0f0f0;
+  }
 `;
 
 const SwitchRow = styled.div`
@@ -225,6 +236,7 @@ const SwitchRow = styled.div`
   display: flex;
   justify-content: center;
 `;
+
 const SwitchLink = styled.button`
   background: none;
   border: 0;
@@ -236,7 +248,7 @@ const SwitchLink = styled.button`
 `;
 
 const ErrorMessage = styled.p`
-  color: #e01e5a; // 에러 색상
+  color: #e01e5a;
   font-size: 14px;
   margin-top: -10px;
   margin-bottom: 10px;
